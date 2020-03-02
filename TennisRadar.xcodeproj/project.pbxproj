@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,25 @@
 		C4DC2DCF24076ED2007CE1DF /* TennisRadar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DCD24076ED2007CE1DF /* TennisRadar.xcdatamodeld */; };
 		C4DC2DD124076ED4007CE1DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4DC2DD024076ED4007CE1DF /* Assets.xcassets */; };
 		C4DC2DD424076ED5007CE1DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4DC2DD224076ED4007CE1DF /* LaunchScreen.storyboard */; };
+		C4DC2DDD24076EEF007CE1DF /* TennisApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DDC24076EEF007CE1DF /* TennisApi.swift */; };
+		C4DC2DDF24076F74007CE1DF /* MatchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DDE24076F74007CE1DF /* MatchMode.swift */; };
+		C4DC2DE32407706C007CE1DF /* MatchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DE22407706C007CE1DF /* MatchStatus.swift */; };
+		C4DC2DE524087B1F007CE1DF /* TournamentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DE424087B1F007CE1DF /* TournamentType.swift */; };
+		C4F62DBB240AABA600A9803E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C4F62DBA240AABA600A9803E /* Alamofire */; };
+		C4F62DE6240C06DC00A9803E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DE5240C06DC00A9803E /* Endpoints.swift */; };
+		C4F62DEA240C08BB00A9803E /* Tournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DE9240C08BB00A9803E /* Tournaments.swift */; };
+		C4F62DEC240C095C00A9803E /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DEB240C095C00A9803E /* Tournament.swift */; };
+		C4F62DEE240C0AA800A9803E /* IdName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DED240C0AA800A9803E /* IdName.swift */; };
+		C4F62DF0240C0AE600A9803E /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DEF240C0AE600A9803E /* Season.swift */; };
+		C4F62DF2240CB0AE00A9803E /* TournamentSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DF1240CB0AE00A9803E /* TournamentSummary.swift */; };
+		C4F62DF7240CB6B300A9803E /* TournamentSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DF6240CB6B300A9803E /* TournamentSchedule.swift */; };
+		C4F62DF9240CB78700A9803E /* SportEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DF8240CB78700A9803E /* SportEvent.swift */; };
+		C4F62DFB240CB89800A9803E /* TournamentRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DFA240CB89800A9803E /* TournamentRound.swift */; };
+		C4F62DFE240CBA3600A9803E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DFD240CBA3600A9803E /* Player.swift */; };
+		C4F62E00240CBD0100A9803E /* TournamentResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DFF240CBD0100A9803E /* TournamentResults.swift */; };
+		C4F62E02240CBDB800A9803E /* TournamentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62E01240CBDB800A9803E /* TournamentResult.swift */; };
+		C4F62E04240CBEB700A9803E /* SportEventStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62E03240CBEB700A9803E /* SportEventStatus.swift */; };
+		C4F62E08240CC04C00A9803E /* PeriodScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62E07240CC04C00A9803E /* PeriodScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +45,24 @@
 		C4DC2DD024076ED4007CE1DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4DC2DD324076ED4007CE1DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4DC2DD524076ED5007CE1DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4DC2DDC24076EEF007CE1DF /* TennisApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisApi.swift; sourceTree = "<group>"; };
+		C4DC2DDE24076F74007CE1DF /* MatchMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMode.swift; sourceTree = "<group>"; };
+		C4DC2DE22407706C007CE1DF /* MatchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatus.swift; sourceTree = "<group>"; };
+		C4DC2DE424087B1F007CE1DF /* TournamentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentType.swift; sourceTree = "<group>"; };
+		C4F62DE5240C06DC00A9803E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		C4F62DE9240C08BB00A9803E /* Tournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournaments.swift; sourceTree = "<group>"; };
+		C4F62DEB240C095C00A9803E /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		C4F62DED240C0AA800A9803E /* IdName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdName.swift; sourceTree = "<group>"; };
+		C4F62DEF240C0AE600A9803E /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		C4F62DF1240CB0AE00A9803E /* TournamentSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentSummary.swift; sourceTree = "<group>"; };
+		C4F62DF6240CB6B300A9803E /* TournamentSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentSchedule.swift; sourceTree = "<group>"; };
+		C4F62DF8240CB78700A9803E /* SportEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportEvent.swift; sourceTree = "<group>"; };
+		C4F62DFA240CB89800A9803E /* TournamentRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentRound.swift; sourceTree = "<group>"; };
+		C4F62DFD240CBA3600A9803E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		C4F62DFF240CBD0100A9803E /* TournamentResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentResults.swift; sourceTree = "<group>"; };
+		C4F62E01240CBDB800A9803E /* TournamentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentResult.swift; sourceTree = "<group>"; };
+		C4F62E03240CBEB700A9803E /* SportEventStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportEventStatus.swift; sourceTree = "<group>"; };
+		C4F62E07240CC04C00A9803E /* PeriodScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F62DBB240AABA600A9803E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +96,10 @@
 		C4DC2DC324076ED2007CE1DF /* TennisRadar */ = {
 			isa = PBXGroup;
 			children = (
+				C4DC2DDB24076EDA007CE1DF /* Network */,
+				C4F62DBC240AF6CA00A9803E /* Controller */,
 				C4DC2DC424076ED2007CE1DF /* AppDelegate.swift */,
 				C4DC2DC624076ED2007CE1DF /* SceneDelegate.swift */,
-				C4DC2DC824076ED2007CE1DF /* ViewController.swift */,
 				C4DC2DCA24076ED2007CE1DF /* Main.storyboard */,
 				C4DC2DD024076ED4007CE1DF /* Assets.xcassets */,
 				C4DC2DD224076ED4007CE1DF /* LaunchScreen.storyboard */,
@@ -68,6 +107,79 @@
 				C4DC2DCD24076ED2007CE1DF /* TennisRadar.xcdatamodeld */,
 			);
 			path = TennisRadar;
+			sourceTree = "<group>";
+		};
+		C4DC2DDB24076EDA007CE1DF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C4F62DE4240BFEC800A9803E /* Response */,
+				C4DC2DDC24076EEF007CE1DF /* TennisApi.swift */,
+				C4F62DE5240C06DC00A9803E /* Endpoints.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C4F62DBC240AF6CA00A9803E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C4DC2DC824076ED2007CE1DF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C4F62DE4240BFEC800A9803E /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				C4F62E06240CC04000A9803E /* Score */,
+				C4F62E05240CBEE700A9803E /* Event */,
+				C4F62DED240C0AA800A9803E /* IdName.swift */,
+				C4F62DFC240CBA2500A9803E /* Player */,
+				C4F62DF5240CB4EA00A9803E /* Tournament */,
+				C4DC2DDE24076F74007CE1DF /* MatchMode.swift */,
+				C4DC2DE22407706C007CE1DF /* MatchStatus.swift */,
+				C4DC2DE424087B1F007CE1DF /* TournamentType.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		C4F62DF5240CB4EA00A9803E /* Tournament */ = {
+			isa = PBXGroup;
+			children = (
+				C4F62DF1240CB0AE00A9803E /* TournamentSummary.swift */,
+				C4F62DE9240C08BB00A9803E /* Tournaments.swift */,
+				C4F62DEB240C095C00A9803E /* Tournament.swift */,
+				C4F62DF6240CB6B300A9803E /* TournamentSchedule.swift */,
+				C4F62DFA240CB89800A9803E /* TournamentRound.swift */,
+				C4F62DFF240CBD0100A9803E /* TournamentResults.swift */,
+				C4F62E01240CBDB800A9803E /* TournamentResult.swift */,
+			);
+			path = Tournament;
+			sourceTree = "<group>";
+		};
+		C4F62DFC240CBA2500A9803E /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				C4F62DFD240CBA3600A9803E /* Player.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		C4F62E05240CBEE700A9803E /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				C4F62DF8240CB78700A9803E /* SportEvent.swift */,
+				C4F62E03240CBEB700A9803E /* SportEventStatus.swift */,
+				C4F62DEF240C0AE600A9803E /* Season.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		C4F62E06240CC04000A9803E /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				C4F62E07240CC04C00A9803E /* PeriodScore.swift */,
+			);
+			path = Score;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +198,9 @@
 			dependencies = (
 			);
 			name = TennisRadar;
+			packageProductDependencies = (
+				C4F62DBA240AABA600A9803E /* Alamofire */,
+			);
 			productName = TennisRadar;
 			productReference = C4DC2DC124076ED2007CE1DF /* TennisRadar.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +229,9 @@
 				Base,
 			);
 			mainGroup = C4DC2DB824076ED2007CE1DF;
+			packageReferences = (
+				C4F62DB9240AABA600A9803E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C4DC2DC224076ED2007CE1DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,10 +259,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F62DEC240C095C00A9803E /* Tournament.swift in Sources */,
+				C4DC2DDF24076F74007CE1DF /* MatchMode.swift in Sources */,
+				C4F62DEE240C0AA800A9803E /* IdName.swift in Sources */,
+				C4F62DEA240C08BB00A9803E /* Tournaments.swift in Sources */,
 				C4DC2DC924076ED2007CE1DF /* ViewController.swift in Sources */,
 				C4DC2DC524076ED2007CE1DF /* AppDelegate.swift in Sources */,
 				C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */,
+				C4F62DF2240CB0AE00A9803E /* TournamentSummary.swift in Sources */,
+				C4DC2DE32407706C007CE1DF /* MatchStatus.swift in Sources */,
+				C4F62E08240CC04C00A9803E /* PeriodScore.swift in Sources */,
+				C4F62E04240CBEB700A9803E /* SportEventStatus.swift in Sources */,
+				C4F62E02240CBDB800A9803E /* TournamentResult.swift in Sources */,
 				C4DC2DCF24076ED2007CE1DF /* TennisRadar.xcdatamodeld in Sources */,
+				C4DC2DE524087B1F007CE1DF /* TournamentType.swift in Sources */,
+				C4F62DFB240CB89800A9803E /* TournamentRound.swift in Sources */,
+				C4F62DE6240C06DC00A9803E /* Endpoints.swift in Sources */,
+				C4F62DF7240CB6B300A9803E /* TournamentSchedule.swift in Sources */,
+				C4F62DF9240CB78700A9803E /* SportEvent.swift in Sources */,
+				C4F62E00240CBD0100A9803E /* TournamentResults.swift in Sources */,
+				C4F62DF0240C0AE600A9803E /* Season.swift in Sources */,
+				C4F62DFE240CBA3600A9803E /* Player.swift in Sources */,
+				C4DC2DDD24076EEF007CE1DF /* TennisApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +478,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4F62DB9240AABA600A9803E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4F62DBA240AABA600A9803E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4F62DB9240AABA600A9803E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C4DC2DCD24076ED2007CE1DF /* TennisRadar.xcdatamodeld */ = {
