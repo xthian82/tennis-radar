@@ -22,7 +22,8 @@ public enum Endpoints {
     case tournamentResults(_ tournamentId: String)
     case tournamentSummary(_ tournamentId: String)
     case tournamentSchedule(_ tournamentId: String)
-    case liveSchedule
+    case results(_ dayOrLive: String)
+    case schedule(_ dayOrLive: String)
     case liveSummary
     case matchProbability(_ matchId: String)
     case matchSummary(_ matchId: String)
@@ -51,8 +52,10 @@ public enum Endpoints {
             return Endpoints.base + "/tournaments/\(tournamentId)/summaries\(Endpoints.apiKeyParam)"
         case .tournamentSchedule(let tournamentId):
             return Endpoints.base + "/tournaments/\(tournamentId)/schedule\(Endpoints.apiKeyParam)"
-        case .liveSchedule:
-            return Endpoints.base + "/schedules/live/schedule\(Endpoints.apiKeyParam)"
+        case .results(let dayOrLive):
+            return Endpoints.base + "/schedules/\(dayOrLive)/results\(Endpoints.apiKeyParam)"
+        case .schedule(let dayOrLive):
+            return Endpoints.base + "/schedules/\(dayOrLive)/schedule\(Endpoints.apiKeyParam)"
         case .liveSummary:
             return Endpoints.base + "/schedules/live/summaries\(Endpoints.apiKeyParam)"
         case .matchProbability(let matchId):

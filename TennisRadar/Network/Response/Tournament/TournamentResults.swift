@@ -9,7 +9,7 @@
 import Foundation
 
 struct TournamentResults: Codable {
-    let tournament: Tournament
+    let tournament: Tournament?
     let results: [TournamentResult]
     
     enum CodingKeys: String, CodingKey {

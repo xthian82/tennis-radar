@@ -15,7 +15,7 @@ struct Tournament: Codable {
     let parentId: String?
     let sport: IdName
     let category: IdName
-    let currentSeason: Season
+    let currentSeason: Season?
     let type: String?
     let gender: String?
     let countryFormat: Bool?
