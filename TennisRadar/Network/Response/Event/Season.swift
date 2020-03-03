@@ -15,6 +15,7 @@ struct Season: Codable {
     let startDate: String?
     let endDate: String?
     let year: String?
+    let tournamentId: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -22,5 +23,6 @@ struct Season: Codable {
         case startDate = "start_date"
         case endDate = "end_date"
         case year
+        case tournamentId = "tournament_id"
     }
 }

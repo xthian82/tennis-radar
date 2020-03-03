@@ -11,8 +11,8 @@ import Foundation
 struct TournamentSchedule: Codable {
     let generatedAt: String
     let schema: String?
-    let tournament: Tournament
-    let sportEvents: [SportEvent]?
+    let tournament: Tournament?
+    let sportEvents: [SportEvent]
     
     enum CodingKeys: String, CodingKey {
         case generatedAt = "generated_at"

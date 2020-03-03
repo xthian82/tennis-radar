@@ -20,5 +20,100 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4ADAE1E0-E0D6-4930-B043-5FD55A77A98F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TennisRadar/Network/TennisApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "getTournamentInfo(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "116870A9-A8F5-4897-BB63-019952D2BE4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TennisRadar/Network/TennisApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "getTournamentInfo(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "116870A9-A8F5-4897-BB63-019952D2BE4D - 2367788e50e88fdb"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TennisRadar.TennisApi.getTournamentInfo(_: Swift.String, completion: (Swift.Optional&lt;TennisRadar.TournamentInfo&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TennisRadar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/workspace-ios/TennisRadar/TennisRadar/Network/TennisApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "707">
+               </Location>
+               <Location
+                  uuid = "116870A9-A8F5-4897-BB63-019952D2BE4D - 185fee705fb6d38a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;TennisRadar.TournamentInfo, Alamofire.AFError&gt;) -&gt; () in static TennisRadar.TennisApi.getTournamentInfo(_: Swift.String, completion: (Swift.Optional&lt;TennisRadar.TournamentInfo&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TennisRadar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/workspace-ios/TennisRadar/TennisRadar/Network/TennisApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "175">
+               </Location>
+               <Location
+                  uuid = "116870A9-A8F5-4897-BB63-019952D2BE4D - abd54e1cf749edfa"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.DataResponse&lt;TennisRadar.TournamentInfo, Alamofire.AFError&gt;) -&gt; () in static TennisRadar.TennisApi.getTournamentInfo(_: Swift.String, completion: (Swift.Optional&lt;TennisRadar.TournamentInfo&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TennisRadar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/workspace-ios/TennisRadar/TennisRadar/Network/TennisApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "470092ED-C4D3-4D36-8D39-B35336E5072D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TennisRadar/Network/TennisApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "getTournamentInfo(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -1,5 +1,5 @@
 //
-//  Player.swift
+//  Competitor.swift
 //  TennisRadar
 //
 //  Created by Cristhian Recalde on 3/2/20.
@@ -8,22 +8,20 @@
 
 import Foundation
 
-struct Player: Codable {
-
-    let id: String
-    let name: String
-    let nationality: String?
-    let countryCode: String
+struct Competitor: Codable {
+    let id: String?
+    let name: String?
+    let bracketNumber: Int?
     let abbreviation: String?
     let qualifier: String?
+    let players: [Player]?
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case nationality
-        case countryCode = "country_code"
+        case bracketNumber = "bracket_number"
         case abbreviation
         case qualifier
+        case players
     }
 }
-

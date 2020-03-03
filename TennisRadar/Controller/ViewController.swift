@@ -17,14 +17,14 @@ class ViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // getTournaments()
-        // getOngoingTournaments
+        //getTournaments()
+        //getOngoingTournaments()
         //getTournamentSummary()
-        getTournamentSchedule()
-        getTournamentResults()
-        getTournamentInfo()
-        getResults()
-        getSchedule()
+        //getTournamentSchedule()
+        //getTournamentResults()
+        //getTournamentInfo()
+        //getResults()
+        //getSchedule()
     }
     
     // MARK: - test funcs
@@ -75,7 +75,7 @@ class ViewController: UITableViewController {
     
     func getTournamentSchedule() {
         print("=================> getTournamentSchedule")
-        TennisApi.getTournamentSchedule("sr:tournament:2553") { response in
+        TennisApi.getTournamentSchedule("sr:tournament:2555") { response in
             guard let tourSummary: TournamentSchedule = response else {
                 print("no tours...")
                 return
@@ -87,7 +87,7 @@ class ViewController: UITableViewController {
 
     func getTournamentResults() {
         print("=================> getTournamentResults")
-        TennisApi.getTournamentResults("sr:tournament:2553") { response in
+        TennisApi.getTournamentResults("sr:tournament:2555") { response in
             guard let toursResults: TournamentResults = response else {
                 print("no tours...")
                 return
@@ -104,7 +104,7 @@ class ViewController: UITableViewController {
     
     func getTournamentInfo() {
         print("=================> getTournamentInfo")
-        TennisApi.getTournamentInfo("sr:tournament:2553") { response in
+        TennisApi.getTournamentInfo("sr:tournament:2555") { response in
             guard let tourInfo: TournamentInfo = response else {
                 print("no tours...")
                 return
@@ -112,7 +112,7 @@ class ViewController: UITableViewController {
 
         
             print("tournament = \(tourInfo.tournament)")
-            print("tournament Round = \(tourInfo.tournamentRound)")
+            print("Cover info  = \(tourInfo.coverageInfo)")
             print("tour Info = \(tourInfo.info)")
             if tourInfo.competitors.count > 0 {
                 print("first is = \(tourInfo.competitors[0])")
@@ -139,15 +139,15 @@ class ViewController: UITableViewController {
     func getSchedule() {
         print("=================> getSchedule")
         TennisApi.getSchedule(ofDate: "2016-07-06") { response in
-            guard let results: TournamentResults = response else {
+            guard let results: TournamentSchedule = response else {
                 print("no tours...")
                 return
             }
 
         
             print("tournament = \(results.tournament)")
-            if results.results.count > 0 {
-                print("first schedule is = \(results.results[0])")
+            if results.sportEvents.count > 0 {
+                print("first schedule is = \(results.sportEvents[0])")
             }
         }
     }

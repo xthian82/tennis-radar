@@ -11,12 +11,14 @@ import Foundation
 struct TournamentRound: Codable {
     let type: String
     let name: String?
-    let cupRoundMatchNumber: String?
-    let cupRoundMatches: String?
+    let groupLongName: String?
+    let cupRoundMatchNumber: Int?
+    let cupRoundMatches: Int?
     
     enum CodingKeys: String, CodingKey {
         case type
         case name
+        case groupLongName = "group_long_name"
         case cupRoundMatchNumber = "cup_round_match_number"
         case cupRoundMatches = "cup_round_matches"
     }

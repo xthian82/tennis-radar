@@ -9,15 +9,15 @@
 import Foundation
 
 struct Info: Codable {
-    let prizeMoney: String
-    let prizeCurrency: String
     let surface: String
-    let numberOfCompetitors: String
+    let complex: String?
+    let complexId: String?
+    let numberOfQualifiedCompetitors: Int
     
     enum CodingKeys: String, CodingKey {
-        case prizeMoney = "prize_money"
-        case prizeCurrency = "prize_currency"
         case surface
-        case numberOfCompetitors = "number_of_competitors"
+        case complex
+        case complexId = "complex_id"
+        case numberOfQualifiedCompetitors = "number_of_qualified_competitors"
     }
 }

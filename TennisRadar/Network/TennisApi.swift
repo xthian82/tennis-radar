@@ -76,9 +76,9 @@ class TennisApi {
         }
     }
     
-    class func getSchedule(ofDate: String?, completion: @escaping (TournamentResults?) -> Void) {
+    class func getSchedule(ofDate: String?, completion: @escaping (TournamentSchedule?) -> Void) {
         AF.request(Endpoints.schedule(getLiveOrDate(ofDate)).val).validate()
-          .responseDecodable(of: TournamentResults.self, queue: .global(qos: .background)) { response in
+          .responseDecodable(of: TournamentSchedule.self, queue: .global(qos: .background)) { response in
             DispatchQueue.main.async {
                 completion(response.value)
             }

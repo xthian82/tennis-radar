@@ -9,10 +9,10 @@
 import Foundation
 
 struct PeriodScore: Codable {
-    let homeScore: String
-    let awayScore: String
-    let type: String?
-    let number: String?
+    let homeScore: Int?
+    let awayScore: Int?
+    let type: String
+    let number: Int?
     
     enum CodingKeys: String, CodingKey {
         case homeScore = "home_score"
