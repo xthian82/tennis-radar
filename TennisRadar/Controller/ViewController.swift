@@ -24,7 +24,12 @@ class ViewController: UITableViewController {
         //getTournamentResults()
         //getTournamentInfo()
         //getResults()
-        //getSchedule()
+        //getSchedule("2016-07-06")
+        //getSchedule("live")
+        //getLiveSummary()
+        // getMatchProbability()
+        //getMatchSummary()
+        //getMatchTimeline()
     }
     
     // MARK: - test funcs
@@ -136,9 +141,9 @@ class ViewController: UITableViewController {
         }
     }
     
-    func getSchedule() {
-        print("=================> getSchedule")
-        TennisApi.getSchedule(ofDate: "2016-07-06") { response in
+    func getSchedule(_ of: String) {
+        print("=================> getSchedule of \(of)")
+        TennisApi.getSchedule(ofDate: of) { response in
             guard let results: TournamentSchedule = response else {
                 print("no tours...")
                 return
@@ -149,6 +154,58 @@ class ViewController: UITableViewController {
             if results.sportEvents.count > 0 {
                 print("first schedule is = \(results.sportEvents[0])")
             }
+        }
+    }
+    
+    func getLiveSummary() {
+           print("=================> getLiveSummary ")
+           TennisApi.getLiveSummary() { response in
+               guard let results: TournamentSummary = response else {
+                   print("no tours...")
+                   return
+               }
+
+           
+               print("tournament = \(results.tournament)")
+            if results.summaries.count > 0 {
+                   print("first summary is = \(results.summaries[0])")
+               }
+           }
+       }
+    
+    func getMatchProbability() {
+        print("=================> getMatchProbability ")
+        TennisApi.getMatchProbabilities("sr:match:21493533") { response in
+            guard let results: MatchProbability = response else {
+                print("no prob...")
+                return
+            }
+
+            print(results)
+        }
+    }
+    
+    func getMatchSummary() {
+        print("=================> getMatchSummary ")
+        TennisApi.getMatchSummary("sr:match:21493533") { response in
+            guard let results: MatchResult = response else {
+                print("no prob...")
+                return
+            }
+
+            print(results)
+        }
+    }
+    
+    func getMatchTimeline() {
+        print("=================> getMatchTimeline ")
+        TennisApi.getMatchTimeline("sr:match:21493533") { response in
+            guard let results: MatchResult = response else {
+                print("no prob...")
+                return
+            }
+
+            print(results)
         }
     }
 }

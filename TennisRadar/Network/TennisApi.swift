@@ -85,6 +85,42 @@ class TennisApi {
         }
     }
     
+    class func getLiveSummary(completion: @escaping (TournamentSummary?) -> Void) {
+        AF.request(Endpoints.liveSummary.val).validate()
+          .responseDecodable(of: TournamentSummary.self, queue: .global(qos: .background)) { response in
+            DispatchQueue.main.async {
+                completion(response.value)
+            }
+        }
+    }
+    
+    class func getMatchProbabilities(_ matchId: String, completion: @escaping (MatchProbability?) -> Void) {
+        AF.request(Endpoints.matchProbability(matchId).val).validate()
+          .responseDecodable(of: MatchProbability.self, queue: .global(qos: .background)) { response in
+            DispatchQueue.main.async {
+                completion(response.value)
+            }
+        }
+    }
+    
+    class func getMatchSummary(_ matchId: String, completion: @escaping (MatchResult?) -> Void) {
+        AF.request(Endpoints.matchSummary(matchId).val).validate()
+          .responseDecodable(of: MatchResult.self, queue: .global(qos: .background)) { response in
+            DispatchQueue.main.async {
+                completion(response.value)
+            }
+        }
+    }
+    
+    class func getMatchTimeline(_ matchId: String, completion: @escaping (MatchResult?) -> Void) {
+        AF.request(Endpoints.matchTimeline(matchId).val).validate()
+          .responseDecodable(of: MatchResult.self, queue: .global(qos: .background)) { response in
+            DispatchQueue.main.async {
+                completion(response.value)
+            }
+        }
+    }
+    
     // MARK: - Players Calls
     
     //MARK: - Helpers
@@ -101,20 +137,11 @@ class TennisApi {
 
 
 /**
- case .results(let dayOrLive):
-return Endpoints.base + "/schedules/\(dayOrLive)/results\(Endpoints.apiKeyParam)"
-case .schedule(let dayOrLive):
-    return Endpoints.base + "/schedules/\(dayOrLive)/schedule\(Endpoints.apiKeyParam)"
  
-        case .liveSummary:
-            return Endpoints.base + "/schedules/live/summaries\(Endpoints.apiKeyParam)"
-        case .matchProbability(let matchId):
-            return Endpoints.base + "/matches/\(matchId)/probabilities\(Endpoints.apiKeyParam)"
-        case .matchSummary(let matchId):
-            return Endpoints.base +  "/matches/\(matchId)/summary\(Endpoints.apiKeyParam)"
-        case .matchTimeline(let matchId):
-            return Endpoints.base + "/matches/\(matchId)/timeline\(Endpoints.apiKeyParam)"
-        case .headToHead(let playerOne, let playerTwo):
+      
+ 
+ 
+ case .headToHead(let playerOne, let playerTwo):
             return Endpoints.base + "/players/\(playerOne)/versus/\(playerTwo)/matches\(Endpoints.apiKeyParam)"
         case .playerProfile(let playerId):
             return Endpoints.base + "/players/\(playerId)/profile\(Endpoints.apiKeyParam)"

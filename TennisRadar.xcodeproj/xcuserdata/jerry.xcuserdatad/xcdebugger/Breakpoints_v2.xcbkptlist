@@ -115,5 +115,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9AF0DBE-467C-4C85-B506-3C8F6C7A60A8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TennisRadar/Network/TennisApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "getMatchProbabilities(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9AF0DBE-467C-4C85-B506-3C8F6C7A60A8 - 62fa1dbc39ac6f37"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;TennisRadar.MatchProbability, Alamofire.AFError&gt;) -&gt; () in static TennisRadar.TennisApi.getMatchProbabilities(_: Swift.String, completion: (Swift.Optional&lt;TennisRadar.MatchProbability&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TennisRadar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/workspace-ios/TennisRadar/TennisRadar/Network/TennisApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "175">
+               </Location>
+               <Location
+                  uuid = "D9AF0DBE-467C-4C85-B506-3C8F6C7A60A8 - 94b26a85742639bb"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.DataResponse&lt;TennisRadar.MatchProbability, Alamofire.AFError&gt;) -&gt; () in static TennisRadar.TennisApi.getMatchProbabilities(_: Swift.String, completion: (Swift.Optional&lt;TennisRadar.MatchProbability&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TennisRadar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/workspace-ios/TennisRadar/TennisRadar/Network/TennisApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E29FB54C-DC1C-4CCF-9D97-A195CB403092"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TennisRadar/Network/TennisApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "getMatchProbabilities(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

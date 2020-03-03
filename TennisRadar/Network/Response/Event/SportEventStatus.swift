@@ -10,6 +10,7 @@ import Foundation
 
 struct SportEventStatus: Codable {
     let status: String
+    let matchStatus: String?
     let homeScore: Int?
     let awayScore: Int?
     let winnerId: String?
@@ -18,6 +19,7 @@ struct SportEventStatus: Codable {
 
     enum CodingKeys: String, CodingKey {
         case status
+        case matchStatus
         case homeScore = "home_score"
         case awayScore = "away_score"
         case winnerId = "winner_id"

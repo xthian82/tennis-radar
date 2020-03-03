@@ -9,10 +9,11 @@
 import Foundation
 
 struct TournamentResults: Codable {
+
     let generatedAt: String?
     let schema: String?
     let tournament: Tournament?
-    let results: [TournamentResult]
+    let results: [MatchResult]
     
     enum CodingKeys: String, CodingKey {
         case generatedAt = "generated_at"

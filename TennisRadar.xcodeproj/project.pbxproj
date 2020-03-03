@@ -12,6 +12,15 @@
 		C4AADA68240DEC760084E172 /* CoverageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA67240DEC760084E172 /* CoverageInfo.swift */; };
 		C4AADA6A240DF1AD0084E172 /* Competitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA69240DF1AD0084E172 /* Competitor.swift */; };
 		C4AADA6C240DF3460084E172 /* SportEventConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA6B240DF3460084E172 /* SportEventConditions.swift */; };
+		C4AADA6E240DFDAD0084E172 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA6D240DFDAD0084E172 /* Venue.swift */; };
+		C4AADA70240E023C0084E172 /* MatchProbability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA6F240E023C0084E172 /* MatchProbability.swift */; };
+		C4AADA72240E02E50084E172 /* Markets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA71240E02E50084E172 /* Markets.swift */; };
+		C4AADA74240E03520084E172 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA73240E03520084E172 /* Market.swift */; };
+		C4AADA76240E03EB0084E172 /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA75240E03EB0084E172 /* Outcome.swift */; };
+		C4AADA78240E08350084E172 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA77240E08350084E172 /* Statistics.swift */; };
+		C4AADA7A240E08800084E172 /* PlayerStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA79240E08800084E172 /* PlayerStat.swift */; };
+		C4AADA7C240E08FA0084E172 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA7B240E08FA0084E172 /* Stats.swift */; };
+		C4AADA7E240E10120084E172 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA7D240E10120084E172 /* Timeline.swift */; };
 		C4DC2DC524076ED2007CE1DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC424076ED2007CE1DF /* AppDelegate.swift */; };
 		C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC624076ED2007CE1DF /* SceneDelegate.swift */; };
 		C4DC2DC924076ED2007CE1DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC824076ED2007CE1DF /* ViewController.swift */; };
@@ -35,7 +44,7 @@
 		C4F62DFB240CB89800A9803E /* TournamentRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DFA240CB89800A9803E /* TournamentRound.swift */; };
 		C4F62DFE240CBA3600A9803E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DFD240CBA3600A9803E /* Player.swift */; };
 		C4F62E00240CBD0100A9803E /* TournamentResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62DFF240CBD0100A9803E /* TournamentResults.swift */; };
-		C4F62E02240CBDB800A9803E /* TournamentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62E01240CBDB800A9803E /* TournamentResult.swift */; };
+		C4F62E02240CBDB800A9803E /* MatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62E01240CBDB800A9803E /* MatchResult.swift */; };
 		C4F62E04240CBEB700A9803E /* SportEventStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62E03240CBEB700A9803E /* SportEventStatus.swift */; };
 		C4F62E08240CC04C00A9803E /* PeriodScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F62E07240CC04C00A9803E /* PeriodScore.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +55,15 @@
 		C4AADA67240DEC760084E172 /* CoverageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageInfo.swift; sourceTree = "<group>"; };
 		C4AADA69240DF1AD0084E172 /* Competitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitor.swift; sourceTree = "<group>"; };
 		C4AADA6B240DF3460084E172 /* SportEventConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportEventConditions.swift; sourceTree = "<group>"; };
+		C4AADA6D240DFDAD0084E172 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		C4AADA6F240E023C0084E172 /* MatchProbability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchProbability.swift; sourceTree = "<group>"; };
+		C4AADA71240E02E50084E172 /* Markets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markets.swift; sourceTree = "<group>"; };
+		C4AADA73240E03520084E172 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		C4AADA75240E03EB0084E172 /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
+		C4AADA77240E08350084E172 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		C4AADA79240E08800084E172 /* PlayerStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStat.swift; sourceTree = "<group>"; };
+		C4AADA7B240E08FA0084E172 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		C4AADA7D240E10120084E172 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		C4DC2DC124076ED2007CE1DF /* TennisRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DC2DC424076ED2007CE1DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4DC2DC624076ED2007CE1DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +88,7 @@
 		C4F62DFA240CB89800A9803E /* TournamentRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentRound.swift; sourceTree = "<group>"; };
 		C4F62DFD240CBA3600A9803E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C4F62DFF240CBD0100A9803E /* TournamentResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentResults.swift; sourceTree = "<group>"; };
-		C4F62E01240CBDB800A9803E /* TournamentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentResult.swift; sourceTree = "<group>"; };
+		C4F62E01240CBDB800A9803E /* MatchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResult.swift; sourceTree = "<group>"; };
 		C4F62E03240CBEB700A9803E /* SportEventStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportEventStatus.swift; sourceTree = "<group>"; };
 		C4F62E07240CC04C00A9803E /* PeriodScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +108,12 @@
 		860AC5C8240D537A0001EE30 /* Match */ = {
 			isa = PBXGroup;
 			children = (
+				C4AADA75240E03EB0084E172 /* Outcome.swift */,
+				C4AADA73240E03520084E172 /* Market.swift */,
+				C4AADA71240E02E50084E172 /* Markets.swift */,
+				C4AADA6F240E023C0084E172 /* MatchProbability.swift */,
+				C4AADA77240E08350084E172 /* Statistics.swift */,
+				C4F62E01240CBDB800A9803E /* MatchResult.swift */,
 			);
 			path = Match;
 			sourceTree = "<group>";
@@ -169,7 +193,6 @@
 				C4F62DF6240CB6B300A9803E /* TournamentSchedule.swift */,
 				C4F62DFA240CB89800A9803E /* TournamentRound.swift */,
 				C4F62DFF240CBD0100A9803E /* TournamentResults.swift */,
-				C4F62E01240CBDB800A9803E /* TournamentResult.swift */,
 				860AC5C4240D4B980001EE30 /* TournamentInfo.swift */,
 			);
 			path = Tournament;
@@ -179,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				C4F62DFD240CBA3600A9803E /* Player.swift */,
+				C4AADA79240E08800084E172 /* PlayerStat.swift */,
+				C4AADA7B240E08FA0084E172 /* Stats.swift */,
 				C4AADA69240DF1AD0084E172 /* Competitor.swift */,
 			);
 			path = Player;
@@ -187,12 +212,14 @@
 		C4F62E05240CBEE700A9803E /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				C4AADA6D240DFDAD0084E172 /* Venue.swift */,
 				C4F62DF8240CB78700A9803E /* SportEvent.swift */,
 				C4F62E03240CBEB700A9803E /* SportEventStatus.swift */,
 				C4F62DEF240C0AE600A9803E /* Season.swift */,
 				860AC5C6240D4CB90001EE30 /* Info.swift */,
 				C4AADA67240DEC760084E172 /* CoverageInfo.swift */,
 				C4AADA6B240DF3460084E172 /* SportEventConditions.swift */,
+				C4AADA7D240E10120084E172 /* Timeline.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -282,23 +309,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AADA7E240E10120084E172 /* Timeline.swift in Sources */,
+				C4AADA7A240E08800084E172 /* PlayerStat.swift in Sources */,
 				C4F62DEC240C095C00A9803E /* Tournament.swift in Sources */,
 				C4AADA6A240DF1AD0084E172 /* Competitor.swift in Sources */,
 				C4DC2DDF24076F74007CE1DF /* MatchMode.swift in Sources */,
 				C4F62DEE240C0AA800A9803E /* IdName.swift in Sources */,
+				C4AADA76240E03EB0084E172 /* Outcome.swift in Sources */,
+				C4AADA70240E023C0084E172 /* MatchProbability.swift in Sources */,
 				C4F62DEA240C08BB00A9803E /* Tournaments.swift in Sources */,
 				C4DC2DC924076ED2007CE1DF /* ViewController.swift in Sources */,
 				C4DC2DC524076ED2007CE1DF /* AppDelegate.swift in Sources */,
 				C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */,
+				C4AADA74240E03520084E172 /* Market.swift in Sources */,
 				C4F62DF2240CB0AE00A9803E /* TournamentSummary.swift in Sources */,
 				C4DC2DE32407706C007CE1DF /* MatchStatus.swift in Sources */,
+				C4AADA78240E08350084E172 /* Statistics.swift in Sources */,
 				860AC5C7240D4CB90001EE30 /* Info.swift in Sources */,
 				C4F62E08240CC04C00A9803E /* PeriodScore.swift in Sources */,
+				C4AADA72240E02E50084E172 /* Markets.swift in Sources */,
 				860AC5C5240D4B980001EE30 /* TournamentInfo.swift in Sources */,
 				C4F62E04240CBEB700A9803E /* SportEventStatus.swift in Sources */,
-				C4F62E02240CBDB800A9803E /* TournamentResult.swift in Sources */,
+				C4F62E02240CBDB800A9803E /* MatchResult.swift in Sources */,
 				C4DC2DCF24076ED2007CE1DF /* TennisRadar.xcdatamodeld in Sources */,
 				C4DC2DE524087B1F007CE1DF /* TournamentType.swift in Sources */,
+				C4AADA6E240DFDAD0084E172 /* Venue.swift in Sources */,
 				C4AADA6C240DF3460084E172 /* SportEventConditions.swift in Sources */,
 				C4F62DFB240CB89800A9803E /* TournamentRound.swift in Sources */,
 				C4F62DE6240C06DC00A9803E /* Endpoints.swift in Sources */,
@@ -306,6 +341,7 @@
 				C4F62DF7240CB6B300A9803E /* TournamentSchedule.swift in Sources */,
 				C4F62DF9240CB78700A9803E /* SportEvent.swift in Sources */,
 				C4F62E00240CBD0100A9803E /* TournamentResults.swift in Sources */,
+				C4AADA7C240E08FA0084E172 /* Stats.swift in Sources */,
 				C4F62DF0240C0AE600A9803E /* Season.swift in Sources */,
 				C4F62DFE240CBA3600A9803E /* Player.swift in Sources */,
 				C4DC2DDD24076EEF007CE1DF /* TennisApi.swift in Sources */,

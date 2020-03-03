@@ -11,6 +11,8 @@ import Foundation
 struct Competitor: Codable {
     let id: String?
     let name: String?
+    let nationality: String?
+    let countryCode: String?
     let bracketNumber: Int?
     let abbreviation: String?
     let qualifier: String?
@@ -19,6 +21,8 @@ struct Competitor: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
+        case nationality
+        case countryCode = "country_code"
         case bracketNumber = "bracket_number"
         case abbreviation
         case qualifier

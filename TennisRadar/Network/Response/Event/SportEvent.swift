@@ -17,6 +17,7 @@ struct SportEvent: Codable {
     let season: Season?
     let tournament: Tournament?
     let competitors: [Competitor]?
+    let venue: Venue?
     let sportEventType: String?
     let estimated: Bool?
     
@@ -28,6 +29,7 @@ struct SportEvent: Codable {
         case season
         case tournament
         case competitors
+        case venue
         case sportEventType = "sport_event_type"
         case estimated
     }
