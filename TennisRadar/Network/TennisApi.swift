@@ -122,7 +122,23 @@ class TennisApi {
     }
     
     // MARK: - Players Calls
-    
+    class func getPlayerProfile(_ playerId: String, completion: @escaping (PlayerProfile?) -> Void){
+        AF.request(Endpoints.playerProfile(playerId).val).validate()
+          .responseDecodable(of: PlayerProfile.self, queue: .global(qos: .background)) { response in
+            DispatchQueue.main.async {
+                completion(response.value)
+            }
+        }
+    }
+    /**
+       case .headToHead(let playerOne, let playerTwo):
+           return Endpoints.base + "/players/\(playerOne)/versus/\(playerTwo)/matches\(Endpoints.apiKeyParam)"
+       case .playersRankings:
+           return Endpoints.base + "/players/rankings\(Endpoints.apiKeyParam)"
+       case .playerResults(let playerId):
+           return Endpoints.base + "/players/\(playerId)/results\(Endpoints.apiKeyParam)"
+    */
+
     //MARK: - Helpers
     fileprivate class func getLiveOrDate(_ ofDate: String?) -> String {
         var response: String
@@ -134,25 +150,3 @@ class TennisApi {
         return response
     }
 }
-
-
-/**
- 
-      
- 
- 
- case .headToHead(let playerOne, let playerTwo):
-            return Endpoints.base + "/players/\(playerOne)/versus/\(playerTwo)/matches\(Endpoints.apiKeyParam)"
-        case .playerProfile(let playerId):
-            return Endpoints.base + "/players/\(playerId)/profile\(Endpoints.apiKeyParam)"
-        case .playerRaceRankings:
-            return Endpoints.base + "/players/race_rankings\(Endpoints.apiKeyParam)"
-        case .playersRankings:
-            return Endpoints.base + "/players/rankings\(Endpoints.apiKeyParam)"
-        case .playerResults(let playerId):
-            return Endpoints.base + "/players/\(playerId)/results\(Endpoints.apiKeyParam)"
-        case .playerSchedule(let playerId):
-            return Endpoints.base + "/players/\(playerId)/schedule\(Endpoints.apiKeyParam)"
-        }
- 
- */

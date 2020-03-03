@@ -30,10 +30,10 @@ public enum Endpoints {
     case matchTimeline(_ matchId: String)
     case headToHead(playerOne: String, playerTwo: String)
     case playerProfile(_ playerId: String)
-    case playerRaceRankings
+    //case playerRaceRankings
     case playersRankings
     case playerResults(_ playerId: String)
-    case playerSchedule(_ playerId: String)
+    //case playerSchedule(_ playerId: String)
     
     // MARK: - Value String
     var val: String {
@@ -68,14 +68,14 @@ public enum Endpoints {
             return Endpoints.base + "/players/\(playerOne)/versus/\(playerTwo)/matches\(Endpoints.apiKeyParam)"
         case .playerProfile(let playerId):
             return Endpoints.base + "/players/\(playerId)/profile\(Endpoints.apiKeyParam)"
-        case .playerRaceRankings:
-            return Endpoints.base + "/players/race_rankings\(Endpoints.apiKeyParam)"
         case .playersRankings:
             return Endpoints.base + "/players/rankings\(Endpoints.apiKeyParam)"
         case .playerResults(let playerId):
             return Endpoints.base + "/players/\(playerId)/results\(Endpoints.apiKeyParam)"
-        case .playerSchedule(let playerId):
-            return Endpoints.base + "/players/\(playerId)/schedule\(Endpoints.apiKeyParam)"
+        //case .playerRaceRankings:
+        //    return Endpoints.base + "/players/race_rankings\(Endpoints.apiKeyParam)"
+        //case .playerSchedule(let playerId):
+        //    return Endpoints.base + "/players/\(playerId)/schedule\(Endpoints.apiKeyParam)"
         }
     }
 }
