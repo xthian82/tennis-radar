@@ -187,13 +187,13 @@
 		C4F62DF5240CB4EA00A9803E /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
-				C4F62DF1240CB0AE00A9803E /* TournamentSummary.swift */,
-				C4F62DE9240C08BB00A9803E /* Tournaments.swift */,
-				C4F62DEB240C095C00A9803E /* Tournament.swift */,
-				C4F62DF6240CB6B300A9803E /* TournamentSchedule.swift */,
 				C4F62DFA240CB89800A9803E /* TournamentRound.swift */,
-				C4F62DFF240CBD0100A9803E /* TournamentResults.swift */,
+				C4F62DEB240C095C00A9803E /* Tournament.swift */,
+				C4F62DE9240C08BB00A9803E /* Tournaments.swift */,
 				860AC5C4240D4B980001EE30 /* TournamentInfo.swift */,
+				C4F62DF6240CB6B300A9803E /* TournamentSchedule.swift */,
+				C4F62DF1240CB0AE00A9803E /* TournamentSummary.swift */,
+				C4F62DFF240CBD0100A9803E /* TournamentResults.swift */,
 			);
 			path = Tournament;
 			sourceTree = "<group>";
