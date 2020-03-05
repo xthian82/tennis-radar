@@ -1,5 +1,5 @@
 //
-//  Stats.swift
+//  MatchStats.swift
 //  TennisRadar
 //
 //  Created by Cristhian Recalde on 3/3/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Stats: Codable {
+struct MatchStats: Codable {
     
     let aces: Int
     let doubleFaults: Int

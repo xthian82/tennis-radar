@@ -15,7 +15,7 @@ public struct MatchResult: Codable {
     let sportEventStatus: SportEventStatus
     let coverageInfo: CoverageInfo?
     let timeline: [Timeline]?
-    let statistics: Statistics?
+    let statistics: MatchStatistics?
     
     enum CodingKeys: String, CodingKey {
         case sportEvent = "sport_event"

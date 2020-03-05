@@ -12,9 +12,13 @@ struct PlayerProfile: Codable {
 
     let player: Player
     let rankings: [Ranking]
+    let statistics: Periods?
+    let tournamentsPlayed: [Tournament]?
     
     enum CodingKeys: String, CodingKey {
         case player
         case rankings
+        case statistics
+        case tournamentsPlayed = "tournaments_played"
     }
 }

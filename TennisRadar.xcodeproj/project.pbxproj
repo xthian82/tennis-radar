@@ -17,12 +17,16 @@
 		C4AADA72240E02E50084E172 /* Markets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA71240E02E50084E172 /* Markets.swift */; };
 		C4AADA74240E03520084E172 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA73240E03520084E172 /* Market.swift */; };
 		C4AADA76240E03EB0084E172 /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA75240E03EB0084E172 /* Outcome.swift */; };
-		C4AADA78240E08350084E172 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA77240E08350084E172 /* Statistics.swift */; };
-		C4AADA7A240E08800084E172 /* PlayerStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA79240E08800084E172 /* PlayerStat.swift */; };
-		C4AADA7C240E08FA0084E172 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA7B240E08FA0084E172 /* Stats.swift */; };
+		C4AADA78240E08350084E172 /* MatchStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA77240E08350084E172 /* MatchStatistics.swift */; };
+		C4AADA7A240E08800084E172 /* MatchStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA79240E08800084E172 /* MatchStat.swift */; };
+		C4AADA7C240E08FA0084E172 /* MatchStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA7B240E08FA0084E172 /* MatchStats.swift */; };
 		C4AADA7E240E10120084E172 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA7D240E10120084E172 /* Timeline.swift */; };
 		C4AADA80240E16300084E172 /* PlayerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA7F240E16300084E172 /* PlayerProfile.swift */; };
 		C4AADA82240E18C10084E172 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA81240E18C10084E172 /* Ranking.swift */; };
+		C4AADA842410A9FE0084E172 /* Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA832410A9FE0084E172 /* Periods.swift */; };
+		C4AADA862410AA7A0084E172 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA852410AA7A0084E172 /* Period.swift */; };
+		C4AADA882410AB500084E172 /* Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA872410AB500084E172 /* Surface.swift */; };
+		C4AADA8A2410ABB60084E172 /* PeriodStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA892410ABB60084E172 /* PeriodStat.swift */; };
 		C4DC2DC524076ED2007CE1DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC424076ED2007CE1DF /* AppDelegate.swift */; };
 		C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC624076ED2007CE1DF /* SceneDelegate.swift */; };
 		C4DC2DC924076ED2007CE1DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC824076ED2007CE1DF /* ViewController.swift */; };
@@ -62,12 +66,16 @@
 		C4AADA71240E02E50084E172 /* Markets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markets.swift; sourceTree = "<group>"; };
 		C4AADA73240E03520084E172 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		C4AADA75240E03EB0084E172 /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
-		C4AADA77240E08350084E172 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
-		C4AADA79240E08800084E172 /* PlayerStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStat.swift; sourceTree = "<group>"; };
-		C4AADA7B240E08FA0084E172 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		C4AADA77240E08350084E172 /* MatchStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatistics.swift; sourceTree = "<group>"; };
+		C4AADA79240E08800084E172 /* MatchStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStat.swift; sourceTree = "<group>"; };
+		C4AADA7B240E08FA0084E172 /* MatchStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStats.swift; sourceTree = "<group>"; };
 		C4AADA7D240E10120084E172 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		C4AADA7F240E16300084E172 /* PlayerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfile.swift; sourceTree = "<group>"; };
 		C4AADA81240E18C10084E172 /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
+		C4AADA832410A9FE0084E172 /* Periods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Periods.swift; sourceTree = "<group>"; };
+		C4AADA852410AA7A0084E172 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		C4AADA872410AB500084E172 /* Surface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surface.swift; sourceTree = "<group>"; };
+		C4AADA892410ABB60084E172 /* PeriodStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodStat.swift; sourceTree = "<group>"; };
 		C4DC2DC124076ED2007CE1DF /* TennisRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DC2DC424076ED2007CE1DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4DC2DC624076ED2007CE1DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,11 +120,13 @@
 		860AC5C8240D537A0001EE30 /* Match */ = {
 			isa = PBXGroup;
 			children = (
+				C4AADA7B240E08FA0084E172 /* MatchStats.swift */,
+				C4AADA79240E08800084E172 /* MatchStat.swift */,
 				C4AADA75240E03EB0084E172 /* Outcome.swift */,
 				C4AADA73240E03520084E172 /* Market.swift */,
 				C4AADA71240E02E50084E172 /* Markets.swift */,
 				C4AADA6F240E023C0084E172 /* MatchProbability.swift */,
-				C4AADA77240E08350084E172 /* Statistics.swift */,
+				C4AADA77240E08350084E172 /* MatchStatistics.swift */,
 				C4F62E01240CBDB800A9803E /* MatchResult.swift */,
 			);
 			path = Match;
@@ -175,7 +185,7 @@
 		C4F62DE4240BFEC800A9803E /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				C4F62E06240CC04000A9803E /* Score */,
+				C4F62E06240CC04000A9803E /* Period */,
 				C4F62E05240CBEE700A9803E /* Event */,
 				C4F62DED240C0AA800A9803E /* IdName.swift */,
 				C4F62DFC240CBA2500A9803E /* Player */,
@@ -184,6 +194,7 @@
 				C4DC2DDE24076F74007CE1DF /* MatchMode.swift */,
 				C4DC2DE22407706C007CE1DF /* MatchStatus.swift */,
 				C4DC2DE424087B1F007CE1DF /* TournamentType.swift */,
+				C4AADA872410AB500084E172 /* Surface.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -206,8 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				C4F62DFD240CBA3600A9803E /* Player.swift */,
-				C4AADA79240E08800084E172 /* PlayerStat.swift */,
-				C4AADA7B240E08FA0084E172 /* Stats.swift */,
 				C4AADA69240DF1AD0084E172 /* Competitor.swift */,
 				C4AADA7F240E16300084E172 /* PlayerProfile.swift */,
 				C4AADA81240E18C10084E172 /* Ranking.swift */,
@@ -230,12 +239,15 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
-		C4F62E06240CC04000A9803E /* Score */ = {
+		C4F62E06240CC04000A9803E /* Period */ = {
 			isa = PBXGroup;
 			children = (
 				C4F62E07240CC04C00A9803E /* PeriodScore.swift */,
+				C4AADA832410A9FE0084E172 /* Periods.swift */,
+				C4AADA852410AA7A0084E172 /* Period.swift */,
+				C4AADA892410ABB60084E172 /* PeriodStat.swift */,
 			);
-			path = Score;
+			path = Period;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,7 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4AADA7E240E10120084E172 /* Timeline.swift in Sources */,
-				C4AADA7A240E08800084E172 /* PlayerStat.swift in Sources */,
+				C4AADA7A240E08800084E172 /* MatchStat.swift in Sources */,
 				C4AADA82240E18C10084E172 /* Ranking.swift in Sources */,
 				C4F62DEC240C095C00A9803E /* Tournament.swift in Sources */,
 				C4AADA6A240DF1AD0084E172 /* Competitor.swift in Sources */,
@@ -325,13 +337,15 @@
 				C4AADA76240E03EB0084E172 /* Outcome.swift in Sources */,
 				C4AADA70240E023C0084E172 /* MatchProbability.swift in Sources */,
 				C4F62DEA240C08BB00A9803E /* Tournaments.swift in Sources */,
+				C4AADA862410AA7A0084E172 /* Period.swift in Sources */,
 				C4DC2DC924076ED2007CE1DF /* ViewController.swift in Sources */,
+				C4AADA8A2410ABB60084E172 /* PeriodStat.swift in Sources */,
 				C4DC2DC524076ED2007CE1DF /* AppDelegate.swift in Sources */,
 				C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */,
 				C4AADA74240E03520084E172 /* Market.swift in Sources */,
 				C4F62DF2240CB0AE00A9803E /* TournamentSummary.swift in Sources */,
 				C4DC2DE32407706C007CE1DF /* MatchStatus.swift in Sources */,
-				C4AADA78240E08350084E172 /* Statistics.swift in Sources */,
+				C4AADA78240E08350084E172 /* MatchStatistics.swift in Sources */,
 				860AC5C7240D4CB90001EE30 /* Info.swift in Sources */,
 				C4F62E08240CC04C00A9803E /* PeriodScore.swift in Sources */,
 				C4AADA72240E02E50084E172 /* Markets.swift in Sources */,
@@ -344,12 +358,14 @@
 				C4AADA6E240DFDAD0084E172 /* Venue.swift in Sources */,
 				C4AADA6C240DF3460084E172 /* SportEventConditions.swift in Sources */,
 				C4F62DFB240CB89800A9803E /* TournamentRound.swift in Sources */,
+				C4AADA882410AB500084E172 /* Surface.swift in Sources */,
 				C4F62DE6240C06DC00A9803E /* Endpoints.swift in Sources */,
 				C4AADA68240DEC760084E172 /* CoverageInfo.swift in Sources */,
 				C4F62DF7240CB6B300A9803E /* TournamentSchedule.swift in Sources */,
 				C4F62DF9240CB78700A9803E /* SportEvent.swift in Sources */,
 				C4F62E00240CBD0100A9803E /* TournamentResults.swift in Sources */,
-				C4AADA7C240E08FA0084E172 /* Stats.swift in Sources */,
+				C4AADA7C240E08FA0084E172 /* MatchStats.swift in Sources */,
+				C4AADA842410A9FE0084E172 /* Periods.swift in Sources */,
 				C4F62DF0240C0AE600A9803E /* Season.swift in Sources */,
 				C4F62DFE240CBA3600A9803E /* Player.swift in Sources */,
 				C4DC2DDD24076EEF007CE1DF /* TennisApi.swift in Sources */,

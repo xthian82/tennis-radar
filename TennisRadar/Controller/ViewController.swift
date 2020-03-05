@@ -30,6 +30,7 @@ class ViewController: UITableViewController {
         // getMatchProbability()
         //getMatchSummary()
         //getMatchTimeline()
+        getPlayerProfile("sr:competitor:14342")
     }
     
     // MARK: - test funcs
@@ -202,6 +203,18 @@ class ViewController: UITableViewController {
         TennisApi.getMatchTimeline("sr:match:21493533") { response in
             guard let results: MatchResult = response else {
                 print("no prob...")
+                return
+            }
+
+            print(results)
+        }
+    }
+    
+    func getPlayerProfile(_ idPlayer: String) {
+        print("=================> getPlayerProfile \(idPlayer) ")
+        TennisApi.getPlayerProfile(idPlayer) { response in
+            guard let results: PlayerProfile = response else {
+                print("no profile...")
                 return
             }
 
