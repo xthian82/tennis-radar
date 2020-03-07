@@ -130,11 +130,19 @@ class TennisApi {
             }
         }
     }
+    
+    class func getPlayerRankings(completion: @escaping (PlayerRankings?) -> Void){
+        AF.request(Endpoints.playersRankings.val).validate()
+          .responseDecodable(of: PlayerRankings.self, queue: .global(qos: .background)) { response in
+            DispatchQueue.main.async {
+                completion(response.value)
+            }
+        }
+    }
     /**
        case .headToHead(let playerOne, let playerTwo):
            return Endpoints.base + "/players/\(playerOne)/versus/\(playerTwo)/matches\(Endpoints.apiKeyParam)"
-       case .playersRankings:
-           return Endpoints.base + "/players/rankings\(Endpoints.apiKeyParam)"
+
        case .playerResults(let playerId):
            return Endpoints.base + "/players/\(playerId)/results\(Endpoints.apiKeyParam)"
     */

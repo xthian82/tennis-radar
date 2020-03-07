@@ -30,7 +30,8 @@ class ViewController: UITableViewController {
         // getMatchProbability()
         //getMatchSummary()
         //getMatchTimeline()
-        getPlayerProfile("sr:competitor:14342")
+        //getPlayerProfile("sr:competitor:14342")
+        getPlayerRankings()
     }
     
     // MARK: - test funcs
@@ -219,6 +220,19 @@ class ViewController: UITableViewController {
             }
 
             print(results)
+        }
+    }
+    
+    func getPlayerRankings() {
+        print("=================> getPlayerRankings ")
+        TennisApi.getPlayerRankings() { response in
+            guard let results: PlayerRankings = response else {
+                print("no profile...")
+                return
+            }
+
+            print("All ranks = \(results.rankings.count)")
+            print("First is = \(results.rankings[1].playerRankings[0])")
         }
     }
 }
