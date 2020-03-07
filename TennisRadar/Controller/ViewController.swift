@@ -31,7 +31,8 @@ class ViewController: UITableViewController {
         //getMatchSummary()
         //getMatchTimeline()
         //getPlayerProfile("sr:competitor:14342")
-        getPlayerRankings()
+        //getPlayerRankings()
+        getPlayerHeadToHead(from: "sr:competitor:18111", vs: "sr:competitor:15126")
     }
     
     // MARK: - test funcs
@@ -235,5 +236,17 @@ class ViewController: UITableViewController {
             print("First is = \(results.rankings[1].playerRankings[0])")
         }
     }
+    
+    func getPlayerHeadToHead(from: String, vs: String) {
+          print("=================> getPlayerHeadToHead \(from) vs \(vs) ")
+        TennisApi.getHeadToHead(from, versus: vs) { response in
+              guard let results: HeadToHead = response else {
+                  print("no profile...")
+                  return
+              }
+
+              print("head to head = \(results)")
+          }
+      }
 }
 

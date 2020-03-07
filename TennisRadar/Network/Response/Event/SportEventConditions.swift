@@ -11,9 +11,11 @@ import Foundation
 struct SportEventConditions: Codable {
     let matchMode: String
     let venue: Venue?
+    let championsTiebreak: Bool?
     
     enum CodingKeys: String, CodingKey {
         case matchMode = "match_mode"
         case venue
+        case championsTiebreak = "champions_tiebreak"
     }
 }

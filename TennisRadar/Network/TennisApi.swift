@@ -139,10 +139,17 @@ class TennisApi {
             }
         }
     }
+    
+    class func getHeadToHead(_ of: String, versus: String, completion: @escaping (HeadToHead?) -> Void){
+        AF.request(Endpoints.headToHead(playerOne: of, playerTwo: versus).val).validate()
+          .responseDecodable(of: HeadToHead.self, queue: .global(qos: .background)) { response in
+            DispatchQueue.main.async {
+                completion(response.value)
+            }
+        }
+    }
+    
     /**
-       case .headToHead(let playerOne, let playerTwo):
-           return Endpoints.base + "/players/\(playerOne)/versus/\(playerTwo)/matches\(Endpoints.apiKeyParam)"
-
        case .playerResults(let playerId):
            return Endpoints.base + "/players/\(playerId)/results\(Endpoints.apiKeyParam)"
     */

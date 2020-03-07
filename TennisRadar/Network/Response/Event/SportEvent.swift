@@ -13,7 +13,7 @@ struct SportEvent: Codable {
     let id: String
     let scheduled: String
     let startTimeTbd: Bool?
-    let tournamentRound: TournamentRound
+    let tournamentRound: TournamentRound?
     let season: Season?
     let tournament: Tournament?
     let competitors: [Competitor]?

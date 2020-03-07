@@ -29,6 +29,8 @@
 		C4AADA8A2410ABB60084E172 /* PeriodStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA892410ABB60084E172 /* PeriodStat.swift */; };
 		C4AADA8C2413360A0084E172 /* PlayerRankings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA8B2413360A0084E172 /* PlayerRankings.swift */; };
 		C4AADA8E241336D30084E172 /* TourRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA8D241336D30084E172 /* TourRanking.swift */; };
+		C4AADA9224133C960084E172 /* HeadToHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA9124133C960084E172 /* HeadToHead.swift */; };
+		C4AADA9424133D650084E172 /* Meetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA9324133D650084E172 /* Meetings.swift */; };
 		C4DC2DC524076ED2007CE1DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC424076ED2007CE1DF /* AppDelegate.swift */; };
 		C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC624076ED2007CE1DF /* SceneDelegate.swift */; };
 		C4DC2DC924076ED2007CE1DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC824076ED2007CE1DF /* ViewController.swift */; };
@@ -80,6 +82,8 @@
 		C4AADA892410ABB60084E172 /* PeriodStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodStat.swift; sourceTree = "<group>"; };
 		C4AADA8B2413360A0084E172 /* PlayerRankings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRankings.swift; sourceTree = "<group>"; };
 		C4AADA8D241336D30084E172 /* TourRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourRanking.swift; sourceTree = "<group>"; };
+		C4AADA9124133C960084E172 /* HeadToHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadToHead.swift; sourceTree = "<group>"; };
+		C4AADA9324133D650084E172 /* Meetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meetings.swift; sourceTree = "<group>"; };
 		C4DC2DC124076ED2007CE1DF /* TennisRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DC2DC424076ED2007CE1DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4DC2DC624076ED2007CE1DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				C4AADA7F240E16300084E172 /* PlayerProfile.swift */,
 				C4AADA81240E18C10084E172 /* Ranking.swift */,
 				C4AADA8B2413360A0084E172 /* PlayerRankings.swift */,
+				C4AADA9124133C960084E172 /* HeadToHead.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				C4AADA67240DEC760084E172 /* CoverageInfo.swift */,
 				C4AADA6B240DF3460084E172 /* SportEventConditions.swift */,
 				C4AADA7D240E10120084E172 /* Timeline.swift */,
+				C4AADA9324133D650084E172 /* Meetings.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				C4DC2DC924076ED2007CE1DF /* ViewController.swift in Sources */,
 				C4AADA8A2410ABB60084E172 /* PeriodStat.swift in Sources */,
 				C4DC2DC524076ED2007CE1DF /* AppDelegate.swift in Sources */,
+				C4AADA9424133D650084E172 /* Meetings.swift in Sources */,
 				C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */,
 				C4AADA74240E03520084E172 /* Market.swift in Sources */,
 				C4F62DF2240CB0AE00A9803E /* TournamentSummary.swift in Sources */,
@@ -371,6 +378,7 @@
 				C4F62DF7240CB6B300A9803E /* TournamentSchedule.swift in Sources */,
 				C4AADA8E241336D30084E172 /* TourRanking.swift in Sources */,
 				C4F62DF9240CB78700A9803E /* SportEvent.swift in Sources */,
+				C4AADA9224133C960084E172 /* HeadToHead.swift in Sources */,
 				C4F62E00240CBD0100A9803E /* TournamentResults.swift in Sources */,
 				C4AADA7C240E08FA0084E172 /* MatchStats.swift in Sources */,
 				C4AADA842410A9FE0084E172 /* Periods.swift in Sources */,
