@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LiveSummaryViewController.swift
 //  TennisRadar
 //
 //  Created by Cristhian Recalde on 2/27/20.
@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ViewController: UITableViewController {
+class LiveSummaryViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
