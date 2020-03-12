@@ -35,6 +35,7 @@
 		C4AADA9A2413FB350084E172 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA992413FB350084E172 /* RankingViewController.swift */; };
 		C4B4D65924146A1A00E78259 /* TournamentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4D65824146A1A00E78259 /* TournamentManager.swift */; };
 		C4B612A32415DF4A0020D12D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B612A22415DF4A0020D12D /* SettingsViewController.swift */; };
+		C4B612A62417105A0020D12D /* TournamentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B612A52417105A0020D12D /* TournamentViewCell.swift */; };
 		C4DC2DC524076ED2007CE1DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC424076ED2007CE1DF /* AppDelegate.swift */; };
 		C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC624076ED2007CE1DF /* SceneDelegate.swift */; };
 		C4DC2DC924076ED2007CE1DF /* LiveSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC2DC824076ED2007CE1DF /* LiveSummaryViewController.swift */; };
@@ -92,6 +93,7 @@
 		C4AADA992413FB350084E172 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		C4B4D65824146A1A00E78259 /* TournamentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentManager.swift; sourceTree = "<group>"; };
 		C4B612A22415DF4A0020D12D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C4B612A52417105A0020D12D /* TournamentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentViewCell.swift; sourceTree = "<group>"; };
 		C4DC2DC124076ED2007CE1DF /* TennisRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DC2DC424076ED2007CE1DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4DC2DC624076ED2007CE1DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		C4B612A4241710430020D12D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4B612A52417105A0020D12D /* TournamentViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C4DC2DB824076ED2007CE1DF = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +195,7 @@
 		C4DC2DC324076ED2007CE1DF /* TennisRadar */ = {
 			isa = PBXGroup;
 			children = (
+				C4B612A4241710430020D12D /* View */,
 				C4AADA952413DC940084E172 /* Model */,
 				C4DC2DDB24076EDA007CE1DF /* Network */,
 				C4F62DBC240AF6CA00A9803E /* Controller */,
@@ -369,6 +380,7 @@
 			files = (
 				C4AADA7E240E10120084E172 /* Timeline.swift in Sources */,
 				C4AADA8C2413360A0084E172 /* PlayerRankings.swift in Sources */,
+				C4B612A62417105A0020D12D /* TournamentViewCell.swift in Sources */,
 				C4AADA7A240E08800084E172 /* MatchStat.swift in Sources */,
 				C4AADA82240E18C10084E172 /* Ranking.swift in Sources */,
 				C4F62DEC240C095C00A9803E /* Tournament.swift in Sources */,

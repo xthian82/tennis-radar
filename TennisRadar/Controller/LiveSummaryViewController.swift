@@ -32,7 +32,7 @@ class LiveSummaryViewController: UITableViewController {
         //getMatchTimeline()
         //getPlayerProfile("sr:competitor:14342")
         //getPlayerRankings()
-        getPlayerHeadToHead(from: "sr:competitor:18111", vs: "sr:competitor:15126")
+        //getPlayerHeadToHead(from: "sr:competitor:18111", vs: "sr:competitor:15126")
     }
     
     // MARK: - test funcs

@@ -10,6 +10,11 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
  
+    override func viewDidLoad() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -19,13 +24,22 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelect \(indexPath.row)")
+        //print("didSelect \(indexPath.row)")
+        let cell = tableView.cellForRow(at: indexPath) as! TournamentViewCell
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "settingCellId") as! TournamentViewCell
+        if cell.markTournamentView.image == UIImage(named: "untick") {
+            cell.markTournamentView.image = UIImage(named: "tick")
+        } else {
+            cell.markTournamentView.image = UIImage(named: "untick")
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCellId")!
-        cell.detailTextLabel?.text = TournamentManager.shared.leagues[indexPath.row]
-                  
+        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCellId") as! TournamentViewCell
+        cell.tournamentNameLabel.text = TournamentManager.shared.leagues[indexPath.row]
+        cell.markTournamentView.image = UIImage(named: "untick")
+    
+        
         return cell
     }
     

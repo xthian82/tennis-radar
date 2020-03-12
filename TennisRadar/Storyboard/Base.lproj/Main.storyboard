@@ -32,7 +32,7 @@
                     <navigationItem key="navigationItem" title="Live Matches" id="9XC-Od-cNo">
                         <barButtonItem key="rightBarButtonItem" image="slider.horizontal.3" catalog="system" id="65d-Z7-m3b">
                             <connections>
-                                <segue destination="7zF-le-dFx" kind="show" id="dCU-ea-Naj"/>
+                                <segue destination="7zF-le-dFx" kind="showDetail" id="dCU-ea-Naj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -67,7 +67,7 @@
                     <navigationItem key="navigationItem" title="Rankings" id="zLS-vl-UF8">
                         <barButtonItem key="rightBarButtonItem" image="slider.horizontal.3" catalog="system" id="P4d-sB-ghY">
                             <connections>
-                                <segue destination="7zF-le-dFx" kind="show" id="upa-Rc-IS3"/>
+                                <segue destination="7zF-le-dFx" kind="showDetail" id="upa-Rc-IS3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,18 +80,45 @@
         <scene sceneID="YVW-li-VLM">
             <objects>
                 <tableViewController id="7zF-le-dFx" customClass="SettingsViewController" customModule="TennisRadar" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jpA-8o-eor">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" id="jpA-8o-eor">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingCellId" id="bMN-1e-5cX">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingCellId" id="bMN-1e-5cX" customClass="TournamentViewCell" customModule="TennisRadar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bMN-1e-5cX" id="cOU-dY-SGQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="untick" translatesAutoresizingMaskIntoConstraints="NO" id="pWN-b3-Wfe">
+                                            <rect key="frame" x="8" y="8" width="38" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="38" id="IDM-Hx-KBB"/>
+                                                <constraint firstAttribute="width" constant="38" id="Yg9-of-5TZ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htT-5L-OiZ">
+                                            <rect key="frame" x="186" y="11" width="42" height="21"/>
+                                            <attributedString key="attributedText"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pWN-b3-Wfe" firstAttribute="top" secondItem="cOU-dY-SGQ" secondAttribute="top" constant="8" id="0TO-8P-SsQ"/>
+                                        <constraint firstItem="htT-5L-OiZ" firstAttribute="trailing" secondItem="cOU-dY-SGQ" secondAttribute="trailing" constant="-8" id="5ul-aL-gQJ"/>
+                                        <constraint firstItem="htT-5L-OiZ" firstAttribute="leading" secondItem="pWN-b3-Wfe" secondAttribute="trailing" constant="8" id="ZCO-xB-pxe"/>
+                                        <constraint firstItem="pWN-b3-Wfe" firstAttribute="bottom" secondItem="cOU-dY-SGQ" secondAttribute="bottom" constant="-8" id="dKL-xu-QZx"/>
+                                        <constraint firstItem="pWN-b3-Wfe" firstAttribute="leading" secondItem="cOU-dY-SGQ" secondAttribute="leading" constant="8" id="fS5-O8-1LJ"/>
+                                        <constraint firstItem="htT-5L-OiZ" firstAttribute="bottom" secondItem="cOU-dY-SGQ" secondAttribute="bottom" id="jxB-Fu-ehT"/>
+                                        <constraint firstItem="htT-5L-OiZ" firstAttribute="top" secondItem="cOU-dY-SGQ" secondAttribute="top" id="smH-dB-hzx"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="markTournamentView" destination="pWN-b3-Wfe" id="KDx-xD-cfR"/>
+                                    <outlet property="tournamentNameLabel" destination="htT-5L-OiZ" id="Ujz-bL-v5I"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -131,7 +158,7 @@
                     <navigationItem key="navigationItem" title="Ongoing Tournaments" id="uwp-qC-aGj">
                         <barButtonItem key="rightBarButtonItem" image="slider.horizontal.3" catalog="system" id="Kpt-1J-x3B">
                             <connections>
-                                <segue destination="7zF-le-dFx" kind="show" id="0va-bq-R0F"/>
+                                <segue destination="7zF-le-dFx" kind="showDetail" id="0va-bq-R0F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -216,6 +243,7 @@
         <image name="court" width="29" height="29"/>
         <image name="list.number.rtl" catalog="system" width="64" height="48"/>
         <image name="slider.horizontal.3" catalog="system" width="64" height="50"/>
+        <image name="untick" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0va-bq-R0F"/>
