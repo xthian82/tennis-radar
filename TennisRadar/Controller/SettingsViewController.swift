@@ -20,13 +20,15 @@ class SettingsViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return TournamentManager.shared.tours.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return TournamentManager.shared.tours[section]
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print("didSelect \(indexPath.row)")
         let cell = tableView.cellForRow(at: indexPath) as! TournamentViewCell
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "settingCellId") as! TournamentViewCell
         if cell.markTournamentView.image == UIImage(named: "untick") {
             cell.markTournamentView.image = UIImage(named: "tick")
         } else {
@@ -35,15 +37,16 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tour: String = TournamentManager.shared.tours[indexPath.section]
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingCellId") as! TournamentViewCell
-        cell.tournamentNameLabel.text = TournamentManager.shared.leagues[indexPath.row]
+        cell.tournamentNameLabel.text = TournamentManager.shared.levels[tour]?[indexPath.row]
         cell.markTournamentView.image = UIImage(named: "untick")
-    
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TournamentManager.shared.leagues.count
+        let tour: String = TournamentManager.shared.tours[section]
+        return TournamentManager.shared.levels[tour]?.count ?? 0
     }
 }
