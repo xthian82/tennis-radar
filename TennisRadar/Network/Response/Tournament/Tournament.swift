@@ -31,5 +31,12 @@ struct Tournament: Codable {
         case gender
         case countryFormat = "country_format"
     }
+    
+    func filter() -> String {
+        if let level = category.level {
+            return "\(category.name)_\(level)_\(type ?? "")"
+        }
+        return "\(category.name)_\(type ?? "")"
+    }
 }
 

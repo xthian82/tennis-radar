@@ -52,23 +52,6 @@ class LiveSummaryViewController: UITableViewController {
         }
     }
         
-    func getOngoingTournaments() {
-        print("=================> getOngoingTournaments")
-        TennisApi.getOngoingTournaments { response in
-            guard let tournaments: Tournaments = response else {
-                print("no tours...")
-                return
-            }
-
-            print("generatedAt = \(tournaments.generatedAt)")
-            print("schema = \(tournaments.schema)")
-            print("total = \(tournaments.tournaments.count)")
-            if tournaments.tournaments.count > 0 {
-                print (print("first is = \(tournaments.tournaments[0])"))
-            }
-        }
-    }
-        
     func getTournamentSummary() {
         print("=================> getTournamentSummary")
         TennisApi.getTournamentSummary("sr:tournament:2553") { response in

@@ -61,6 +61,7 @@ class TennisApi {
         AF.request(Endpoints.tournamentInfo(tournamentId).val).validate()
           .responseDecodable(of: TournamentInfo.self, queue: .global(qos: .background)) { response in
             DispatchQueue.main.async {
+                // print("response is \(String(describing: response))")
                 completion(response.value)
             }
         }
@@ -135,6 +136,7 @@ class TennisApi {
         AF.request(Endpoints.playersRankings.val).validate()
           .responseDecodable(of: PlayerRankings.self, queue: .global(qos: .background)) { response in
             DispatchQueue.main.async {
+                print("getPlayerRankings ==> \(String(describing: response))")
                 completion(response.value)
             }
         }

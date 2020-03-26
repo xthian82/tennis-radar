@@ -35,8 +35,9 @@ class TournamentManager {
     static let wtaSingles = "WTA_Singles"
     static let wtaDoubles = "WTA_doubles"
     
+    private var _types = ["WTA", "ATP"]
     private var _tours = ["WTA - [S: Singles - : Doubles]", "ATP - [S: Singles - : Doubles]", "Enable / Disable"]
-    private var _types = ["singles", "doubles"]
+    private var _modes = ["singles", "doubles"]
     //private var _leagues = ["ATP": ["Singles", "Doubles"], "WTA":["Singles", "Doubles"]]
     //private var _levels = ["ATP": ["atp_1000", "atp_500", "atp_250", "atp_world_tour_finals", "grand_slam"],
     //                       "WTA": ["wta_premier","wta_international","wta_championships"]]
@@ -58,17 +59,18 @@ class TournamentManager {
             return _tours
         }
     }
-    /*
-    var leagues: [String: [String]] {
-        return _leagues
+    
+    var types: [String] {
+        return _types
     }
     
+    /*
     var levels: [String: [String]] {
         return _levels
     }*/
     
-    var types: [String] {
-        return _types
+    var modes: [String] {
+        return _modes
     }
     
     var matchMode: [String:String] {

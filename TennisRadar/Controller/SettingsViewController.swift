@@ -85,14 +85,15 @@ class SettingsViewController: UITableViewController {
     
     // MARK: - Table Header
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 15, y: 8, width: self.tableView.frame.size.width - 15, height: 22))
+        return getHeaderView(title: TournamentManager.shared.tours[section])
+        /*let headerView = UIView(frame: CGRect(x: 15, y: 8, width: self.tableView.frame.size.width - 15, height: 22))
         let label = UILabel(frame: headerView.frame)
         label.text = TournamentManager.shared.tours[section]
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont.boldSystemFont(ofSize: 18.0)
         
         headerView.addSubview(label)
-        return headerView;
+        return headerView;*/
     }
     
     // MARK: - Button Actions
@@ -158,6 +159,7 @@ class SettingsViewController: UITableViewController {
         }
     }
     
+    // MARK: WTA
     @IBAction func wtaClick(_ sender: UISwitch) {
         switch sender {
         case wtaSingles:
@@ -174,6 +176,7 @@ class SettingsViewController: UITableViewController {
         }
     }
     
+    // MARK: ATP
     @IBAction func atpClick(_ sender: UISwitch) {
         switch sender {
         case atpSingles:

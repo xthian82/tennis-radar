@@ -9,10 +9,10 @@
 import Foundation
 
 struct Info: Codable {
-    let surface: String
+    let surface: String?
     let complex: String?
     let complexId: String?
-    let numberOfQualifiedCompetitors: Int
+    let numberOfQualifiedCompetitors: Int?
     
     enum CodingKeys: String, CodingKey {
         case surface
