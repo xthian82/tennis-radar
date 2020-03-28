@@ -1,0 +1,732 @@
+{
+	"info": {
+		"_postman_id": "ddd12800-fb55-44ca-ab37-bb5c21d966aa",
+		"name": "IOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sport-radar",
+			"item": [
+				{
+					"name": "results",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2ece64ef-7829-4409-a237-1916d3b45fea",
+								"exec": [
+									"cu"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/schedules/2020-02-26/results.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"schedules",
+								"2020-02-26",
+								"results.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "live-results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/schedules/live/results.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"schedules",
+								"live",
+								"results.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "live-schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/schedules/live/schedule.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"schedules",
+								"live",
+								"schedule.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleted-matches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/schedules/deleted_matches.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"schedules",
+								"deleted_matches.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "live-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/schedules/live/summaries.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"schedules",
+								"live",
+								"summaries.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "match-prob",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/matches/sr:match:21493533/probabilities.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"matches",
+								"sr:match:21493533",
+								"probabilities.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "match-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/matches/sr:match:21493533/summary.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"matches",
+								"sr:match:21493533",
+								"summary.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "match-timeline",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/matches/sr:match:21493533/timeline.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"matches",
+								"sr:match:21493533",
+								"timeline.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "head-to-head",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/players/sr:competitor:18111/versus/sr:competitor:15126/matches.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"players",
+								"sr:competitor:18111",
+								"versus",
+								"sr:competitor:15126",
+								"matches.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "player-profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/players/sr:competitor:18111/profile.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"players",
+								"sr:competitor:18111",
+								"profile.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "player-race",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/players/race_rankings.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"players",
+								"race_rankings.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "player-rankings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/players/rankings.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"players",
+								"rankings.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "player-results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/players/sr:competitor:18111/results.json?api_key={{tennis-radar-api}}&start=10&limit=15",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"players",
+								"sr:competitor:18111",
+								"results.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								},
+								{
+									"key": "start",
+									"value": "10"
+								},
+								{
+									"key": "limit",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "player-schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/players/sr:competitor:18111/schedule.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"players",
+								"sr:competitor:18111",
+								"schedule.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								},
+								{
+									"key": "start",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "15",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tournaments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/tournaments.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"tournaments.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tournament-info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/tournaments/sr:tournament:2555/info.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"tournaments",
+								"sr:tournament:2555",
+								"info.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tournament-ongoing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/tournaments/ongoing.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"tournaments",
+								"ongoing.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tournament-result",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/tournaments/sr:tournament:2555/results.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"tournaments",
+								"sr:tournament:2555",
+								"results.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tournament-schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/tournaments/sr:tournament:2555/schedule.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"tournaments",
+								"sr:tournament:2555",
+								"schedule.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tournament-seasons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/tournaments/sr:tournament:2555/seasons.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"tournaments",
+								"sr:tournament:2555",
+								"seasons.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tournament-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/tournaments/sr:tournament:2555/summaries.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"tournaments",
+								"sr:tournament:2555",
+								"summaries.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "date_results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/schedules/2016-07-06/results.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"schedules",
+								"2016-07-06",
+								"results.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "daySchedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sportradar.com/tennis-t2/en/schedules/2016-07-06/schedule.json?api_key={{tennis-radar-api}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sportradar",
+								"com"
+							],
+							"path": [
+								"tennis-t2",
+								"en",
+								"schedules",
+								"2016-07-06",
+								"schedule.json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{tennis-radar-api}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
