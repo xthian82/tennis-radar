@@ -84,16 +84,8 @@ class SettingsViewController: UITableViewController {
     }
     
     // MARK: - Table Header
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return getHeaderView(title: TournamentManager.shared.tours[section])
-        /*let headerView = UIView(frame: CGRect(x: 15, y: 8, width: self.tableView.frame.size.width - 15, height: 22))
-        let label = UILabel(frame: headerView.frame)
-        label.text = TournamentManager.shared.tours[section]
-        label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.boldSystemFont(ofSize: 18.0)
-        
-        headerView.addSubview(label)
-        return headerView;*/
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return TournamentManager.shared.tours[section]
     }
     
     // MARK: - Button Actions
@@ -214,7 +206,6 @@ class SettingsViewController: UITableViewController {
     }
     
     private func saveOption(_ name: String, isOn: Bool) {
-        //print("name = \(name) is \(isOn)")
         UserDefaults.standard.set(isOn, forKey: name)
     }
 }

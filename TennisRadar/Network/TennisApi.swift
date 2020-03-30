@@ -33,6 +33,7 @@ class TennisApi {
     class func getTournamentSummary(_ tournamentId: String, completion: @escaping (TournamentSummary?) -> Void) {
         AF.request(Endpoints.tournamentSummary(tournamentId).val).validate()
            .responseDecodable(of: TournamentSummary.self, queue: .global(qos: .background)) { response in
+             print("\n\n\ngetTournamentSummary is \(String(describing: response))")
                DispatchQueue.main.async {
                    completion(response.value)
                }
@@ -42,6 +43,7 @@ class TennisApi {
     class func getTournamentSchedule(_ tournamentId: String, completion: @escaping (TournamentSchedule?) -> Void) {
         AF.request(Endpoints.tournamentSchedule(tournamentId).val).validate()
            .responseDecodable(of: TournamentSchedule.self, queue: .global(qos: .background)) { response in
+            print("\n\n\ngetTournamentSchedule is \(String(describing: response))")
                DispatchQueue.main.async {
                    completion(response.value)
                }
@@ -61,7 +63,7 @@ class TennisApi {
         AF.request(Endpoints.tournamentInfo(tournamentId).val).validate()
           .responseDecodable(of: TournamentInfo.self, queue: .global(qos: .background)) { response in
             DispatchQueue.main.async {
-                // print("response is \(String(describing: response))")
+                print("\n\n\ngetTournamentInfo is \(String(describing: response))")
                 completion(response.value)
             }
         }
@@ -69,8 +71,11 @@ class TennisApi {
     
     // MARK: - Match Calls
     class func getResults(ofDate: String?, completion: @escaping (TournamentResults?) -> Void) {
-        AF.request(Endpoints.results(getLiveOrDate(ofDate)).val).validate()
+        let endpoint = Endpoints.results(getLiveOrDate(ofDate)).val
+        print("** Invoking => \(endpoint)")
+        AF.request(endpoint).validate()
           .responseDecodable(of: TournamentResults.self, queue: .global(qos: .background)) { response in
+            print("getResults \(String(describing: ofDate)) ==> \(String(describing: response))")
             DispatchQueue.main.async {
                 completion(response.value)
             }
@@ -136,7 +141,6 @@ class TennisApi {
         AF.request(Endpoints.playersRankings.val).validate()
           .responseDecodable(of: PlayerRankings.self, queue: .global(qos: .background)) { response in
             DispatchQueue.main.async {
-                print("getPlayerRankings ==> \(String(describing: response))")
                 completion(response.value)
             }
         }

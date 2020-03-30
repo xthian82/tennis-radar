@@ -9,7 +9,7 @@
 import Foundation
 
 struct CoverageInfo: Codable {
-    let liveCoverage: String?
+    let liveCoverage: Bool? //coverage String in getResults
     let playByPlay: Bool?
     let detailedServeOutcomes: Bool?
     

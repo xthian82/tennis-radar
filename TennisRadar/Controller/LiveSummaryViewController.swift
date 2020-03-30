@@ -10,31 +10,24 @@ import UIKit
 import Foundation
 
 class LiveSummaryViewController: UITableViewController {
-
+    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //tableView.backgroundView = activityIndicator
+        //tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
-        //getTournaments()
-        //getOngoingTournaments()
-        //getTournamentSummary()
-        //getTournamentSchedule()
-        //getTournamentResults()
-        //getTournamentInfo()
-        //getResults()
-        //getSchedule("2016-07-06")
-        //getSchedule("live")
-        //getLiveSummary()
-        // getMatchProbability()
-        //getMatchSummary()
-        //getMatchTimeline()
-        //getPlayerProfile("sr:competitor:14342")
-        //getPlayerRankings()
-        //getPlayerHeadToHead(from: "sr:competitor:18111", vs: "sr:competitor:15126")
+        /*getResults(ofDate: nil)
+        getResults(ofDate: "2016-02-26")
+        getLiveSummary()*/
     }
     
+    /*
     // MARK: - test funcs
     func getTournaments() {
         print("=================> getTournaments")
@@ -109,24 +102,24 @@ class LiveSummaryViewController: UITableViewController {
                 print("first is = \(tourInfo.competitors[0])")
             }
         }
-    }
+    }*/
     
-    func getResults() {
-        print("=================> getResults")
-        TennisApi.getResults(ofDate: "2016-07-06") { response in
+    func getResults(ofDate: String?) {
+        print("\n\n\n=================> getResults \(String(describing: ofDate))")
+        TennisApi.getResults(ofDate: ofDate) { response in
             guard let results: TournamentResults = response else {
                 print("no tours...")
                 return
             }
 
         
-            print("tournament = \(results.tournament)")
+            print("tournament = \(results)")
             if results.results.count > 0 {
                 print("first result is = \(results.results[0])")
             }
         }
     }
-    
+    /*
     func getSchedule(_ of: String) {
         print("=================> getSchedule of \(of)")
         TennisApi.getSchedule(ofDate: of) { response in
@@ -141,24 +134,25 @@ class LiveSummaryViewController: UITableViewController {
                 print("first schedule is = \(results.sportEvents[0])")
             }
         }
-    }
+    }*/
     
     func getLiveSummary() {
-           print("=================> getLiveSummary ")
-           TennisApi.getLiveSummary() { response in
-               guard let results: TournamentSummary = response else {
-                   print("no tours...")
-                   return
-               }
+        print("\n\n\n=================> getLiveSummary ")
+        TennisApi.getLiveSummary() { response in
+            self.activityIndicator.stopAnimating()
+            guard let results: TournamentSummary = response else {
+                print("no tours...")
+                return
+            }
 
-           
-               print("tournament = \(results.tournament)")
+            print("tournament = \(String(describing: results.tournament))")
             if results.summaries.count > 0 {
                    print("first summary is = \(results.summaries[0])")
                }
-           }
-       }
+        }
+    }
     
+    /*
     func getMatchProbability() {
         print("=================> getMatchProbability ")
         TennisApi.getMatchProbabilities("sr:match:21493533") { response in
@@ -230,6 +224,6 @@ class LiveSummaryViewController: UITableViewController {
 
               print("head to head = \(results)")
           }
-      }
+      }*/
 }
 

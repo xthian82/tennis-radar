@@ -9,6 +9,7 @@
 import UIKit
 
 class PlayerInfoViewController: UIViewController, UINavigationControllerDelegate {
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var playerId: String? = nil
     var playerProfile: PlayerProfile?
@@ -27,8 +28,9 @@ class PlayerInfoViewController: UIViewController, UINavigationControllerDelegate
             print("no id player")
            return
         }
-        
+        activityIndicator.startAnimating()
         TennisApi.getPlayerProfile(playerId) { response in
+            self.activityIndicator.stopAnimating()
             guard let playerData = response else {
                 print("no info found for player \(playerId)")
                 return
@@ -36,6 +38,7 @@ class PlayerInfoViewController: UIViewController, UINavigationControllerDelegate
                    
             self.playerProfile = playerData
             print("info returned \(String(describing: self.playerProfile))")
+            self.activityIndicator.stopAnimating()
         }
     }
 }

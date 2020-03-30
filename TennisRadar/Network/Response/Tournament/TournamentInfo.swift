@@ -14,7 +14,7 @@ struct TournamentInfo: Codable {
     let tournament: Tournament
     let season: Season
     let info: Info
-    let coverageInfo: CoverageInfo
+    let coverageInfo: TournamentCoverageInfo
     let winnerLastSeason: Player?
     let competitors: [Player]
     

@@ -11,14 +11,16 @@ import UIKit
 extension UITableViewController {
     
     func getHeaderView(title: String) -> UIView {
-        let headerView = UIView(frame: CGRect(x: 15, y: 8, width: self.tableView.frame.size.width - 15, height: 22))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 50))
         let label = UILabel(frame: headerView.frame)
         label.text = title
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.boldSystemFont(ofSize: 18.0)
+        label.font = UIFont.boldSystemFont(ofSize: 24.0)
         
-        headerView.addSubview(label)
+
         headerView.backgroundColor = UIColor.lightGray
+        headerView.addSubview(label)
+        
         return headerView;
     }
 

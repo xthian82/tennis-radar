@@ -13,15 +13,18 @@ class OngoingTournamentsController: UITableViewController {
     let tournamentInfo = "showTournamentInfo"
     var tournaments: [Tournament]? = nil
     var selectedIndex = 0
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Window functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        getOngoingTournaments()
+        tableView.backgroundView = activityIndicator
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
     }
        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getOngoingTournaments()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,7 +61,9 @@ class OngoingTournamentsController: UITableViewController {
     
     // MARK: - Service
     func getOngoingTournaments() {
+        activityIndicator.startAnimating()
         TennisApi.getOngoingTournaments { response in
+            self.activityIndicator.stopAnimating()
             guard let tournaments: Tournaments = response else {
                 print("no tours...")
                 return

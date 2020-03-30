@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4333D8D8242FF2F600D910A9 /* TournamentCoverageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8D7242FF2F600D910A9 /* TournamentCoverageInfo.swift */; };
+		4333D8DA2431682800D910A9 /* RankingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8D92431682800D910A9 /* RankingPageViewController.swift */; };
+		4333D8DC2431ADE000D910A9 /* RankingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8DB2431ADE000D910A9 /* RankingCellView.swift */; };
 		860AC5C5240D4B980001EE30 /* TournamentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C4240D4B980001EE30 /* TournamentInfo.swift */; };
 		860AC5C7240D4CB90001EE30 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C6240D4CB90001EE30 /* Info.swift */; };
 		C4A46792242C5BE500ADABB6 /* PlayerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A46791242C5BE500ADABB6 /* PlayerInfoViewController.swift */; };
@@ -70,6 +73,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4333D8D7242FF2F600D910A9 /* TournamentCoverageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCoverageInfo.swift; sourceTree = "<group>"; };
+		4333D8D92431682800D910A9 /* RankingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPageViewController.swift; sourceTree = "<group>"; };
+		4333D8DB2431ADE000D910A9 /* RankingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCellView.swift; sourceTree = "<group>"; };
 		860AC5C4240D4B980001EE30 /* TournamentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentInfo.swift; sourceTree = "<group>"; };
 		860AC5C6240D4CB90001EE30 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		C4A46791242C5BE500ADABB6 /* PlayerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 			children = (
 				C4B612A52417105A0020D12D /* TournamentViewCell.swift */,
 				C4C23A04242C4E7E002AABA6 /* UITableViewController+Extension.swift */,
+				4333D8DB2431ADE000D910A9 /* RankingCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,6 +255,7 @@
 				C4B612A22415DF4A0020D12D /* SettingsViewController.swift */,
 				C4C23A02242AE747002AABA6 /* TourInfoViewController.swift */,
 				C4A46791242C5BE500ADABB6 /* PlayerInfoViewController.swift */,
+				4333D8D92431682800D910A9 /* RankingPageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 				C4F62DF1240CB0AE00A9803E /* TournamentSummary.swift */,
 				C4F62DFF240CBD0100A9803E /* TournamentResults.swift */,
 				C4AADA8D241336D30084E172 /* TourRanking.swift */,
+				4333D8D7242FF2F600D910A9 /* TournamentCoverageInfo.swift */,
 			);
 			path = Tournament;
 			sourceTree = "<group>";
@@ -411,6 +420,7 @@
 				C4DC2DDF24076F74007CE1DF /* MatchMode.swift in Sources */,
 				C4F62DEE240C0AA800A9803E /* IdName.swift in Sources */,
 				C4AADA76240E03EB0084E172 /* Outcome.swift in Sources */,
+				4333D8DA2431682800D910A9 /* RankingPageViewController.swift in Sources */,
 				C4AADA70240E023C0084E172 /* MatchProbability.swift in Sources */,
 				C4F62DEA240C08BB00A9803E /* Tournaments.swift in Sources */,
 				C4AADA862410AA7A0084E172 /* Period.swift in Sources */,
@@ -440,6 +450,8 @@
 				C4AADA6E240DFDAD0084E172 /* Venue.swift in Sources */,
 				C4B612A32415DF4A0020D12D /* SettingsViewController.swift in Sources */,
 				C4AADA6C240DF3460084E172 /* SportEventConditions.swift in Sources */,
+				4333D8D8242FF2F600D910A9 /* TournamentCoverageInfo.swift in Sources */,
+				4333D8DC2431ADE000D910A9 /* RankingCellView.swift in Sources */,
 				C4F62DFB240CB89800A9803E /* TournamentRound.swift in Sources */,
 				C4AADA882410AB500084E172 /* Surface.swift in Sources */,
 				C4C23A05242C4E7E002AABA6 /* UITableViewController+Extension.swift in Sources */,
