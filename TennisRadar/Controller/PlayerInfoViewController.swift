@@ -6,6 +6,9 @@
 //  Copyright © 2020 Cristhian Recalde. All rights reserved.
 //
 
+// Flag Icons borrowed from
+// https://github.com/madebybowtie/FlagKit
+
 import UIKit
 
 class PlayerInfoViewController: UIViewController, UINavigationControllerDelegate {
