@@ -10,6 +10,7 @@
 		4333D8D8242FF2F600D910A9 /* TournamentCoverageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8D7242FF2F600D910A9 /* TournamentCoverageInfo.swift */; };
 		4333D8DA2431682800D910A9 /* RankingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8D92431682800D910A9 /* RankingPageViewController.swift */; };
 		4333D8DC2431ADE000D910A9 /* RankingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8DB2431ADE000D910A9 /* RankingCellView.swift */; };
+		43B10CEE2432D11500FE22C8 /* JTAppleCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 43B10CED2432D11500FE22C8 /* JTAppleCalendar */; };
 		860AC5C5240D4B980001EE30 /* TournamentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C4240D4B980001EE30 /* TournamentInfo.swift */; };
 		860AC5C7240D4CB90001EE30 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C6240D4CB90001EE30 /* Info.swift */; };
 		C4A46792242C5BE500ADABB6 /* PlayerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A46791242C5BE500ADABB6 /* PlayerInfoViewController.swift */; };
@@ -145,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F62DBB240AABA600A9803E /* Alamofire in Frameworks */,
+				43B10CEE2432D11500FE22C8 /* JTAppleCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +353,7 @@
 			name = TennisRadar;
 			packageProductDependencies = (
 				C4F62DBA240AABA600A9803E /* Alamofire */,
+				43B10CED2432D11500FE22C8 /* JTAppleCalendar */,
 			);
 			productName = TennisRadar;
 			productReference = C4DC2DC124076ED2007CE1DF /* TennisRadar.app */;
@@ -382,6 +385,7 @@
 			mainGroup = C4DC2DB824076ED2007CE1DF;
 			packageReferences = (
 				C4F62DB9240AABA600A9803E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				43B10CEC2432D11500FE22C8 /* XCRemoteSwiftPackageReference "JTAppleCalendar" */,
 			);
 			productRefGroup = C4DC2DC224076ED2007CE1DF /* Products */;
 			projectDirPath = "";
@@ -668,6 +672,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		43B10CEC2432D11500FE22C8 /* XCRemoteSwiftPackageReference "JTAppleCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/patchthecode/JTAppleCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.3;
+			};
+		};
 		C4F62DB9240AABA600A9803E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -679,6 +691,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		43B10CED2432D11500FE22C8 /* JTAppleCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43B10CEC2432D11500FE22C8 /* XCRemoteSwiftPackageReference "JTAppleCalendar" */;
+			productName = JTAppleCalendar;
+		};
 		C4F62DBA240AABA600A9803E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C4F62DB9240AABA600A9803E /* XCRemoteSwiftPackageReference "Alamofire" */;

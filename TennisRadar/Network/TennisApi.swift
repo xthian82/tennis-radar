@@ -33,7 +33,6 @@ class TennisApi {
     class func getTournamentSummary(_ tournamentId: String, completion: @escaping (TournamentSummary?) -> Void) {
         AF.request(Endpoints.tournamentSummary(tournamentId).val).validate()
            .responseDecodable(of: TournamentSummary.self, queue: .global(qos: .background)) { response in
-             print("\n\n\ngetTournamentSummary is \(String(describing: response))")
                DispatchQueue.main.async {
                    completion(response.value)
                }
@@ -43,7 +42,6 @@ class TennisApi {
     class func getTournamentSchedule(_ tournamentId: String, completion: @escaping (TournamentSchedule?) -> Void) {
         AF.request(Endpoints.tournamentSchedule(tournamentId).val).validate()
            .responseDecodable(of: TournamentSchedule.self, queue: .global(qos: .background)) { response in
-            print("\n\n\ngetTournamentSchedule is \(String(describing: response))")
                DispatchQueue.main.async {
                    completion(response.value)
                }
@@ -63,7 +61,6 @@ class TennisApi {
         AF.request(Endpoints.tournamentInfo(tournamentId).val).validate()
           .responseDecodable(of: TournamentInfo.self, queue: .global(qos: .background)) { response in
             DispatchQueue.main.async {
-                print("\n\n\ngetTournamentInfo is \(String(describing: response))")
                 completion(response.value)
             }
         }
@@ -75,7 +72,6 @@ class TennisApi {
         print("** Invoking => \(endpoint)")
         AF.request(endpoint).validate()
           .responseDecodable(of: TournamentResults.self, queue: .global(qos: .background)) { response in
-            print("getResults \(String(describing: ofDate)) ==> \(String(describing: response))")
             DispatchQueue.main.async {
                 completion(response.value)
             }

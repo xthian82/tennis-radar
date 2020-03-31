@@ -13,7 +13,6 @@ class RankingViewController: UITableViewController {
     // MARK: - Properties
     let maxPlayers = 150
     let playerInfo = "playerInfo"
-    var selectedIndex: IndexPath = []
     var tourRanking: TourRanking?
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
@@ -29,6 +28,11 @@ class RankingViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedIndex = tableView.indexPathForSelectedRow else {
+            print("no selection!!!")
+            return
+        }
+        
         if segue.identifier == playerInfo {
             let nav = segue.destination as! UINavigationController
             let playerInfoVC = nav.topViewController as! PlayerInfoViewController
@@ -51,7 +55,6 @@ class RankingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath
         performSegue(withIdentifier: playerInfo, sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }

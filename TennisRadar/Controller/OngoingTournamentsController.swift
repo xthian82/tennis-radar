@@ -12,7 +12,7 @@ class OngoingTournamentsController: UITableViewController {
     
     let tournamentInfo = "showTournamentInfo"
     var tournaments: [Tournament]? = nil
-    var selectedIndex = 0
+    //var selectedIndex = -1
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Window functions
@@ -28,17 +28,21 @@ class OngoingTournamentsController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == tournamentInfo {
+        guard let selectedIndex = tableView.indexPathForSelectedRow else {
+            print("no selection!!!")
+            return
+        }
+        
+        if segue.identifier == tournamentInfo && selectedIndex.row >= 0 {
             let nav = segue.destination as! UINavigationController
             let tourInfoVC = nav.topViewController as! TourInfoViewController
-
-            tourInfoVC.tournamentId = tournaments?[selectedIndex].id
+            print(" +++ preparedSelected \(selectedIndex)")
+            tourInfoVC.tournamentId = tournaments?[selectedIndex.row].id
         }
     }
     
     // MARK: - Table functions
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: tournamentInfo, sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -50,6 +54,7 @@ class OngoingTournamentsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ongoingCell")!
         if let tournament = self.tournaments?[indexPath.row] {
+            print("** id \(tournament.id), row \(indexPath), => name = \(tournament.name)")
             cell.textLabel?.text = tournament.name
             if let season = tournament.currentSeason, let start = season.startDate, let end = season.endDate {
                 cell.detailTextLabel?.text = "From \(start) to \(end)"

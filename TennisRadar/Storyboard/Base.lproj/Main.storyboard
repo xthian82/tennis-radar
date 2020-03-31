@@ -31,6 +31,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Live Matches" id="9XC-Od-cNo">
+                        <barButtonItem key="leftBarButtonItem" image="calendar" catalog="system" id="VKm-ei-AcP"/>
                         <barButtonItem key="rightBarButtonItem" image="slider.horizontal.3" catalog="system" id="65d-Z7-m3b">
                             <connections>
                                 <segue destination="7zF-le-dFx" kind="showDetail" id="dCU-ea-Naj"/>
@@ -1259,12 +1260,13 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="z8t-VM-9GQ"/>
-        <segue reference="6ub-Hg-nwG"/>
+        <segue reference="dCU-ea-Naj"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CHE" width="21" height="15"/>
         <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
         <image name="ball" width="29" height="29"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="court" width="29" height="29"/>
         <image name="list.number" catalog="system" width="128" height="97"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>

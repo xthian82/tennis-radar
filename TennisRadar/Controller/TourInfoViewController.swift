@@ -37,7 +37,7 @@ class TourInfoViewController: UIViewController, UINavigationControllerDelegate {
         }
         //activityIndicator.startAnimating()
         TennisApi.getTournamentInfo(tourInfo) { response in
-            //self.activityIndicator.stopAnimating()
+            self.activityIndicator.stopAnimating()
             guard let tournamentInfo = response else {
                 print("no info found for \(tourInfo)")
                 return

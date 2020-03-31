@@ -43,8 +43,6 @@ class RankingPageViewController: UIPageViewController, UIPageViewControllerDeleg
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        print("RankingPageViewController - Before")
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController as! RankingViewController) else {
             return nil
         }
@@ -83,13 +81,15 @@ class RankingPageViewController: UIPageViewController, UIPageViewControllerDeleg
     
     // MARK: Helper Methods
     func configurePageControl() {
+        let heightSize: CGFloat = 70
+        let tabBarHeight = self.tabBarController?.tabBar.frame.size.height ?? heightSize
         pageControl = UIPageControl(frame: CGRect(x: 0,
-                                                  y: UIScreen.main.bounds.maxY - 100,
+                                                  y: UIScreen.main.bounds.maxY - tabBarHeight - heightSize,
                                                   width: UIScreen.main.bounds.width,
-                                                  height: 70))
+                                                  height: heightSize))
         pageControl.numberOfPages = orderedViewControllers.count
         pageControl.currentPage = 0
-        pageControl.tintColor = UIColor.white
+        pageControl.tintColor = UIColor.green
         pageControl.defersCurrentPageDisplay = true
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
