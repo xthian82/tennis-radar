@@ -10,9 +10,10 @@
 		4333D8D8242FF2F600D910A9 /* TournamentCoverageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8D7242FF2F600D910A9 /* TournamentCoverageInfo.swift */; };
 		4333D8DA2431682800D910A9 /* RankingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8D92431682800D910A9 /* RankingPageViewController.swift */; };
 		4333D8DC2431ADE000D910A9 /* RankingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8DB2431ADE000D910A9 /* RankingCellView.swift */; };
-		43B10CEE2432D11500FE22C8 /* JTAppleCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 43B10CED2432D11500FE22C8 /* JTAppleCalendar */; };
 		860AC5C5240D4B980001EE30 /* TournamentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C4240D4B980001EE30 /* TournamentInfo.swift */; };
 		860AC5C7240D4CB90001EE30 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C6240D4CB90001EE30 /* Info.swift */; };
+		C4A24A852432F7310056DE46 /* KDCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C4A24A842432F7310056DE46 /* KDCalendar */; };
+		C4A24A8B24342C6D0056DE46 /* CalendarPickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A24A8A24342C6D0056DE46 /* CalendarPickController.swift */; };
 		C4A46792242C5BE500ADABB6 /* PlayerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A46791242C5BE500ADABB6 /* PlayerInfoViewController.swift */; };
 		C4AADA68240DEC760084E172 /* CoverageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA67240DEC760084E172 /* CoverageInfo.swift */; };
 		C4AADA6A240DF1AD0084E172 /* Competitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AADA69240DF1AD0084E172 /* Competitor.swift */; };
@@ -79,6 +80,7 @@
 		4333D8DB2431ADE000D910A9 /* RankingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCellView.swift; sourceTree = "<group>"; };
 		860AC5C4240D4B980001EE30 /* TournamentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentInfo.swift; sourceTree = "<group>"; };
 		860AC5C6240D4CB90001EE30 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		C4A24A8A24342C6D0056DE46 /* CalendarPickController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickController.swift; sourceTree = "<group>"; };
 		C4A46791242C5BE500ADABB6 /* PlayerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoViewController.swift; sourceTree = "<group>"; };
 		C4AADA67240DEC760084E172 /* CoverageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageInfo.swift; sourceTree = "<group>"; };
 		C4AADA69240DF1AD0084E172 /* Competitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitor.swift; sourceTree = "<group>"; };
@@ -146,7 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F62DBB240AABA600A9803E /* Alamofire in Frameworks */,
-				43B10CEE2432D11500FE22C8 /* JTAppleCalendar in Frameworks */,
+				C4A24A852432F7310056DE46 /* KDCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +260,7 @@
 				C4C23A02242AE747002AABA6 /* TourInfoViewController.swift */,
 				C4A46791242C5BE500ADABB6 /* PlayerInfoViewController.swift */,
 				4333D8D92431682800D910A9 /* RankingPageViewController.swift */,
+				C4A24A8A24342C6D0056DE46 /* CalendarPickController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -353,7 +356,7 @@
 			name = TennisRadar;
 			packageProductDependencies = (
 				C4F62DBA240AABA600A9803E /* Alamofire */,
-				43B10CED2432D11500FE22C8 /* JTAppleCalendar */,
+				C4A24A842432F7310056DE46 /* KDCalendar */,
 			);
 			productName = TennisRadar;
 			productReference = C4DC2DC124076ED2007CE1DF /* TennisRadar.app */;
@@ -385,7 +388,7 @@
 			mainGroup = C4DC2DB824076ED2007CE1DF;
 			packageReferences = (
 				C4F62DB9240AABA600A9803E /* XCRemoteSwiftPackageReference "Alamofire" */,
-				43B10CEC2432D11500FE22C8 /* XCRemoteSwiftPackageReference "JTAppleCalendar" */,
+				C4A24A832432F7310056DE46 /* XCRemoteSwiftPackageReference "CalendarView" */,
 			);
 			productRefGroup = C4DC2DC224076ED2007CE1DF /* Products */;
 			projectDirPath = "";
@@ -434,6 +437,7 @@
 				C4C23A03242AE747002AABA6 /* TourInfoViewController.swift in Sources */,
 				C4AADA9424133D650084E172 /* Meetings.swift in Sources */,
 				C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */,
+				C4A24A8B24342C6D0056DE46 /* CalendarPickController.swift in Sources */,
 				C4AADA982413FB070084E172 /* OngoingTournamentsController.swift in Sources */,
 				C4AADA74240E03520084E172 /* Market.swift in Sources */,
 				C4F62DF2240CB0AE00A9803E /* TournamentSummary.swift in Sources */,
@@ -672,12 +676,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		43B10CEC2432D11500FE22C8 /* XCRemoteSwiftPackageReference "JTAppleCalendar" */ = {
+		C4A24A832432F7310056DE46 /* XCRemoteSwiftPackageReference "CalendarView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/patchthecode/JTAppleCalendar";
+			repositoryURL = "https://github.com/mmick66/CalendarView.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.3;
+				minimumVersion = 1.8.9;
 			};
 		};
 		C4F62DB9240AABA600A9803E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -691,10 +695,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		43B10CED2432D11500FE22C8 /* JTAppleCalendar */ = {
+		C4A24A842432F7310056DE46 /* KDCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 43B10CEC2432D11500FE22C8 /* XCRemoteSwiftPackageReference "JTAppleCalendar" */;
-			productName = JTAppleCalendar;
+			package = C4A24A832432F7310056DE46 /* XCRemoteSwiftPackageReference "CalendarView" */;
+			productName = KDCalendar;
 		};
 		C4F62DBA240AABA600A9803E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

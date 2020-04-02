@@ -9,9 +9,10 @@
 import UIKit
 import Foundation
 
-class LiveSummaryViewController: UITableViewController {
+class LiveSummaryViewController: UITableViewController, CalendarPickControllerDelegate {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    var selectedDate: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,18 @@ class LiveSummaryViewController: UITableViewController {
         getLiveSummary()*/
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCalendar" {
+            let calendarController = segue.destination as! CalendarPickController
+            calendarController.delegate = self
+        }
+    }
+    
+    func handleSelection(data: String) {
+        selectedDate = data
+        print("now date is \(String(describing: selectedDate))")
+    }
+       
     /*
     // MARK: - test funcs
     func getTournaments() {
