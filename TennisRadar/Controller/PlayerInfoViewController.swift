@@ -11,7 +11,7 @@
 
 import UIKit
 
-class PlayerInfoViewController: UIViewController, UINavigationControllerDelegate {
+class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINavigationControllerDelegate {
     
     // MARK: - Properties
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -30,18 +30,29 @@ class PlayerInfoViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet weak var topDoubleRank: UILabel!
     @IBOutlet weak var ranking: UILabel!
     @IBOutlet weak var raceRank: UILabel!
-
+    @IBOutlet weak var uiscrollView: UIScrollView!
+    
+    //MARK: - Controller Functions
+    override func viewDidLoad() {
+        uiscrollView.delegate = self
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getPlayerProfile()
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.contentOffset.x = 0
+    }
+    
     @IBAction func cancelActionTapped() {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - Api
     func getPlayerProfile() {
+        print("searching for \(playerId)")
         guard let playerId = playerId else {
             print("no id player")
            return
@@ -69,7 +80,13 @@ class PlayerInfoViewController: UIViewController, UINavigationControllerDelegate
             self.topDoubleRank.text = self.optIntString(player.highestDoublesRanking) + self.optStringEnclosed(player.dateHighestDoublesRanking, tag: " on")
             
             self.turnedPro.text = self.optIntString(player.proYear)
+            self.raceRank.text = "-"
+            self.ranking.text = "-"
             for rank in playerData.rankings {
+                if rank.type != "singles" {
+                    continue
+                }
+                
                 if let raceRank = rank.raceRanking, raceRank == true {
                     self.raceRank.text = "\(rank.rank), \(rank.points) pts." + self.optStringEnclosed(rank.rankingMovement, tag: " Mov.")
 
@@ -80,6 +97,7 @@ class PlayerInfoViewController: UIViewController, UINavigationControllerDelegate
         }
     }
     
+    // MARK: - Helpers
     func optIntString(_ value: Int?, tag: String = "--") -> String {
         if let val = value {
             return "\(val)"
