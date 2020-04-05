@@ -19,7 +19,7 @@ class RankingViewController: UITableViewController {
     // MARK: - Windows Functions
     override func viewDidLoad() {
         tableView.backgroundView = activityIndicator
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +48,7 @@ class RankingViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = tourRanking?.playerRankings.count, count > 0 {
+            tableView.separatorStyle = .singleLine
             return maxPlayers
         }
         

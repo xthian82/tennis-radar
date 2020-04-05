@@ -15,6 +15,10 @@ import UIKit
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    /*
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +28,5 @@ import UIKit
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
+    }*/
 }

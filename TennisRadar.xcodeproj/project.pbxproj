@@ -12,6 +12,7 @@
 		4333D8DC2431ADE000D910A9 /* RankingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333D8DB2431ADE000D910A9 /* RankingCellView.swift */; };
 		860AC5C5240D4B980001EE30 /* TournamentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C4240D4B980001EE30 /* TournamentInfo.swift */; };
 		860AC5C7240D4CB90001EE30 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C6240D4CB90001EE30 /* Info.swift */; };
+		C403896F243A899D00B5B724 /* TourStatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C403896E243A899D00B5B724 /* TourStatViewCell.swift */; };
 		C4A24A852432F7310056DE46 /* KDCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C4A24A842432F7310056DE46 /* KDCalendar */; };
 		C4A24A8B24342C6D0056DE46 /* CalendarPickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A24A8A24342C6D0056DE46 /* CalendarPickController.swift */; };
 		C4A46792242C5BE500ADABB6 /* PlayerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A46791242C5BE500ADABB6 /* PlayerInfoViewController.swift */; };
@@ -80,6 +81,7 @@
 		4333D8DB2431ADE000D910A9 /* RankingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCellView.swift; sourceTree = "<group>"; };
 		860AC5C4240D4B980001EE30 /* TournamentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentInfo.swift; sourceTree = "<group>"; };
 		860AC5C6240D4CB90001EE30 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		C403896E243A899D00B5B724 /* TourStatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourStatViewCell.swift; sourceTree = "<group>"; };
 		C4A24A8A24342C6D0056DE46 /* CalendarPickController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickController.swift; sourceTree = "<group>"; };
 		C4A46791242C5BE500ADABB6 /* PlayerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoViewController.swift; sourceTree = "<group>"; };
 		C4AADA67240DEC760084E172 /* CoverageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageInfo.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				C4B612A52417105A0020D12D /* TournamentViewCell.swift */,
 				C4C23A04242C4E7E002AABA6 /* UITableViewController+Extension.swift */,
 				4333D8DB2431ADE000D910A9 /* RankingCellView.swift */,
+				C403896E243A899D00B5B724 /* TourStatViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				C4F62DE6240C06DC00A9803E /* Endpoints.swift in Sources */,
 				C4AADA68240DEC760084E172 /* CoverageInfo.swift in Sources */,
 				C4F62DF7240CB6B300A9803E /* TournamentSchedule.swift in Sources */,
+				C403896F243A899D00B5B724 /* TourStatViewCell.swift in Sources */,
 				C4AADA8E241336D30084E172 /* TourRanking.swift in Sources */,
 				C4F62DF9240CB78700A9803E /* SportEvent.swift in Sources */,
 				C4AADA9224133C960084E172 /* HeadToHead.swift in Sources */,

@@ -129,14 +129,20 @@ extension PlayerInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playerStatCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "playerStatCell") as! TourStatViewCell
         
         if let stat = playerProfile?.statistics?.periods[indexPath.row] {
             let statistics = stat.statistics
             let toursStat = Double(statistics.tournamentsWon)/Double(statistics.tournamentsPlayed) * 100
             let matchesStat = Double(statistics.matchesWon)/Double(statistics.matchesPlayed)*100
             
-            cell.textLabel?.text = "\(stat.year) => |  \(statistics.tournamentsWon)/\(statistics.tournamentsPlayed) |  \(statistics.matchesWon)/\(statistics.matchesPlayed) | \(toursStat.truncate(places: 2))% | \(matchesStat.truncate(places: 2))%"
+            cell.yearLabel.text = "\(stat.year)"
+            cell.toursPlayedLabel.text = "\(statistics.tournamentsPlayed)"
+            cell.toursWonLabel.text = "\(statistics.tournamentsWon)"
+            cell.matchesPlayedLabel.text = "\(statistics.matchesPlayed)"
+            cell.matchesWonLabel.text = "\(statistics.matchesWon)"
+            cell.tourStatLabel.text = "\(toursStat.truncate(places: 2))%"
+            cell.matchesStatLabel.text = "\(matchesStat.truncate(places: 2))%"
         }
         return cell
     }
