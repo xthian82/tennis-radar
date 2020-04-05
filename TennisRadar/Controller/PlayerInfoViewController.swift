@@ -17,7 +17,7 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var playerId: String? = nil
-//    var playerProfile: PlayerProfile?
+    var playerProfile: PlayerProfile?
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var countryFlag: UIImageView!
     @IBOutlet weak var countryName: UILabel!
@@ -31,10 +31,14 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     @IBOutlet weak var ranking: UILabel!
     @IBOutlet weak var raceRank: UILabel!
     @IBOutlet weak var uiscrollView: UIScrollView!
+    @IBOutlet weak var tableView: UITableView!
+
     
     //MARK: - Controller Functions
     override func viewDidLoad() {
         uiscrollView.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +56,6 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     // MARK: - Api
     func getPlayerProfile() {
-        print("searching for \(playerId)")
         guard let playerId = playerId else {
             print("no id player")
            return
@@ -61,9 +64,12 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
         TennisApi.getPlayerProfile(playerId) { response in
             self.activityIndicator.stopAnimating()
             guard let playerData: PlayerProfile = response else {
+                //MARK: improve error message
                 print("no info found for player \(playerId)")
                 return
             }
+            
+            self.playerProfile = playerData
             
             let player = playerData.player
             self.playerName.text = player.name
@@ -94,6 +100,7 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
                     self.ranking.text = "\(rank.rank), \(rank.points) pts." + self.optStringEnclosed(rank.rankingMovement, tag: " Mov.")
                 }
             }
+            self.tableView.reloadData()
         }
     }
     
@@ -112,5 +119,34 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
         }
         
         return ""
+    }
+}
+
+extension PlayerInfoViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return playerProfile?.statistics?.periods.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "playerStatCell")!
+        
+        if let stat = playerProfile?.statistics?.periods[indexPath.row] {
+            let statistics = stat.statistics
+            let toursStat = Double(statistics.tournamentsWon)/Double(statistics.tournamentsPlayed) * 100
+            let matchesStat = Double(statistics.matchesWon)/Double(statistics.matchesPlayed)*100
+            
+            cell.textLabel?.text = "\(stat.year) => |  \(statistics.tournamentsWon)/\(statistics.tournamentsPlayed) |  \(statistics.matchesWon)/\(statistics.matchesPlayed) | \(toursStat.truncate(places: 2))% | \(matchesStat.truncate(places: 2))%"
+        }
+        return cell
+    }
+
+}
+
+extension Double
+{
+    func truncate(places : Int)-> Double
+    {
+        return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
     }
 }
