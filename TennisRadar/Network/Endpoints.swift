@@ -12,7 +12,8 @@ public enum Endpoints {
     
     //MARK: - Properties
     static let base = "https://api.sportradar.com/tennis-t2/en"
-    static let apiKeyParam = ".json?api_key=6pf56k9275ga27kq4g4ghzw2"
+    // static let apiKeyParam = ".json?api_key=6pf56k9275ga27kq4g4ghzw2"
+    static let apiKeyParam = ".json?api_key=mvvutby85g24kpsh2bnnaqrv"
     
     //MARK: Endpoints
     case tournaments

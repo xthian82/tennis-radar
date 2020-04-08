@@ -13,19 +13,24 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     var selectedDate: String?
+    var tournamentResults = [String: [MatchResult]]()
+    var tournamentsLoaded = [Int: String]()
+    var tournamentsAdded: Set<String> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //tableView.backgroundView = activityIndicator
-        //tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.backgroundView = activityIndicator
+        tableView.separatorStyle = .none
+        //tableView.dataSource = self
+        //tableView.delegate = self
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-        /*getResults(ofDate: nil)
-        getResults(ofDate: "2016-02-26")
-        getLiveSummary()*/
+        //getResults(ofDate: nil)
+        getResults(ofDate: "2019-07-14")
+        //getLiveSummary()*/
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,96 +45,70 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
         print("now date is \(String(describing: selectedDate))")
     }
        
-    /*
+    // MARK: Table Functions
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return tournamentResults.keys.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selecting \(indexPath)")
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let keyStr = tournamentsLoaded[section] else {
+            return 0
+        }
+        
+        guard let itemsAtKey = tournamentResults[keyStr] else {
+            return 0
+        }
+        if itemsAtKey.count > 0 {
+            tableView.separatorStyle = .singleLine
+        }
+        
+        return itemsAtKey.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return tournamentsLoaded[section] ?? ""
+    }
+    
+    //override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //    <#code#>
+   //}
+    
     // MARK: - test funcs
-    func getTournaments() {
-        print("=================> getTournaments")
-        TennisApi.getTournaments { response in
-            guard let tournaments: Tournaments = response else {
-                print("no tours...")
-                return
-            }
-            print("generatedAt = \(tournaments.generatedAt)")
-            print("schema = \(tournaments.schema)")
-            print("total = \(tournaments.tournaments.count)")
-            if tournaments.tournaments.count > 0 {
-                print (print("first is = \(tournaments.tournaments[0])"))
-            }
-        }
-    }
-        
-    func getTournamentSummary() {
-        print("=================> getTournamentSummary")
-        TennisApi.getTournamentSummary("sr:tournament:2553") { response in
-            guard let tourSummary: TournamentSummary = response else {
-                print("no tours...")
-                return
-            }
-
-            print("summary = \(tourSummary)")
-        }
-    }
-    
-    func getTournamentSchedule() {
-        print("=================> getTournamentSchedule")
-        TennisApi.getTournamentSchedule("sr:tournament:2555") { response in
-            guard let tourSummary: TournamentSchedule = response else {
-                print("no tours...")
-                return
-            }
-
-            print("schedule = \(tourSummary)")
-        }
-    }
-
-    func getTournamentResults() {
-        print("=================> getTournamentResults")
-        TennisApi.getTournamentResults("sr:tournament:2555") { response in
-            guard let toursResults: TournamentResults = response else {
-                print("no tours...")
-                return
-            }
-
-            print("tournament = \(toursResults.tournament)")
-    
-            print("total = \(toursResults.results.count)")
-            if toursResults.results.count > 0 {
-                print("first is = \(toursResults.results[0])")
-            }
-        }
-    }
-    
-    func getTournamentInfo() {
-        print("=================> getTournamentInfo")
-        TennisApi.getTournamentInfo("sr:tournament:2555") { response in
-            guard let tourInfo: TournamentInfo = response else {
-                print("no tours...")
-                return
-            }
-
-        
-            print("tournament = \(tourInfo.tournament)")
-            print("Cover info  = \(tourInfo.coverageInfo)")
-            print("tour Info = \(tourInfo.info)")
-            if tourInfo.competitors.count > 0 {
-                print("first is = \(tourInfo.competitors[0])")
-            }
-        }
-    }*/
-    
     func getResults(ofDate: String?) {
-        print("\n\n\n=================> getResults \(String(describing: ofDate))")
         TennisApi.getResults(ofDate: ofDate) { response in
-            guard let results: TournamentResults = response else {
+            self.crearAll()
+            
+            guard let tResults: TournamentResults = response else {
                 print("no tours...")
                 return
             }
 
-        
-            print("tournament = \(results)")
-            if results.results.count > 0 {
-                print("first result is = \(results.results[0])")
+            for tournamentResult in tResults.results {
+                let sEvent = tournamentResult.sportEvent
+                guard let tournament = sEvent.tournament else {
+                    continue
+                }
+                guard let catLevel = tournament.category.level else {
+                    continue
+                }
+                print("adding tour = \(tournament.name) with level => \(catLevel)")
+                if !self.tournamentResults.keys.contains(tournament.name) {
+                    self.tournamentResults[tournament.name] = []
+                }
+                
+                self.tournamentResults[tournament.name]!.append(tournamentResult)
+                if self.tournamentsAdded.contains(tournament.name) == false {
+                    self.tournamentsAdded.insert(tournament.name)
+                    self.tournamentsLoaded[self.tournamentsAdded.count - 1] = tournament.name
+                }
             }
+            // print("Finally added\n\n\(self.tournamentResults)")
+            self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
         }
     }
     /*
@@ -166,66 +145,7 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     }
     
     /*
-    func getMatchProbability() {
-        print("=================> getMatchProbability ")
-        TennisApi.getMatchProbabilities("sr:match:21493533") { response in
-            guard let results: MatchProbability = response else {
-                print("no prob...")
-                return
-            }
-
-            print(results)
-        }
-    }
-    
-    func getMatchSummary() {
-        print("=================> getMatchSummary ")
-        TennisApi.getMatchSummary("sr:match:21493533") { response in
-            guard let results: MatchResult = response else {
-                print("no prob...")
-                return
-            }
-
-            print(results)
-        }
-    }
-    
-    func getMatchTimeline() {
-        print("=================> getMatchTimeline ")
-        TennisApi.getMatchTimeline("sr:match:21493533") { response in
-            guard let results: MatchResult = response else {
-                print("no prob...")
-                return
-            }
-
-            print(results)
-        }
-    }
-    
-    func getPlayerProfile(_ idPlayer: String) {
-        print("=================> getPlayerProfile \(idPlayer) ")
-        TennisApi.getPlayerProfile(idPlayer) { response in
-            guard let results: PlayerProfile = response else {
-                print("no profile...")
-                return
-            }
-
-            print(results)
-        }
-    }
-    
-    func getPlayerRankings() {
-        print("=================> getPlayerRankings ")
-        TennisApi.getPlayerRankings() { response in
-            guard let results: PlayerRankings = response else {
-                print("no profile...")
-                return
-            }
-
-            print("All ranks = \(results.rankings.count)")
-            print("First is = \(results.rankings[1].playerRankings[0])")
-        }
-    }
+   
     
     func getPlayerHeadToHead(from: String, vs: String) {
           print("=================> getPlayerHeadToHead \(from) vs \(vs) ")
@@ -238,5 +158,11 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
               print("head to head = \(results)")
           }
       }*/
+    
+    fileprivate func crearAll() {
+        self.tournamentResults.removeAll()
+        self.tournamentsLoaded.removeAll()
+        self.tournamentsAdded.removeAll()
+    }
 }
 

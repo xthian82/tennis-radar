@@ -9,7 +9,7 @@
 import Foundation
 
 struct SportEventConditions: Codable {
-    let matchMode: String
+    let matchMode: String?
     let venue: Venue?
     let championsTiebreak: Bool?
     
