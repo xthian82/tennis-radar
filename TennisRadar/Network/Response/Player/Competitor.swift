@@ -15,6 +15,7 @@ struct Competitor: Codable {
     let countryCode: String?
     let bracketNumber: Int?
     let abbreviation: String?
+    let seed: Int?
     let qualifier: String?
     let players: [Player]?
     
@@ -25,6 +26,7 @@ struct Competitor: Codable {
         case countryCode = "country_code"
         case bracketNumber = "bracket_number"
         case abbreviation
+        case seed
         case qualifier
         case players
     }

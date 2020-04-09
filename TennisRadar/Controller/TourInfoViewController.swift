@@ -22,8 +22,6 @@ class TourInfoViewController: UIViewController, UINavigationControllerDelegate {
         super.viewWillAppear(animated)
         activityIndicator.startAnimating()
         getTourInfo()
-        //getTourSumm()
-        //getTourSch()
     }
     
     @IBAction func cancelActionTapped() {
