@@ -69,7 +69,6 @@ class TennisApi {
     // MARK: - Match Calls
     class func getResults(ofDate: String?, completion: @escaping (TournamentResults?) -> Void) {
         let endpoint = Endpoints.results(getLiveOrDate(ofDate)).val
-        print("** Invoking => \(endpoint)")
         AF.request(endpoint).validate()
           .responseDecodable(of: TournamentResults.self, queue: .global(qos: .background)) { response in
             DispatchQueue.main.async {

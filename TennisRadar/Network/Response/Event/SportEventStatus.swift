@@ -19,7 +19,7 @@ struct SportEventStatus: Codable {
 
     enum CodingKeys: String, CodingKey {
         case status
-        case matchStatus
+        case matchStatus = "match_status"
         case homeScore = "home_score"
         case awayScore = "away_score"
         case winnerId = "winner_id"

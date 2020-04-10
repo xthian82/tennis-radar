@@ -15,7 +15,6 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     var selectedDate: String?
     var tournamentResults = [String: [MatchResult]]()
     var tournamentsLoaded = [Int: String]()
-    //var tournamentsAdded: Set<String> = []
     var matchesLoaded = [IndexPath: String]()
     
     override func viewDidLoad() {
@@ -29,7 +28,6 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     
     
     override func viewWillAppear(_ animated: Bool) {
-        //getResults(ofDate: nil)
         getResults(ofDate: "2019-07-14")
         //getLiveSummary()*/
     }
@@ -48,31 +46,26 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
        
     // MARK: Table Functions
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // return tournamentsAdded.count
         return tournamentResults.keys.count
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "Futura", size: 18)
+        header.textLabel?.font = UIFont(name: "FuturaBold", size: 17)
+        header.textLabel?.textAlignment = .center
+        header.textLabel?.textColor = UIColor.black
     }
 
-
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return tournamentsLoaded[section] ?? ""
+    }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
-
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UITableViewHeaderFooterView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: tableView.sectionHeaderHeight))
-        view.contentView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        view.contentView.backgroundColor = UIColor.init(red: 235/255, green: 235/255, blue: 235/255, alpha: 0)
-        view.textLabel?.text =  tournamentsLoaded[section] ?? ""
-        view.textLabel?.adjustsFontForContentSizeCategory = true
-        return view
-    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selecting \(matchesLoaded[indexPath]). from index = \(indexPath)")
+        print("\n\n******* selecting \(matchesLoaded[indexPath]). from index = \(indexPath)")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,10 +83,6 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
         return itemsAtKey.count
     }
     
-    /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return tournamentsLoaded[section] ?? ""
-    }*/
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultViewCell") as! LiveResultViewCell
         
@@ -105,11 +94,9 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
             return cell
         }
         
-        //if matchResults.count < indexPath.row {
-            let matchResult = matchResults[indexPath.row]
-            matchesLoaded[indexPath] = matchResult.sportEvent.id
-            cell.loadResult(matchResult)
-        //}
+        let matchResult = matchResults[indexPath.row]
+        matchesLoaded[indexPath] = matchResult.sportEvent.id
+        cell.loadResult(matchResult)
         
         return cell
     }
@@ -139,38 +126,15 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
                 }
                 
                 self.tournamentResults[tournament.name]!.append(tournamentResult)
-                //if !self.tournamentsAdded.contains(tournament.name) {
-                //  self.tournamentsAdded.insert(tournament.name)
-                //  self.tournamentsLoaded[self.tournamentsAdded.count - 1] = tournament.name
-                // }
             }
-            print("tournaments = \(self.tournamentsLoaded)")
             self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
         }
     }
-
-    /*
-    func getSchedule(_ of: String) {
-        print("=================> getSchedule of \(of)")
-        TennisApi.getSchedule(ofDate: of) { response in
-            guard let results: TournamentSchedule = response else {
-                print("no tours...")
-                return
-            }
-
-        
-            print("tournament = \(results.tournament)")
-            if results.sportEvents.count > 0 {
-                print("first schedule is = \(results.sportEvents[0])")
-            }
-        }
-    }*/
     
     private func clearAll() {
         tournamentResults.removeAll()
         tournamentsLoaded.removeAll()
-        //self.tournamentsAdded.removeAll()
         matchesLoaded.removeAll()
     }
 }

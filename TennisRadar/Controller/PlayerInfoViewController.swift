@@ -43,7 +43,7 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getPlayerProfile()
+        //getPlayerProfile()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -145,6 +145,22 @@ extension PlayerInfoViewController: UITableViewDelegate, UITableViewDataSource {
             cell.matchesStatLabel.text = "\(matchesStat.truncate(places: 2))%"
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "FuturaBold", size: 15)
+        header.textLabel?.textAlignment = .center
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.adjustsFontSizeToFitWidth = true
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "YEAR\tTP\tTW\tMP\tMW\tTS\tMS"
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
     }
 
 }

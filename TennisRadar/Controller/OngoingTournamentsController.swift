@@ -45,7 +45,11 @@ class OngoingTournamentsController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tournaments?.count ?? 0
+        let size = tournaments?.count ?? 0
+        if size > 0 {
+            tableView.separatorStyle = .singleLine
+        }
+        return size
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

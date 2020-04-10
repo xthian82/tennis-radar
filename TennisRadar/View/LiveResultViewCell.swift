@@ -76,16 +76,13 @@ import UIKit
     }
     
     func loadResult(_ matchResult: MatchResult) {
+        clearLabels()
         let sportEvent = matchResult.sportEvent
         let sportEventStatus = matchResult.sportEventStatus
         let awayScore = sportEventStatus.awayScore ?? -1
         let homeScore = sportEventStatus.homeScore ?? -1
         
-        // Venue name
-        if let venue = sportEvent.venue {
-            venueName.text = "\(venue.name)\(venue.cityName != nil ? ", " : "")\(venue.cityName ?? "")"
-        }
-        
+        venueName.text = sportEvent.venue?.name ?? ""
         stageMatch.text = sportEvent.tournamentRound?.name ?? ""
         matchStatus.text = sportEventStatus.matchStatus ?? ""
         
@@ -105,11 +102,14 @@ import UIKit
                 var countryFlag: UIImage? = nil
                 if let contryCode = competitor.countryCode {
                     countryFlag = UIImage(named: contryCode)
+                } else if let players = competitor.players {
+                    if let firstCountry = players[0].countryCode, let secCountry = players[1].countryCode,
+                        firstCountry == secCountry {
+                        countryFlag = UIImage(named: firstCountry)
+                    }
                 }
-                
                 setMainInfo(competitor.qualifier, name, seed, countryFlag)
             }
-            
         }
         
         // match results
@@ -168,5 +168,36 @@ import UIKit
         default:
             return nil
         }
+    }
+    
+    private func clearLabels() {
+        venueName.text = ""
+        stageMatch.text = ""
+        matchStatus.text = ""
+        fourthSetHeader.text = ""
+        fifthSetHeader.text = ""
+        
+        
+        // MARK: - Home Data
+        homeSeed.text = ""
+        homeName.text = ""
+        homeCoutryCode.image = nil
+        homeCurrent.text = ""
+        homeFirstSet.text = ""
+        homeSecondSet.text = ""
+        homeThirdSet.text = ""
+        homeFourthSet.text = ""
+        homeFifthSet.text = ""
+        
+        // MARK: - Away Data
+        awaySeed.text = ""
+        awayName.text = ""
+        awayCountryCode.image = nil
+        awayCurrent.text = ""
+        awayFirstSet.text = ""
+        awaySecondSet.text = ""
+        awayThirdSet.text = ""
+        awayFourthSet.text = ""
+        awayFifthSet.text = ""
     }
 }
