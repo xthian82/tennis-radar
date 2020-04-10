@@ -52,6 +52,25 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
         return tournamentResults.keys.count
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Futura", size: 18)
+    }
+
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UITableViewHeaderFooterView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: tableView.sectionHeaderHeight))
+        view.contentView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        view.contentView.backgroundColor = UIColor.init(red: 235/255, green: 235/255, blue: 235/255, alpha: 0)
+        view.textLabel?.text =  tournamentsLoaded[section] ?? ""
+        view.textLabel?.adjustsFontForContentSizeCategory = true
+        return view
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selecting \(matchesLoaded[indexPath]). from index = \(indexPath)")
     }
@@ -71,9 +90,9 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
         return itemsAtKey.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return tournamentsLoaded[section] ?? ""
-    }
+    }*/
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultViewCell") as! LiveResultViewCell
@@ -86,11 +105,11 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
             return cell
         }
         
-        if matchResults.count < indexPath.row {
+        //if matchResults.count < indexPath.row {
             let matchResult = matchResults[indexPath.row]
             matchesLoaded[indexPath] = matchResult.sportEvent.id
             cell.loadResult(matchResult)
-        }
+        //}
         
         return cell
     }

@@ -100,7 +100,7 @@ import UIKit
         // players data
         if let competitors = sportEvent.competitors {
             for competitor in competitors {
-                let seed = competitor.seed != nil ? "\(competitor.seed!)" : ""
+                let seed = competitor.seed != nil ? "\(competitor.seed!)" : " "
                 let name = competitor.name ?? ""
                 var countryFlag: UIImage? = nil
                 if let contryCode = competitor.countryCode {
