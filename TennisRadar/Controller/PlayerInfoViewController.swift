@@ -80,8 +80,8 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
             self.birthdate.text = player.dateOfBirth
             self.handedness.text = player.handedness
             self.activityIndicator.stopAnimating()
-            self.height.text = self.optIntString(player.height)
-            self.weight.text = self.optIntString(player.weight)
+            self.height.text = self.optIntString(player.height, fill: "''")
+            self.weight.text = self.optIntString(player.weight, fill: " pnds.")
             self.topSingleRank.text = self.optIntString(player.highestSinglesRanking) + self.optStringEnclosed(player.dateHighestSinglesRanking, tag: " on")
             self.topDoubleRank.text = self.optIntString(player.highestDoublesRanking) + self.optStringEnclosed(player.dateHighestDoublesRanking, tag: " on")
             
@@ -105,9 +105,9 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     }
     
     // MARK: - Helpers
-    func optIntString(_ value: Int?, tag: String = "--") -> String {
+    func optIntString(_ value: Int?, fill: String = "", tag: String = "--") -> String {
         if let val = value {
-            return "\(val)"
+            return "\(val)\(fill)"
         }
         
         return tag
