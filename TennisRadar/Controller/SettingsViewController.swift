@@ -88,6 +88,10 @@ class SettingsViewController: UITableViewController {
         return TournamentManager.shared.tours[section]
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        ControllerUtil.setHeaderView(view, fontName: "Futura-Bold")
+    }
+    
     // MARK: - Button Actions
     @IBAction func clicked(_ sender: UISwitch) {
         switch sender {

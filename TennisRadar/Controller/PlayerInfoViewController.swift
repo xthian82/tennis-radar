@@ -43,7 +43,7 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //getPlayerProfile()
+        getPlayerProfile()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -56,6 +56,7 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     // MARK: - Api
     func getPlayerProfile() {
+        clearData()
         guard let playerId = playerId else {
             print("no id player")
            return
@@ -105,6 +106,21 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     }
     
     // MARK: - Helpers
+    func clearData() {
+        playerName.text = ""
+        countryName.text = ""
+        birthdate.text = ""
+        handedness.text = ""
+        turnedPro.text = ""
+        height.text = ""
+        weight.text = ""
+        topSingleRank.text = ""
+        topDoubleRank.text = ""
+        ranking.text = ""
+        raceRank.text = ""
+        countryFlag.image = nil
+    }
+    
     func optIntString(_ value: Int?, fill: String = "", tag: String = "--") -> String {
         if let val = value {
             return "\(val)\(fill)"
@@ -129,7 +145,7 @@ extension PlayerInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playerStatCell") as! TourStatViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.playerStatCellId) as! TourStatViewCell
         
         if let stat = playerProfile?.statistics?.periods[indexPath.row] {
             let statistics = stat.statistics
@@ -148,27 +164,27 @@ extension PlayerInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "FuturaBold", size: 15)
-        header.textLabel?.textAlignment = .center
-        header.textLabel?.textColor = UIColor.black
-        header.textLabel?.adjustsFontSizeToFitWidth = true
+        // setHeaderFoot(view)
+        ControllerUtil.setHeaderView(view)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        // setHeaderFoot(view)
+        ControllerUtil.setHeaderView(view)
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "YEAR\tTP\tTW\tMP\tMW\tTS\tMS"
+        return "YEAR - TP - TW - MP - MW - TS - MS"
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "TP: Tournaments Played, TW: Tournaments Won, MP: Matches Played, MW: Matches Won, TS: Tournaments Stats, MS: Matches Stas"
     }
-
-}
-
-extension Double
-{
-    func truncate(places : Int)-> Double
-    {
-        return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
-    }
+    /*
+    func setHeaderFoot(_ view: UIView) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Futura", size: 15)
+        header.textLabel?.textAlignment = .center
+        header.textLabel?.textColor = UIColor.black
+    }*/
 }

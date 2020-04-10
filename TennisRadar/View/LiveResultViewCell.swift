@@ -17,7 +17,6 @@ import UIKit
     @IBOutlet weak var fourthSetHeader: UILabel!
     @IBOutlet weak var fifthSetHeader: UILabel!
     
-    
     // MARK: - Home Data
     @IBOutlet weak var homeSeed: UILabel!
     @IBOutlet weak var homeName: UILabel!
@@ -54,12 +53,10 @@ import UIKit
     // MARK: - Cell Func
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
        
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     //MARK: - Helper Methods
@@ -83,8 +80,13 @@ import UIKit
         let homeScore = sportEventStatus.homeScore ?? -1
         
         venueName.text = sportEvent.venue?.name ?? ""
-        stageMatch.text = sportEvent.tournamentRound?.name ?? ""
-        matchStatus.text = sportEventStatus.matchStatus ?? ""
+        if let roundName = sportEvent.tournamentRound?.name {
+            stageMatch.text = ControllerUtil.capitalize(roundName, separator: Character(""))
+        }
+        matchStatus.text = ""
+        if let status = sportEventStatus.matchStatus {
+            matchStatus.text = TournamentManager.shared.eventStatusType[status] ?? ""
+        }
         
         // current Score
         if awayScore >= 0 {
@@ -93,6 +95,8 @@ import UIKit
         if homeScore >= 0 {
             homeCurrent.text = "\(homeScore)"
         }
+        
+        setTypeFont(isAwayHigher: awayScore > homeScore, away: awayCurrent, home: homeCurrent)
         
         // players data
         if let competitors = sportEvent.competitors {
@@ -124,18 +128,20 @@ import UIKit
                 if homeScores.keys.contains(keySet), awayScores.keys.contains(keySet) {
                     homeScores[keySet]?.text = "\(hScore)"
                     awayScores[keySet]?.text = "\(aScore)"
+                    
+                    setTypeFont(isAwayHigher: aScore > hScore, away: awayScores[keySet]!, home: homeScores[keySet]!)
                 }
             }
         }
         
         // if not 5 sets, hide 4th and 5th sets headers
         if let sportEventConditions = matchResult.sportEventConditions {
-            if sportEventConditions.matchMode == "bo3" {
-                fourthSetHeader.text = ""
-                fifthSetHeader.text = ""
-            } else {
+            if sportEventConditions.matchMode == Constants.bestOfFive {
                 fourthSetHeader.text = "4"
                 fifthSetHeader.text = "5"
+            } else {
+                fourthSetHeader.text = ""
+                fifthSetHeader.text = ""
             }
         }
     }
@@ -199,5 +205,15 @@ import UIKit
         awayThirdSet.text = ""
         awayFourthSet.text = ""
         awayFifthSet.text = ""
+    }
+    
+    fileprivate func setTypeFont(isAwayHigher: Bool, away: UILabel, home: UILabel) {
+        if isAwayHigher {
+            away.font = Constants.fontBold
+            home.font = Constants.fontMedium
+        } else {
+            home.font = Constants.fontBold
+            away.font = Constants.fontMedium
+        }
     }
 }

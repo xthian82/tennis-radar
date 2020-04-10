@@ -12,8 +12,8 @@ class RankingPageViewController: UIPageViewController, UIPageViewControllerDeleg
     
     // MARK: - Properties
     lazy var orderedViewControllers: [RankingViewController] = {
-        return [self.newVc(viewController: "wtaRank"),
-            self.newVc(viewController: "atpRank")]
+        return [self.newVc(viewController: Constants.wtaRanking),
+                self.newVc(viewController: Constants.atpRanking)]
     }()
     var pageControl = UIPageControl()
     

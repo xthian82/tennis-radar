@@ -11,8 +11,7 @@ import UIKit
 class RankingViewController: UITableViewController {
     
     // MARK: - Properties
-    let maxPlayers = 150
-    let playerInfo = "playerInfo"
+    
     var tourRanking: TourRanking?
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
@@ -33,7 +32,7 @@ class RankingViewController: UITableViewController {
             return
         }
         
-        if segue.identifier == playerInfo {
+        if segue.identifier == Constants.showPlayerInfoSegue {
             let nav = segue.destination as! UINavigationController
             let playerInfoVC = nav.topViewController as! PlayerInfoViewController
             let ranking = tourRanking?.playerRankings[selectedIndex.row]
@@ -49,27 +48,31 @@ class RankingViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = tourRanking?.playerRankings.count, count > 0 {
             tableView.separatorStyle = .singleLine
-            return maxPlayers
+            return Constants.maxRankPlayers
         }
         
         return 0
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: playerInfo, sender: nil)
+        performSegue(withIdentifier: Constants.showPlayerInfoSegue, sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return getHeaderView(title: tourRanking?.type ?? "")
+
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        ControllerUtil.setHeaderView(view, fontName: "Futura-Bold", ofSize: 17)
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return tourRanking?.type ?? ""
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "rankingCell") as! RankingCellView
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.rankingCellId) as! RankingCellView
         if let ranking: Ranking = tourRanking?.playerRankings[indexPath.row] {
             cell.rankLabel.text = "\(ranking.rank). "
             

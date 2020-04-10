@@ -43,8 +43,6 @@ public enum Endpoints {
             return Endpoints.base + "/tournaments\(Endpoints.apiKeyParam)"
         case .tournamentsOngoing:
             return Endpoints.base + "/tournaments/ongoing\(Endpoints.apiKeyParam)"
-        //case .tournamentSeasons(let tournamentId):
-        //    return Endpoints.base + "/tournaments/\(tournamentId)/seasons\(Endpoints.apiKeyParam)"
         case .tournamentInfo(let tournamentId):
             return Endpoints.base + "/tournaments/\(tournamentId)/info\(Endpoints.apiKeyParam)"
         case .tournamentResults(let tournamentId):
@@ -73,10 +71,6 @@ public enum Endpoints {
             return Endpoints.base + "/players/rankings\(Endpoints.apiKeyParam)"
         case .playerResults(let playerId):
             return Endpoints.base + "/players/\(playerId)/results\(Endpoints.apiKeyParam)"
-        //case .playerRaceRankings:
-        //    return Endpoints.base + "/players/race_rankings\(Endpoints.apiKeyParam)"
-        //case .playerSchedule(let playerId):
-        //    return Endpoints.base + "/players/\(playerId)/schedule\(Endpoints.apiKeyParam)"
         }
     }
 }

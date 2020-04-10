@@ -31,22 +31,17 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     }
     
     func headerString(_ input: Date) -> String? {
-        //let formatter = DateFormatter()
-        formatter.dateFormat = "MMM/yyyy"
+        formatter.dateFormat = Constants.MMMMyyyyFormat
         return formatter.string(from: input)
     }
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
-
         let myStyle = CalendarView.Style()
         myStyle.cellTextColorWeekend = UIColor.systemOrange
         myStyle.cellColorOutOfRange = UIColor.lightGray
         myStyle.cellColorToday = UIColor.white
-        //myStyle.locale = Locale(identifier: "en_US")
-
-        myStyle.firstWeekday = .sunday
+        myStyle.cellFont = UIFont(name: "Futura", size: 15)!
 
         // set your values
         calendarView.style = myStyle
@@ -65,9 +60,7 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     func startDate() -> Date {
         var dateComponents = DateComponents()
         dateComponents.month = -24
-        let today = Date()
-        print("today = \(today)")
-        return self.calendarView.calendar.date(byAdding: dateComponents, to: today)!
+        return self.calendarView.calendar.date(byAdding: dateComponents, to: Date())!
     }
     
     func calendar(_ calendar: CalendarView, didScrollToMonth date: Date) {
@@ -75,10 +68,8 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     }
     
     func calendar(_ calendar: CalendarView, didSelectDate date: Date, withEvents events: [CalendarEvent]) {
-        //selectedDate = date
         if let delegate = delegate {
-            formatter.dateFormat = "yyyy-MM-dd"
-            //return formatter.string(from: date)
+            formatter.dateFormat = Constants.yyyyMMddFormat
             delegate.handleSelection(data: formatter.string(from: date))
         }
         dismiss(animated: true, completion: nil)

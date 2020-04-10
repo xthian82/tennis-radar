@@ -28,12 +28,12 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     
     
     override func viewWillAppear(_ animated: Bool) {
-        getResults(ofDate: "2019-07-14")
+        //getResults(ofDate: "2019-07-14")
         //getLiveSummary()*/
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showCalendar" {
+        if segue.identifier == Constants.showCalendarSegue {
             let calendarController = segue.destination as! CalendarPickController
             calendarController.delegate = self
         }
@@ -51,7 +51,7 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "FuturaBold", size: 17)
+        header.textLabel?.font = UIFont(name: "Futura-Bold", size: 15)
         header.textLabel?.textAlignment = .center
         header.textLabel?.textColor = UIColor.black
     }
@@ -84,7 +84,7 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "resultViewCell") as! LiveResultViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.liveResultViewCellId) as! LiveResultViewCell
         
         guard let tourName = tournamentsLoaded[indexPath.section] else {
             return cell
@@ -103,9 +103,10 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     
     // MARK: - test funcs
     func getResults(ofDate: String?) {
+        activityIndicator.startAnimating()
         TennisApi.getResults(ofDate: ofDate) { response in
             self.clearAll()
-            
+            self.activityIndicator.stopAnimating()
             guard let tResults: TournamentResults = response else {
                 print("no tours...")
                 return
@@ -119,7 +120,7 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
                 guard let catLevel = tournament.category.level else {
                     continue
                 }
-                // print("adding tour = \(tournament.name) with level => \(catLevel)")
+                
                 if !self.tournamentResults.keys.contains(tournament.name) {
                     self.tournamentResults[tournament.name] = []
                     self.tournamentsLoaded[self.tournamentResults.keys.count - 1] = tournament.name
@@ -127,7 +128,6 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
                 
                 self.tournamentResults[tournament.name]!.append(tournamentResult)
             }
-            self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
         }
     }

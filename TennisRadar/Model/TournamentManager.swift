@@ -36,11 +36,8 @@ class TournamentManager {
     static let wtaDoubles = "WTA_doubles"
     
     private var _types = ["WTA", "ATP"]
-    private var _tours = ["WTA - [S: Singles - : Doubles]", "ATP - [S: Singles - : Doubles]", "Enable / Disable"]
+    private var _tours = ["WTA (S: Singles / D: Doubles)", "ATP (S: Singles / D: Doubles)", "Enable / Disable"]
     private var _modes = ["singles", "doubles"]
-    //private var _leagues = ["ATP": ["Singles", "Doubles"], "WTA":["Singles", "Doubles"]]
-    //private var _levels = ["ATP": ["atp_1000", "atp_500", "atp_250", "atp_world_tour_finals", "grand_slam"],
-    //                       "WTA": ["wta_premier","wta_international","wta_championships"]]
     private var _matchMode = ["bo5": "5 Sets", "bo3": "3 Sets"]
     private var _eventStatusType = [
         "not_started": "Scheduled",
@@ -63,11 +60,6 @@ class TournamentManager {
     var types: [String] {
         return _types
     }
-    
-    /*
-    var levels: [String: [String]] {
-        return _levels
-    }*/
     
     var modes: [String] {
         return _modes
@@ -106,16 +98,5 @@ class TournamentManager {
     }
     
     private init() {
-    }
-    
-    class func capitalize(_ str: String, separator: Character = "_", join: String = " ") -> String {
-        let words = str.split(separator: separator)
-        var capWords: [String] = []
-        
-        for word in words {
-            capWords.append(word.capitalized)
-        }
-        
-        return capWords.joined(separator: join)
     }
 }

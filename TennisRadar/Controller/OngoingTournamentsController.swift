@@ -9,8 +9,7 @@
 import UIKit
 
 class OngoingTournamentsController: UITableViewController {
-    
-    let tournamentInfo = "showTournamentInfo"
+
     var tournaments: [Tournament]? = nil
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
@@ -31,7 +30,7 @@ class OngoingTournamentsController: UITableViewController {
             return
         }
         
-        if segue.identifier == tournamentInfo && selectedIndex.row >= 0 {
+        if segue.identifier == Constants.showTournamentInfoSegue && selectedIndex.row >= 0 {
             let nav = segue.destination as! UINavigationController
             let tourInfoVC = nav.topViewController as! TourInfoViewController
             tourInfoVC.tournamentId = tournaments?[selectedIndex.row].id
@@ -40,7 +39,7 @@ class OngoingTournamentsController: UITableViewController {
     
     // MARK: - Table functions
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: tournamentInfo, sender: nil)
+        performSegue(withIdentifier: Constants.showTournamentInfoSegue, sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -53,7 +52,7 @@ class OngoingTournamentsController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ongoingCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ongoingTourCellId)!
         if let tournament = self.tournaments?[indexPath.row] {
             cell.textLabel?.text = tournament.name
             if let season = tournament.currentSeason, let start = season.startDate, let end = season.endDate {
