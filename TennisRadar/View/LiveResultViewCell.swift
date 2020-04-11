@@ -141,15 +141,9 @@ import UIKit
             }
         }
         
-        // if not 5 sets, hide 4th and 5th sets headers
+        // hide 4th and 5th sets headers if neccesary
         if let sportEventConditions = matchResult.sportEventConditions {
-            if sportEventConditions.matchMode == Constants.bestOfFive {
-                fourthSetHeader.text = "4"
-                fifthSetHeader.text = "5"
-            } else {
-                fourthSetHeader.text = ""
-                fifthSetHeader.text = ""
-            }
+            showSets(isFiveSetMatch: sportEventConditions.matchMode == Constants.bestOfFive)
         }
     }
     
@@ -188,6 +182,15 @@ import UIKit
     fileprivate func showDoublePartnerFlag(_ show: Bool) {
         homePartCountryCode.isHidden = !show
         awayPartCountryCode.isHidden = !show
+    }
+    
+    fileprivate func showSets(isFiveSetMatch: Bool) {
+        fourthSetHeader.isHidden = !isFiveSetMatch
+        fifthSetHeader.isHidden = !isFiveSetMatch
+        homeFourthSet.isHidden = !isFiveSetMatch
+        homeFifthSet.isHidden = !isFiveSetMatch
+        awayFourthSet.isHidden = !isFiveSetMatch
+        awayFifthSet.isHidden = !isFiveSetMatch
     }
     
     private func clearLabels() {

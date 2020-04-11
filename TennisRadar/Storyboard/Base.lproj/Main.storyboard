@@ -39,60 +39,65 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="diD-SB-Rsd">
                                                             <rect key="frame" x="264" y="0.0" width="150" height="19"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CD-sU-pHu">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="19"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="20" id="yPg-HA-5LF"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9H-1H-t9z">
-                                                                    <rect key="frame" x="25" y="0.0" width="25" height="19"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="20" id="wz2-aF-Vjg"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAl-N2-DLc">
-                                                                    <rect key="frame" x="50" y="0.0" width="25" height="19"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="20" id="yrB-S4-hrl"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5G-pr-EqF">
-                                                                    <rect key="frame" x="75" y="0.0" width="25" height="19"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="20" id="lqW-GX-TGB"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRu-bA-2E0">
-                                                                    <rect key="frame" x="100" y="0.0" width="25" height="19"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="20" id="tej-81-XfQ"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7r-bz-sK3">
-                                                                    <rect key="frame" x="125" y="0.0" width="25" height="19"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="20" id="ZMj-wY-jX2"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kqr-uJ-SMF">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="19"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CD-sU-pHu">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="20" id="yPg-HA-5LF"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9H-1H-t9z">
+                                                                            <rect key="frame" x="25" y="0.0" width="25" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="20" id="wz2-aF-Vjg"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAl-N2-DLc">
+                                                                            <rect key="frame" x="50" y="0.0" width="25" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="20" id="yrB-S4-hrl"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5G-pr-EqF">
+                                                                            <rect key="frame" x="75" y="0.0" width="25" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="20" id="lqW-GX-TGB"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRu-bA-2E0">
+                                                                            <rect key="frame" x="100" y="0.0" width="25" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="20" id="tej-81-XfQ"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7r-bz-sK3">
+                                                                            <rect key="frame" x="125" y="0.0" width="25" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="20" id="ZMj-wY-jX2"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
