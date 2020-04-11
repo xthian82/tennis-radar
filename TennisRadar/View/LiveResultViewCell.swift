@@ -21,6 +21,8 @@ import UIKit
     @IBOutlet weak var homeSeed: UILabel!
     @IBOutlet weak var homeName: UILabel!
     @IBOutlet weak var homeCoutryCode: UIImageView!
+    @IBOutlet weak var homePartCountryCode: UIImageView!
+    
     @IBOutlet weak var homeCurrent: UILabel!
     @IBOutlet weak var homeFirstSet: UILabel!
     @IBOutlet weak var homeSecondSet: UILabel!
@@ -32,6 +34,8 @@ import UIKit
     @IBOutlet weak var awaySeed: UILabel!
     @IBOutlet weak var awayName: UILabel!
     @IBOutlet weak var awayCountryCode: UIImageView!
+    @IBOutlet weak var awayPartCountryCode: UIImageView!
+    
     @IBOutlet weak var awayCurrent: UILabel!
     @IBOutlet weak var awayFirstSet: UILabel!
     @IBOutlet weak var awaySecondSet: UILabel!
@@ -81,7 +85,7 @@ import UIKit
         
         venueName.text = sportEvent.venue?.name ?? ""
         if let roundName = sportEvent.tournamentRound?.name {
-            stageMatch.text = ControllerUtil.capitalize(roundName, separator: Character(""))
+            stageMatch.text = roundName
         }
         matchStatus.text = ""
         if let status = sportEventStatus.matchStatus {
@@ -104,15 +108,18 @@ import UIKit
                 let seed = competitor.seed != nil ? "\(competitor.seed!)" : " "
                 let name = competitor.name ?? ""
                 var countryFlag: UIImage? = nil
+                var countryPartFlag: UIImage? = nil
+                showDoublePartnerFlag(false)
                 if let contryCode = competitor.countryCode {
                     countryFlag = UIImage(named: contryCode)
                 } else if let players = competitor.players {
-                    if let firstCountry = players[0].countryCode, let secCountry = players[1].countryCode,
-                        firstCountry == secCountry {
+                    showDoublePartnerFlag(true)
+                    if let firstCountry = players[0].countryCode, let secCountry = players[1].countryCode {
                         countryFlag = UIImage(named: firstCountry)
+                        countryPartFlag = UIImage(named: secCountry)
                     }
                 }
-                setMainInfo(competitor.qualifier, name, seed, countryFlag)
+                setMainInfo(competitor.qualifier, name, seed, countryFlag, countryPartFlag)
             }
         }
         
@@ -147,15 +154,17 @@ import UIKit
     }
     
     // MARK: - Helper
-    fileprivate func setMainInfo(_ qualifier: String?, _ name: String, _ seed: String, _ countryFlag: UIImage?) {
+    fileprivate func setMainInfo(_ qualifier: String?, _ name: String, _ seed: String, _ countryFlag: UIImage?, _ countryPartFalg: UIImage?) {
         if "home" == qualifier {
             homeSeed.text = seed
             homeName.text = name
             homeCoutryCode.image = countryFlag
+            homePartCountryCode.image = countryPartFalg
         } else {
             awaySeed.text = seed
             awayName.text = name
             awayCountryCode.image = countryFlag
+            awayPartCountryCode.image = countryPartFalg
         }
     }
     
@@ -176,6 +185,11 @@ import UIKit
         }
     }
     
+    fileprivate func showDoublePartnerFlag(_ show: Bool) {
+        homePartCountryCode.isHidden = !show
+        awayPartCountryCode.isHidden = !show
+    }
+    
     private func clearLabels() {
         venueName.text = ""
         stageMatch.text = ""
@@ -188,6 +202,7 @@ import UIKit
         homeSeed.text = ""
         homeName.text = ""
         homeCoutryCode.image = nil
+        homePartCountryCode.image = nil
         homeCurrent.text = ""
         homeFirstSet.text = ""
         homeSecondSet.text = ""
@@ -199,6 +214,7 @@ import UIKit
         awaySeed.text = ""
         awayName.text = ""
         awayCountryCode.image = nil
+        awayPartCountryCode.image = nil
         awayCurrent.text = ""
         awayFirstSet.text = ""
         awaySecondSet.text = ""

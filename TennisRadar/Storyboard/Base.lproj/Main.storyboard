@@ -117,7 +117,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Djokovic, Novak" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agK-MQ-suN">
-                                                                    <rect key="frame" x="30" y="0.0" width="204" height="18.5"/>
+                                                                    <rect key="frame" x="30" y="0.0" width="177" height="18.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="22" id="PQa-Ml-vj2"/>
                                                                     </constraints>
@@ -125,12 +125,23 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SRB" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-lh-Xne">
-                                                                    <rect key="frame" x="234" y="0.0" width="25" height="18.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="25" id="13n-Lv-IsW"/>
-                                                                    </constraints>
-                                                                </imageView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yqp-aL-Fhz">
+                                                                    <rect key="frame" x="207" y="0.0" width="52" height="18.5"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SRB" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-lh-Xne">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="18.5"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="25" id="13n-Lv-IsW"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SRB" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-Jy-kdK" userLabel="homeDoubleCountry">
+                                                                            <rect key="frame" x="27" y="0.0" width="25" height="18.5"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="25" id="eP5-UX-4uf"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                </stackView>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NJm-vP-FzT" userLabel="ResultInfoHome">
@@ -215,7 +226,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Federer, Roger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pg-UH-LBn">
-                                                                    <rect key="frame" x="30" y="0.0" width="204" height="19"/>
+                                                                    <rect key="frame" x="30" y="0.0" width="177" height="19"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="22" id="tsy-Pc-6F5"/>
                                                                     </constraints>
@@ -223,12 +234,23 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CHE" translatesAutoresizingMaskIntoConstraints="NO" id="bfM-9v-5yu">
-                                                                    <rect key="frame" x="234" y="0.0" width="25" height="19"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="25" id="Gda-Tb-ayn"/>
-                                                                    </constraints>
-                                                                </imageView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ytd-iC-rr8">
+                                                                    <rect key="frame" x="207" y="0.0" width="52" height="19"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CHE" translatesAutoresizingMaskIntoConstraints="NO" id="bfM-9v-5yu">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="25" id="Gda-Tb-ayn"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CHE" translatesAutoresizingMaskIntoConstraints="NO" id="rdL-0L-0DT" userLabel="awayDoubleCountry">
+                                                                            <rect key="frame" x="27" y="0.0" width="25" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="25" id="vyo-d9-bK1"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                </stackView>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mE5-dE-4dn" userLabel="ResultInfoAway">
@@ -344,6 +366,7 @@
                                     <outlet property="awayFirstSet" destination="YVJ-ea-mQO" id="DxM-Il-bLU"/>
                                     <outlet property="awayFourthSet" destination="wMV-Hr-Pez" id="zav-DY-muk"/>
                                     <outlet property="awayName" destination="9pg-UH-LBn" id="C1C-Dj-f1B"/>
+                                    <outlet property="awayPartCountryCode" destination="rdL-0L-0DT" id="Lb1-Mq-Xbz"/>
                                     <outlet property="awaySecondSet" destination="hMY-W5-wzk" id="2yx-rF-K5G"/>
                                     <outlet property="awaySeed" destination="dy9-ob-nGX" id="ZBa-bP-xnL"/>
                                     <outlet property="awayThirdSet" destination="Q8T-2C-zP0" id="dmi-Zg-LDh"/>
@@ -355,6 +378,7 @@
                                     <outlet property="homeFirstSet" destination="On6-Yd-ltb" id="Qyo-5G-vhK"/>
                                     <outlet property="homeFourthSet" destination="VDX-sA-hcY" id="rsv-aq-0Xy"/>
                                     <outlet property="homeName" destination="agK-MQ-suN" id="aGq-Uo-xmd"/>
+                                    <outlet property="homePartCountryCode" destination="F7S-Jy-kdK" id="St8-zC-BLy"/>
                                     <outlet property="homeSecondSet" destination="v8M-3u-U5w" id="zwZ-Fm-ewe"/>
                                     <outlet property="homeSeed" destination="WBX-XD-spN" id="edz-KI-ZFQ"/>
                                     <outlet property="homeThirdSet" destination="2H0-in-Wgb" id="r5r-Pv-8qQ"/>

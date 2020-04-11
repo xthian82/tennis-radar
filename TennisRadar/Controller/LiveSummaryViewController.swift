@@ -28,7 +28,7 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     
     
     override func viewWillAppear(_ animated: Bool) {
-        //getResults(ofDate: "2019-07-14")
+        getResults(ofDate: "2019-07-14")
         //getLiveSummary()*/
     }
     
