@@ -32,7 +32,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qt-oK-tXt">
                                                             <rect key="frame" x="0.0" y="0.0" width="259" height="19"/>
-                                                            <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="15"/>
                                                             <color key="textColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -112,24 +112,29 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="y2Q-Au-Otx" userLabel="playerInfoHome">
                                                             <rect key="frame" x="0.0" y="0.0" width="259" height="18.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBX-XD-spN">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="18.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="30" id="ZG5-c4-0P6"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Djokovic, Novak" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agK-MQ-suN">
-                                                                    <rect key="frame" x="30" y="0.0" width="177" height="18.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="22" id="PQa-Ml-vj2"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="08y-Qs-rbY">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="18.5"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBX-XD-spN">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="18.5"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="30" id="ZG5-c4-0P6"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="10"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Djokovic, Novak" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agK-MQ-suN">
+                                                                            <rect key="frame" x="32" y="0.0" width="175" height="18.5"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="22" id="PQa-Ml-vj2"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yqp-aL-Fhz">
                                                                     <rect key="frame" x="207" y="0.0" width="52" height="18.5"/>
                                                                     <subviews>
@@ -221,24 +226,29 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="NZ3-MT-GFl" userLabel="playerInfoAway">
                                                             <rect key="frame" x="0.0" y="0.0" width="259" height="19"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dy9-ob-nGX">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="19"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="30" id="koC-5g-nKS"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Federer, Roger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pg-UH-LBn">
-                                                                    <rect key="frame" x="30" y="0.0" width="177" height="19"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="22" id="tsy-Pc-6F5"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="47F-ex-k6m">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="19"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dy9-ob-nGX">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="30" id="koC-5g-nKS"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="10"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Federer, Roger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pg-UH-LBn">
+                                                                            <rect key="frame" x="32" y="0.0" width="175" height="19"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="22" id="tsy-Pc-6F5"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ytd-iC-rr8">
                                                                     <rect key="frame" x="207" y="0.0" width="52" height="19"/>
                                                                     <subviews>
@@ -467,7 +477,6 @@
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DQ8-R7-67v">
                                 <rect key="frame" x="188.5" y="271" width="37" height="37"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="color" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleAspectFit" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="7ov-ra-6on">

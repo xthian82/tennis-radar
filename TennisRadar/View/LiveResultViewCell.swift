@@ -85,7 +85,8 @@ import UIKit
         
         venueName.text = sportEvent.venue?.name ?? ""
         if let roundName = sportEvent.tournamentRound?.name {
-            stageMatch.text = roundName
+            let spr: Character = " "
+            stageMatch.text = ControllerUtil.capitalize(roundName, separator: spr)
         }
         matchStatus.text = ""
         if let status = sportEventStatus.matchStatus {
@@ -110,10 +111,12 @@ import UIKit
                 var countryFlag: UIImage? = nil
                 var countryPartFlag: UIImage? = nil
                 showDoublePartnerFlag(false)
+                showSeed(true)
                 if let contryCode = competitor.countryCode {
                     countryFlag = UIImage(named: contryCode)
                 } else if let players = competitor.players {
                     showDoublePartnerFlag(true)
+                    showSeed(false)
                     if let firstCountry = players[0].countryCode, let secCountry = players[1].countryCode {
                         countryFlag = UIImage(named: firstCountry)
                         countryPartFlag = UIImage(named: secCountry)
@@ -182,6 +185,11 @@ import UIKit
     fileprivate func showDoublePartnerFlag(_ show: Bool) {
         homePartCountryCode.isHidden = !show
         awayPartCountryCode.isHidden = !show
+    }
+    
+    fileprivate func showSeed(_ show: Bool) {
+        homeSeed.isHidden = !show
+        awaySeed.isHidden = !show
     }
     
     fileprivate func showSets(isFiveSetMatch: Bool) {
