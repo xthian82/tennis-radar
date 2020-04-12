@@ -51,6 +51,48 @@ class TournamentManager {
         "delayed": "Delayed",
         "abandoned": "Match cancelled"]
     
+    private var _eventStagesType = [
+        "final": "F",
+        "semifinal": "SF",
+        "quarterfinal": "QF",
+        "qualification": "Q",
+        
+        "11th_place_final": "11PF",
+        "13th_place_final": "13PF",
+        "15th_place_final": "15PF",
+        "17th_place_final": "17PF",
+        "19th_place_final": "19PF",
+        "21st_place_final": "21PF",
+        "23rd_place_final": "23PF",
+        "2nd_place_final": "2PF",
+        "3rd_place_final": "3PF",
+        "3rd_place_playoff": "3PP",
+        "4th_place_final": "4PF",
+        "5th_place_final": "5PF",
+        "7th_place_final": "7PF",
+        "9th_place_final": "9PF",
+        
+        "decider_match": "DM",
+        "initial_match": "IM",
+        "losers_final": "LF",
+        "losers_match": "LM",
+        "losers_quarterfinal": "LQ",
+        "losers_round_1": "LR1",
+        "losers_round_2": "LR2",
+        "losers_round_3": "LR3",
+        "losers_round_4": "LR4",
+        "losers_round_5": "LR5",
+        "losers_round_of_16": "LR16",
+        "losers_semifinal": "LSF",
+        "placement_qualification_match": "PQM",
+        
+        "round_of_128": "R128",
+        "round_of_16": "R16",
+        "round_of_256": "R256",
+        "round_of_32": "R32",
+        "round_of_64": "R64",
+        ]
+    
     var tours: [String] {
         get {
             return _tours
@@ -71,6 +113,10 @@ class TournamentManager {
     
     var eventStatusType: [String:String] {
         return _eventStatusType
+    }
+    
+    var eventStagesType: [String:String] {
+        return _eventStagesType
     }
     
     class var wtaCategoriesSingles: [String] {

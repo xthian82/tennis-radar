@@ -38,10 +38,18 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     override func viewDidLoad() {
         super.viewDidLoad()
         let myStyle = CalendarView.Style()
-        myStyle.cellTextColorWeekend = UIColor.systemOrange
+        myStyle.cellTextColorWeekend = UIColor.green
+        myStyle.headerFont = UIFont(name: "Futura-Bold", size: 16)!
+        myStyle.headerBackgroundColor = UIColor.lightText
         myStyle.cellColorOutOfRange = UIColor.lightGray
-        myStyle.cellColorToday = UIColor.white
-        myStyle.cellFont = UIFont(name: "Futura", size: 15)!
+        myStyle.cellColorToday = UIColor.lightText
+        myStyle.cellTextColorDefault = UIColor.white
+        myStyle.cellFont = UIFont(name: "Futura-Medium", size: 15)!
+        myStyle.weekdaysFont = UIFont(name: "Futura-CondensedMedium", size: 17)!
+        myStyle.weekdaysTextColor = UIColor.black
+        myStyle.firstWeekday = .sunday
+        myStyle.calendar.timeZone = TimeZone.current
+        myStyle.calendar.locale = Locale.current
 
         // set your values
         calendarView.style = myStyle
@@ -60,7 +68,7 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     func startDate() -> Date {
         var dateComponents = DateComponents()
         dateComponents.month = -24
-        return self.calendarView.calendar.date(byAdding: dateComponents, to: Date())!
+        return self.calendarView.calendar.date(byAdding: dateComponents, to: Date() + 10)!
     }
     
     func calendar(_ calendar: CalendarView, didScrollToMonth date: Date) {

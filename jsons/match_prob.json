@@ -1,0 +1,88 @@
+{
+    "generated_at": "2020-04-11T03:11:20+00:00",
+    "schema": "http://schemas.sportradar.com/bsa/tennis/v1/json/endpoints/tennis/match_probabilities.json",
+    "sport_event": {
+        "id": "sr:match:18734718",
+        "scheduled": "2019-07-14T13:00:00+00:00",
+        "start_time_tbd": false,
+        "tournament_round": {
+            "type": "cup",
+            "name": "final",
+            "cup_round_match_number": 1,
+            "cup_round_matches": 1,
+            "group_long_name": "Wimbledon, London, Great Britain"
+        },
+        "season": {
+            "id": "sr:season:56061",
+            "name": "2019 Wimbledon Men Singles",
+            "start_date": "2019-06-24",
+            "end_date": "2019-07-14",
+            "year": "2019",
+            "tournament_id": "sr:tournament:2555"
+        },
+        "tournament": {
+            "id": "sr:tournament:2555",
+            "name": "Wimbledon Men Singles",
+            "parent_id": "sr:tournament:2553",
+            "sport": {
+                "id": "sr:sport:5",
+                "name": "Tennis"
+            },
+            "category": {
+                "id": "sr:category:3",
+                "name": "ATP",
+                "level": "grand_slam"
+            },
+            "type": "singles",
+            "gender": "men"
+        },
+        "competitors": [
+            {
+                "id": "sr:competitor:14882",
+                "name": "Djokovic, Novak",
+                "nationality": "Serbia",
+                "country_code": "SRB",
+                "abbreviation": "DJO",
+                "seed": 1,
+                "bracket_number": 1,
+                "qualifier": "home"
+            },
+            {
+                "id": "sr:competitor:14342",
+                "name": "Federer, Roger",
+                "nationality": "Switzerland",
+                "country_code": "CHE",
+                "abbreviation": "FED",
+                "seed": 2,
+                "bracket_number": 128,
+                "qualifier": "away"
+            }
+        ],
+        "venue": {
+            "id": "sr:venue:19070",
+            "name": "Centre Court",
+            "city_name": "London",
+            "country_name": "England",
+            "country_code": "ENG"
+        },
+        "sport_event_type": "singles",
+        "estimated": false
+    },
+    "probabilities": {
+        "markets": [
+            {
+                "name": "2way",
+                "outcomes": [
+                    {
+                        "name": "home_team_winner",
+                        "probability": 62.3
+                    },
+                    {
+                        "name": "away_team_winner",
+                        "probability": 37.7
+                    }
+                ]
+            }
+        ]
+    }
+}

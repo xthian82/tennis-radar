@@ -26,5 +26,17 @@ struct SportEventStatus: Codable {
         case periodScores = "period_scores"
         case matchEnded = "match_ended"
     }
+    
+    func eventScores(separator: String = "-", lineSeparator: String = ", ") -> String {
+        var results: [String] = []
+        
+        if let scores = periodScores {
+            for score in scores {
+                results.append("\(score.homeScore ?? 0)\(separator)\(score.awayScore ?? 0)")
+            }
+        }
+        
+        return results.joined(separator: lineSeparator)
+    }
 }
 

@@ -10,6 +10,8 @@ import UIKit
 
 class ControllerUtil {
     
+    private static let formatter = DateFormatter()
+    
     class func setHeaderView(_ view: UIView, fontName: String = "Futura", ofSize: CGFloat = 15, align: NSTextAlignment = .center,
                              color: UIColor = .black) {
         let header = view as! UITableViewHeaderFooterView
@@ -39,6 +41,19 @@ class ControllerUtil {
         }
         
         return capWords.joined(separator: join)
+    }
+    
+    class func formatDateFromString(dateStr: String?, format: String = "yyyy-MMM-dd") -> String {
+        guard let str = dateStr else {
+            return ""
+        }
+        
+        if let date = formatter.date(from: str) {
+            formatter.dateFormat = format
+            return formatter.string(from: date)
+        }
+        
+        return ""
     }
 
 }

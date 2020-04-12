@@ -36,6 +36,15 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
         if segue.identifier == Constants.showCalendarSegue {
             let calendarController = segue.destination as! CalendarPickController
             calendarController.delegate = self
+        } else if segue.identifier == Constants.showMatchDetailsSegue {
+            guard let selectedIndex = tableView.indexPathForSelectedRow else {
+                return
+            }
+            
+            let nav = segue.destination as! UINavigationController
+            let matchDetailVC = nav.topViewController as! MatchDetailsController
+            print("matchId = \(matchesLoaded[selectedIndex])")
+            matchDetailVC.matchId = matchesLoaded[selectedIndex]
         }
     }
     
@@ -65,7 +74,8 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\n\n******* selecting \(matchesLoaded[indexPath]). from index = \(indexPath)")
+        performSegue(withIdentifier: Constants.showMatchDetailsSegue, sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -33,7 +33,7 @@ class TourInfoViewController: UIViewController, UINavigationControllerDelegate {
             print("no tour")
             return
         }
-        //activityIndicator.startAnimating()
+        activityIndicator.startAnimating()
         TennisApi.getTournamentInfo(tourInfo) { response in
             self.activityIndicator.stopAnimating()
             guard let tournamentInfo = response else {
@@ -43,35 +43,6 @@ class TourInfoViewController: UIViewController, UINavigationControllerDelegate {
             
             self.tournamentInfo = tournamentInfo
             print("\n\n\ninfo returned \(tournamentInfo)")
-        }
-    }
-    func getTourSumm() {
-        guard let tourInfo = tournamentId else {
-            print("no tour")
-            return
-        }
-        TennisApi.getTournamentSummary(tourInfo) { response in
-            guard let tournamentSummary = response else {
-                print("no sum found for \(tourInfo)")
-                return
-            }
-            
-            print("\n\n\nsum returned \(tournamentSummary)")
-        }
-    }
-    func getTourSch() {
-        guard let tourInfo = tournamentId else {
-            print("no tour")
-            return
-        }
-        
-        TennisApi.getTournamentSchedule(tourInfo) { response in
-            self.activityIndicator.stopAnimating()
-            guard let tournamentSchedule = response else {
-                print("no schedule found for \(tourInfo)")
-                return
-            }
-            print("\n\n\nschedule returned \(tournamentSchedule)")
         }
     }
 }

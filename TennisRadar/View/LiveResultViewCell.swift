@@ -85,8 +85,7 @@ import UIKit
         
         venueName.text = sportEvent.venue?.name ?? ""
         if let roundName = sportEvent.tournamentRound?.name {
-            let spr: Character = " "
-            stageMatch.text = ControllerUtil.capitalize(roundName, separator: spr)
+            stageMatch.text = roundName.capitalized
         }
         matchStatus.text = ""
         if let status = sportEventStatus.matchStatus {
@@ -152,7 +151,7 @@ import UIKit
     
     // MARK: - Helper
     fileprivate func setMainInfo(_ qualifier: String?, _ name: String, _ seed: String, _ countryFlag: UIImage?, _ countryPartFalg: UIImage?) {
-        if "home" == qualifier {
+        if Constants.homePlayer == qualifier {
             homeSeed.text = seed
             homeName.text = name
             homeCoutryCode.image = countryFlag
@@ -235,12 +234,14 @@ import UIKit
     }
     
     fileprivate func setTypeFont(isAwayHigher: Bool, away: UILabel, home: UILabel) {
-        if isAwayHigher {
+        away.font = isAwayHigher ? Constants.fontBold : Constants.fontMedium
+        home.font = isAwayHigher ? Constants.fontMedium : Constants.fontBold
+        /*if isAwayHigher {
             away.font = Constants.fontBold
             home.font = Constants.fontMedium
         } else {
             home.font = Constants.fontBold
             away.font = Constants.fontMedium
-        }
+        }*/
     }
 }

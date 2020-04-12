@@ -43,7 +43,7 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getPlayerProfile()
+        //getPlayerProfile()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -140,6 +140,10 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
 
 extension PlayerInfoViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playerProfile?.statistics?.periods.count ?? 0
     }
@@ -164,12 +168,10 @@ extension PlayerInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        // setHeaderFoot(view)
         ControllerUtil.setHeaderView(view)
     }
     
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        // setHeaderFoot(view)
         ControllerUtil.setHeaderView(view)
     }
 
@@ -180,11 +182,4 @@ extension PlayerInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return "TP: Tournaments Played, TW: Tournaments Won, MP: Matches Played, MW: Matches Won, TS: Tournaments Stats, MS: Matches Stas"
     }
-    /*
-    func setHeaderFoot(_ view: UIView) {
-        let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "Futura", size: 15)
-        header.textLabel?.textAlignment = .center
-        header.textLabel?.textColor = UIColor.black
-    }*/
 }

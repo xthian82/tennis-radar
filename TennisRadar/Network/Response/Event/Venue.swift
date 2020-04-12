@@ -22,4 +22,10 @@ struct Venue: Codable {
         case countryName = "country_name"
         case countryCode = "country_code"
     }
+    
+    func fullName() -> String {
+        let ctyName = cityName != nil ? ", \(cityName!)" : ""
+        let coName = countryName != nil ? ", \(countryName!)" : ""
+        return "\(name)\(ctyName)\(coName)"
+    }
 }
