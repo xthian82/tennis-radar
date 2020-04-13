@@ -10,6 +10,7 @@ import Foundation
 
 struct SportEventStatus: Codable {
     let status: String
+    let winningReason: String?
     let matchStatus: String?
     let homeScore: Int?
     let awayScore: Int?
@@ -19,6 +20,7 @@ struct SportEventStatus: Codable {
 
     enum CodingKeys: String, CodingKey {
         case status
+        case winningReason = "winning_reason"
         case matchStatus = "match_status"
         case homeScore = "home_score"
         case awayScore = "away_score"
@@ -30,9 +32,19 @@ struct SportEventStatus: Codable {
     func eventScores(separator: String = "-", lineSeparator: String = ", ") -> String {
         var results: [String] = []
         
+        guard let hScore = homeScore, let aScore = awayScore else {
+            return winningReason ?? ""
+        }
+        
+        let homeIsTheWinner  = hScore > aScore
+        
         if let scores = periodScores {
             for score in scores {
-                results.append("\(score.homeScore ?? 0)\(separator)\(score.awayScore ?? 0)")
+                if homeIsTheWinner {
+                    results.append("\(score.homeScore ?? 0)\(separator)\(score.awayScore ?? 0)")
+                } else {
+                    results.append("\(score.awayScore ?? 0)\(separator)\(score.homeScore ?? 0)")
+                }
             }
         }
         

@@ -106,7 +106,7 @@ class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigati
     func getMatchResults(completion: @escaping (_ homePlayerId: String?, _ awayPlayerId: String?) -> Void) {
         clearValues()
         guard let matchResultId = matchId else {
-            print("no match ID")
+            ControllerUtil.presentAlert(self, title: "Error", message: "No match selected")
             return
         }
         activityIndicator.startAnimating()
@@ -114,12 +114,12 @@ class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigati
             self.loadData(matchResult: response)
             self.activityIndicator.stopAnimating()
             guard let competitors = response?.sportEvent.competitors, competitors.count == 2 else {
-                print("no competitors")
+                ControllerUtil.presentAlert(self, title: "Error", message: "No competitors found")
                 completion(nil, nil)
                 return
             }
             guard let homePlayerId = competitors[0].id, let awayPlayerId = competitors[1].id else {
-                print("no competitors")
+                ControllerUtil.presentAlert(self, title: "Error", message: "No competitors found")
                 completion(nil, nil)
                 return
             }
@@ -130,13 +130,18 @@ class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigati
     
     func getHeadToHeadHist(homePlayerId: String?, awayPlayerId: String?) {
         guard let homePlayerId = homePlayerId, let awayPlayerId = awayPlayerId else {
-            print("no homePlayers")
             return
         }
         activityIndicator.startAnimating()
         TennisApi.getHeadToHead(homePlayerId, versus: awayPlayerId) { (response) in
             self.activityIndicator.stopAnimating()
             self.headToHead = response
+            
+            let items = self.headToHead?.lastMeetings.results.count ?? 0
+            if items == 0 {
+                ControllerUtil.presentAlert(self, title: "Alert", message: "No history found for this match")
+            }
+            
             self.tableView.reloadData()
         }
     }
@@ -153,7 +158,7 @@ class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigati
         resultValue.text = matchResult.scoreResults()
         winnerName.text = matchResult.winnerName()
         let eventStatus = matchResult.sportEventStatus
-        stageDate.text = "\(matchResult.tourRoundFull()) \(ControllerUtil.formatDateFromString(dateStr: eventStatus.matchEnded))"
+        stageDate.text = "\(matchResult.tourRoundFull()) \(ControllerUtil.formatDateFromString(dateStr: eventStatus.matchEnded, format: Constants.timezoneDateISO, isPosixDate: true))"
         loadStatistics(getHome(), qualifier: Constants.homePlayer, matchStat: matchResult.homeStatistics())
         loadStatistics(getAway(), qualifier: Constants.awayPlayer, matchStat: matchResult.awayStatistics())
     }

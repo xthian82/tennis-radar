@@ -9,10 +9,20 @@
 import UIKit
 import Foundation
 
+
+
+// MARK: - TODOS
+/**
+  - tournament info detail view
+  - fix alerts for empty network response
+  - handle future schedule
+  - show alert of no match on empty response in match details
+  - check future date selection
+ */
+
 class LiveSummaryViewController: UITableViewController, CalendarPickControllerDelegate {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    var selectedDate: String?
     var tournamentResults = [String: [MatchResult]]()
     var tournamentsLoaded = [Int: String]()
     var matchesLoaded = [IndexPath: String]()
@@ -43,14 +53,12 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
             
             let nav = segue.destination as! UINavigationController
             let matchDetailVC = nav.topViewController as! MatchDetailsController
-            print("matchId = \(matchesLoaded[selectedIndex])")
             matchDetailVC.matchId = matchesLoaded[selectedIndex]
         }
     }
     
     func handleSelection(data: String) {
-        selectedDate = data
-        print("now date is \(String(describing: selectedDate))")
+        getResults(ofDate: data)
     }
        
     // MARK: Table Functions
@@ -118,7 +126,8 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
             self.clearAll()
             self.activityIndicator.stopAnimating()
             guard let tResults: TournamentResults = response else {
-                print("no tours...")
+                
+                ControllerUtil.presentAlert(self, title: "Info", message: "No result found for \(ofDate ?? "today")")
                 return
             }
 

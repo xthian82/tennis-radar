@@ -30,19 +30,19 @@ class TourInfoViewController: UIViewController, UINavigationControllerDelegate {
     
     func getTourInfo() {
         guard let tourInfo = tournamentId else {
-            print("no tour")
+            ControllerUtil.presentAlert(self, title: "Error", message: "No tour selected")
             return
         }
         activityIndicator.startAnimating()
         TennisApi.getTournamentInfo(tourInfo) { response in
             self.activityIndicator.stopAnimating()
             guard let tournamentInfo = response else {
-                print("no info found for \(tourInfo)")
+                ControllerUtil.presentAlert(self, title: "Alert", message: "No info found for \(tourInfo)")
                 return
             }
             
             self.tournamentInfo = tournamentInfo
-            print("\n\n\ninfo returned \(tournamentInfo)")
+            // TODO: show details
         }
     }
 }

@@ -69,7 +69,8 @@ class OngoingTournamentsController: UITableViewController {
         TennisApi.getOngoingTournaments { response in
             self.activityIndicator.stopAnimating()
             guard let tournaments: Tournaments = response else {
-                print("no tours...")
+                 ControllerUtil.presentAlert(self, title: "Error", message: "No tournaments found")
+
                 return
             }
             self.tournaments = tournaments.tournaments.filter({ (tseason) -> Bool in

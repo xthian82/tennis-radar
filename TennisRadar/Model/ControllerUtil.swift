@@ -10,8 +10,6 @@ import UIKit
 
 class ControllerUtil {
     
-    private static let formatter = DateFormatter()
-    
     class func setHeaderView(_ view: UIView, fontName: String = "Futura", ofSize: CGFloat = 15, align: NSTextAlignment = .center,
                              color: UIColor = .black) {
         let header = view as! UITableViewHeaderFooterView
@@ -31,16 +29,27 @@ class ControllerUtil {
         return capWords.joined(separator: join)
     }
     
-    class func formatDateFromString(dateStr: String?, format: String = "yyyy-MMM-dd") -> String {
+    class func formatDateFromString(dateStr: String?, format: String = "yyyy-MMM-dd", isPosixDate: Bool = false) -> String {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        if isPosixDate {
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+        }
+        
         guard let str = dateStr else {
             return ""
         }
         
         if let date = formatter.date(from: str) {
-            formatter.dateFormat = format
+            formatter.dateFormat = Constants.yyyyMMddFormat
             return formatter.string(from: date)
         }
         
         return ""
+    }
+    
+    class func presentAlert(_ controller: UIViewController, title: String, message: String) {
+        controller.present(controller.getDefaultAlertUI(title: title, message: message), animated: true, completion: nil)
     }
 }

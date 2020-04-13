@@ -28,7 +28,6 @@ class RankingViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedIndex = tableView.indexPathForSelectedRow else {
-            print("no selection!!!")
             return
         }
         

@@ -38,6 +38,7 @@ class Constants {
     // dates
     static let MMMMyyyyFormat = "MMMM yyyy"
     static let yyyyMMddFormat = "yyyy-MM-dd"
+    static let timezoneDateISO = "yyyy-MM-dd'T'HH:mm:ssXXXXX"
     
     // segues
     static let showCalendarSegue = "showCalendar"

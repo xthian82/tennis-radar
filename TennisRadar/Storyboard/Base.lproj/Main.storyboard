@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccW-wf-Fas">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O2T-xE-xgP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -488,7 +488,7 @@
         <scene sceneID="W8H-Cw-3jD">
             <objects>
                 <viewController id="O2T-xE-xgP" customClass="MatchDetailsController" customModule="TennisRadar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Byu-zW-Dpv">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Byu-zW-Dpv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -497,7 +497,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleAspectFit" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="YJI-bq-uh2" userLabel="StatScrollView">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleAspectFit" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="YJI-bq-uh2" userLabel="StatScrollView">
                                 <rect key="frame" x="8" y="96" width="398" height="379"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MEF-fF-coU" userLabel="VersusStatStack">
@@ -1005,24 +1005,24 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Bmr-IH-JV6"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Tns-me-dIX"/>
                             </scrollView>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" separatorInsetReference="fromAutomaticInsets" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="UFc-wu-VCL" userLabel="HeadToHead">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" separatorInsetReference="fromAutomaticInsets" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="UFc-wu-VCL" userLabel="HeadToHead">
                                 <rect key="frame" x="12" y="491" width="382" height="371"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="headToHeadCell" rowHeight="50" id="DMc-Vu-1gK" customClass="HeadToHeadCell" customModule="TennisRadar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="382" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="headToHeadCell" rowHeight="55" id="DMc-Vu-1gK" customClass="HeadToHeadCell" customModule="TennisRadar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="382" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMc-Vu-1gK" id="pwf-NT-pPr">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-OZ-JnW" userLabel="rowStack">
-                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-OZ-JnW" userLabel="rowStack">
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="55"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRT-fC-MWu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="55"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="35" id="nxb-7K-ZW9"/>
                                                             </constraints>
@@ -1031,16 +1031,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KzM-ay-CG8" userLabel="stackPlace">
-                                                            <rect key="frame" x="54.5" y="0.0" width="107.5" height="50"/>
+                                                            <rect key="frame" x="33" y="0.0" width="179" height="55"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Australian Open" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-fI-VhC" userLabel="tourName">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="107.5" height="25"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="27.5"/>
                                                                     <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melbourne, Australia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHx-jO-dyC" userLabel="cityTour">
-                                                                    <rect key="frame" x="0.0" y="25" width="107.5" height="25"/>
+                                                                    <rect key="frame" x="0.0" y="27.5" width="179" height="27.5"/>
                                                                     <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1052,7 +1052,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R256" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyA-RX-mTZ">
-                                                            <rect key="frame" x="181.5" y="0.0" width="35" height="50"/>
+                                                            <rect key="frame" x="213" y="0.0" width="32" height="55"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="35" id="Ued-Pl-kUu"/>
                                                             </constraints>
@@ -1061,16 +1061,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="evO-11-CYe" userLabel="stackResults">
-                                                            <rect key="frame" x="236" y="0.0" width="162" height="50"/>
+                                                            <rect key="frame" x="246" y="0.0" width="152" height="55"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Djokovic, Novak" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEr-gs-9uu" userLabel="winnerName">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="26"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
                                                                     <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13-12, 13-12, 12-11, 13-11, 13-12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mj-57-LYK" userLabel="results">
-                                                                    <rect key="frame" x="0.0" y="27" width="162" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="30" width="152" height="25"/>
                                                                     <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1082,6 +1082,11 @@
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="KzM-ay-CG8" firstAttribute="width" secondItem="tNL-OZ-JnW" secondAttribute="width" multiplier="0.45" id="ePT-zz-uER"/>
+                                                        <constraint firstItem="GyA-RX-mTZ" firstAttribute="width" secondItem="tNL-OZ-JnW" secondAttribute="width" multiplier="0.08" id="f2x-Yx-zlx"/>
+                                                        <constraint firstItem="pRT-fC-MWu" firstAttribute="width" secondItem="tNL-OZ-JnW" secondAttribute="width" multiplier="0.08" id="xJk-K7-CSz"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>

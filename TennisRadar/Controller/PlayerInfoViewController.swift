@@ -43,7 +43,7 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //getPlayerProfile()
+        getPlayerProfile()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -58,15 +58,14 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
     func getPlayerProfile() {
         clearData()
         guard let playerId = playerId else {
-            print("no id player")
+            ControllerUtil.presentAlert(self, title: "Error", message: "No player selected")
            return
         }
         activityIndicator.startAnimating()
         TennisApi.getPlayerProfile(playerId) { response in
             self.activityIndicator.stopAnimating()
             guard let playerData: PlayerProfile = response else {
-                //MARK: improve error message
-                print("no info found for player \(playerId)")
+                ControllerUtil.presentAlert(self, title: "Alert", message: "No info found for \(playerId)")
                 return
             }
             
@@ -81,8 +80,8 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
             self.birthdate.text = player.dateOfBirth
             self.handedness.text = player.handedness
             self.activityIndicator.stopAnimating()
-            self.height.text = self.optIntString(player.height, fill: "''")
-            self.weight.text = self.optIntString(player.weight, fill: " pnds.")
+            self.height.text = self.optIntString(player.height, fill: " cm.")
+            self.weight.text = self.optIntString(player.weight, fill: " kg.")
             self.topSingleRank.text = self.optIntString(player.highestSinglesRanking) + self.optStringEnclosed(player.dateHighestSinglesRanking, tag: " on")
             self.topDoubleRank.text = self.optIntString(player.highestDoublesRanking) + self.optStringEnclosed(player.dateHighestDoublesRanking, tag: " on")
             

@@ -29,8 +29,8 @@ class HeadToHeadCell: UITableViewCell {
 
     func loadData(_ mResult: MatchResult) {
         let sportEvent = mResult.sportEvent
-        year.text = sportEvent.season?.year ?? ""
         clearValues()
+        year.text = sportEvent.season?.year ?? " "
         tourRound.text = mResult.tourRound()
         tourName.text = mResult.tourName()
         
@@ -46,6 +46,8 @@ class HeadToHeadCell: UITableViewCell {
         tourName.text = ""
         winner.text = ""
         matchResults.text = ""
+        year.text = ""
+        tourCity.text = ""
     }
        
 }
