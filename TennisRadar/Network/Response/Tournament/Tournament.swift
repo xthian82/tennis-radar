@@ -33,10 +33,7 @@ struct Tournament: Codable {
     }
     
     func filter() -> String {
-        if let level = category.level {
-            return "\(category.name)_\(level)_\(type ?? "")"
-        }
-        return "\(category.name)_\(type ?? "")"
+        return "\(category.name)_\(category.level ?? "")_\(type ?? "")"
     }
 }
 

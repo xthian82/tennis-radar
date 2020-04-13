@@ -19,19 +19,7 @@ class ControllerUtil {
         header.textLabel?.textAlignment = align
         header.textLabel?.textColor = color
     }
-    /*
-    func getHeaderView(title: String, tableView: UITableView) -> UIView {
-           let headerView = UIView(frame: CGRect(x: 0, y: -5, width: tableView.frame.size.width, height: 50))
-           let label = UILabel(frame: headerView.frame)
-           label.text = title
-           label.textAlignment = NSTextAlignment.center
-           label.font = UIFont.boldSystemFont(ofSize: 19.0)
-           
-           headerView.addSubview(label)
-           
-           return headerView;
-       }*/
-    
+
     class func capitalize(_ str: String, separator: Character = "_", join: String = " ") -> String {
         let words = str.split(separator: separator)
         var capWords: [String] = []
@@ -55,5 +43,4 @@ class ControllerUtil {
         
         return ""
     }
-
 }

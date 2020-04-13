@@ -127,7 +127,8 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
                 guard let tournament = sEvent.tournament else {
                     continue
                 }
-                guard let catLevel = tournament.category.level else {
+
+                if !UserDefaults.standard.bool(forKey: tournament.filter()) {
                     continue
                 }
                 

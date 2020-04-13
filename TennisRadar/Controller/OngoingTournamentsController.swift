@@ -72,7 +72,9 @@ class OngoingTournamentsController: UITableViewController {
                 print("no tours...")
                 return
             }
-            self.tournaments = tournaments.tournaments
+            self.tournaments = tournaments.tournaments.filter({ (tseason) -> Bool in
+                return UserDefaults.standard.bool(forKey: tseason.filter())
+            })
             self.tableView.reloadData()
         }
     }

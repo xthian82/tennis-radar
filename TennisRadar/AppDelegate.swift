@@ -64,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
             //print("App has launched before")
         } else {
-            print("This is the first launch ever!")
             UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
             setValueForKey(true, forKeys: TournamentManager.atpCategoriesSingles)
             setValueForKey(false, forKeys: TournamentManager.atpCategoriesDoubles)

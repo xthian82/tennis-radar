@@ -56,7 +56,6 @@ class TournamentManager {
         "semifinal": "SF",
         "quarterfinal": "QF",
         "qualification": "Q",
-        
         "11th_place_final": "11PF",
         "13th_place_final": "13PF",
         "15th_place_final": "15PF",
@@ -71,7 +70,6 @@ class TournamentManager {
         "5th_place_final": "5PF",
         "7th_place_final": "7PF",
         "9th_place_final": "9PF",
-        
         "decider_match": "DM",
         "initial_match": "IM",
         "losers_final": "LF",
@@ -85,7 +83,6 @@ class TournamentManager {
         "losers_round_of_16": "LR16",
         "losers_semifinal": "LSF",
         "placement_qualification_match": "PQM",
-        
         "round_of_128": "R128",
         "round_of_16": "R16",
         "round_of_256": "R256",

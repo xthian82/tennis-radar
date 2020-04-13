@@ -90,7 +90,7 @@ class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigati
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //getMatchResults(completion: getHeadToHeadHist(homePlayerId:awayPlayerId:))
+        getMatchResults(completion: getHeadToHeadHist(homePlayerId:awayPlayerId:))
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

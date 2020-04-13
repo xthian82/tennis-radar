@@ -16,6 +16,7 @@
 		438BEDE2244131AC00B7BE92 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438BEDE1244131AC00B7BE92 /* Double+Extension.swift */; };
 		438BEDE424417CA800B7BE92 /* MatchDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438BEDE324417CA800B7BE92 /* MatchDetailsController.swift */; };
 		43C24713243F6F35002811D7 /* LiveResultViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C24712243F6F35002811D7 /* LiveResultViewCell.swift */; };
+		43E01B212443E35D00D8DD4E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E01B202443E35C00D8DD4E /* UIViewController+Extension.swift */; };
 		860AC5C5240D4B980001EE30 /* TournamentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C4240D4B980001EE30 /* TournamentInfo.swift */; };
 		860AC5C7240D4CB90001EE30 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860AC5C6240D4CB90001EE30 /* Info.swift */; };
 		C403896F243A899D00B5B724 /* TourStatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C403896E243A899D00B5B724 /* TourStatViewCell.swift */; };
@@ -90,6 +91,7 @@
 		438BEDE1244131AC00B7BE92 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		438BEDE324417CA800B7BE92 /* MatchDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsController.swift; sourceTree = "<group>"; };
 		43C24712243F6F35002811D7 /* LiveResultViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResultViewCell.swift; sourceTree = "<group>"; };
+		43E01B202443E35C00D8DD4E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		860AC5C4240D4B980001EE30 /* TournamentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentInfo.swift; sourceTree = "<group>"; };
 		860AC5C6240D4CB90001EE30 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		C403896E243A899D00B5B724 /* TourStatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourStatViewCell.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				43C24712243F6F35002811D7 /* LiveResultViewCell.swift */,
 				438BEDE1244131AC00B7BE92 /* Double+Extension.swift */,
 				4385721F244213B30027996E /* HeadToHeadCell.swift */,
+				43E01B202443E35C00D8DD4E /* UIViewController+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				C4AADA8A2410ABB60084E172 /* PeriodStat.swift in Sources */,
 				C4DC2DC524076ED2007CE1DF /* AppDelegate.swift in Sources */,
 				C4C23A03242AE747002AABA6 /* TourInfoViewController.swift in Sources */,
+				43E01B212443E35D00D8DD4E /* UIViewController+Extension.swift in Sources */,
 				C4AADA9424133D650084E172 /* Meetings.swift in Sources */,
 				C4DC2DC724076ED2007CE1DF /* SceneDelegate.swift in Sources */,
 				C4A24A8B24342C6D0056DE46 /* CalendarPickController.swift in Sources */,
