@@ -138,11 +138,11 @@ class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigati
             self.headToHead = response
             
             let items = self.headToHead?.lastMeetings.results.count ?? 0
-            if items == 0 {
-                ControllerUtil.presentAlert(self, title: "Alert", message: "No history found for this match")
-            }
             
             self.tableView.reloadData()
+            if items == 0 {
+                self.tableView.backgroundView = ControllerUtil.getLabel(self.view, text: "No history found", fontSize: 14.0)
+            }
         }
     }
     
@@ -158,7 +158,7 @@ class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigati
         resultValue.text = matchResult.scoreResults()
         winnerName.text = matchResult.winnerName()
         let eventStatus = matchResult.sportEventStatus
-        stageDate.text = "\(matchResult.tourRoundFull()) \(ControllerUtil.formatDateFromString(dateStr: eventStatus.matchEnded, format: Constants.timezoneDateISO, isPosixDate: true))"
+        stageDate.text = "\(matchResult.tourRoundFull()) \(ControllerUtil.formatDate(dateStr: eventStatus.matchEnded, formatOrigin: Constants.timezoneDateISO, isPosixDate: true))"
         loadStatistics(getHome(), qualifier: Constants.homePlayer, matchStat: matchResult.homeStatistics())
         loadStatistics(getAway(), qualifier: Constants.awayPlayer, matchStat: matchResult.awayStatistics())
     }

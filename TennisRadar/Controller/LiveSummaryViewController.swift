@@ -32,7 +32,7 @@ class LiveSummaryViewController: UITableViewController,
     
     
     override func viewWillAppear(_ animated: Bool) {
-        getResults(ofDate: nil)
+        getResults(ofDate: selectedDate)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,10 +51,13 @@ class LiveSummaryViewController: UITableViewController,
     }
     
     func handleSelection(data: String) {
-        getResults(ofDate: data)
+        selectedDate = data
+        UserDefaults.standard.set(data, forKey: Constants.pickedDate)
+        self.clearAll()
+        self.tableView.backgroundView = activityIndicator
+        getResults(ofDate: selectedDate)
     }
     
-    // @IBAction func handleSwipeDown(_ sender: UISwipeGestureRecognizer) {
     @objc func handleRefresh() {
         if tableView.numberOfSections != 0 {
             print("quiting refresh... no empty table")
@@ -63,7 +66,7 @@ class LiveSummaryViewController: UITableViewController,
 
         isFromRefresh = true
         self.tableView.backgroundView = ControllerUtil.getLabel(self.view, text: "Refreshing.")
-        getResults(ofDate: "2019-07-14")
+        getResults(ofDate: selectedDate)
     }
     
     
@@ -160,6 +163,10 @@ class LiveSummaryViewController: UITableViewController,
                 self.tournamentResults[tournament.name]!.append(tournamentResult)
             }
             self.tableView.reloadData()
+            
+            if self.tournamentResults.count == 0 {
+                self.tableView.backgroundView = ControllerUtil.getLabel(self.view, text: "No data found, you can pick a date in calendar")
+            }
         }
     }
     

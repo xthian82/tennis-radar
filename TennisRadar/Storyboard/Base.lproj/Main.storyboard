@@ -507,100 +507,100 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="22.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tournament" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqk-3c-cAY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wimbledon Men Singles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzQ-dm-bhK">
-                                                        <rect key="frame" x="124.5" y="0.0" width="273.5" height="22.5"/>
+                                                        <rect key="frame" x="104.5" y="0.0" width="293.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="fqk-3c-cAY" firstAttribute="trailing" secondItem="eKt-ar-NwX" secondAttribute="centerX" multiplier="0.6" id="bId-oF-Re7"/>
+                                                    <constraint firstItem="fqk-3c-cAY" firstAttribute="trailing" secondItem="eKt-ar-NwX" secondAttribute="centerX" multiplier="0.5" id="bId-oF-Re7"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DwW-Ds-27T" userLabel="stackVenue">
                                                 <rect key="frame" x="0.0" y="27.5" width="398" height="22.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPG-TO-uUw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Center Court London, England" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKt-uZ-nqn">
-                                                        <rect key="frame" x="124.5" y="0.0" width="273.5" height="22.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arthur Ashe Stadium, New York, USA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKt-uZ-nqn">
+                                                        <rect key="frame" x="104.5" y="0.0" width="293.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="xPG-TO-uUw" firstAttribute="trailing" secondItem="DwW-Ds-27T" secondAttribute="centerX" multiplier="0.6" id="Njw-aC-dgb"/>
+                                                    <constraint firstItem="xPG-TO-uUw" firstAttribute="trailing" secondItem="DwW-Ds-27T" secondAttribute="centerX" multiplier="0.5" id="Njw-aC-dgb"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" horizontalCompressionResistancePriority="770" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="l7H-GI-s71" userLabel="stackWinner">
                                                 <rect key="frame" x="0.0" y="55" width="398" height="22.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="360" verticalHuggingPriority="251" horizontalCompressionResistancePriority="770" text="Winner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdA-rH-DNB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Djokovic, Novak" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYc-Ru-08r">
-                                                        <rect key="frame" x="124.5" y="0.0" width="273.5" height="22.5"/>
+                                                        <rect key="frame" x="104.5" y="0.0" width="293.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="pdA-rH-DNB" firstAttribute="trailing" secondItem="l7H-GI-s71" secondAttribute="centerX" multiplier="0.6" id="oTP-2P-gkD"/>
+                                                    <constraint firstItem="pdA-rH-DNB" firstAttribute="trailing" secondItem="l7H-GI-s71" secondAttribute="centerX" multiplier="0.5" id="oTP-2P-gkD"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="O4b-bg-nDw" userLabel="stackResult">
                                                 <rect key="frame" x="0.0" y="82.5" width="398" height="22.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXL-1d-Rdx" userLabel="Result">
-                                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7-6, 1-6, 7-6, 4-6, 13-12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAV-4X-h6I" userLabel="ResultValue">
-                                                        <rect key="frame" x="124.5" y="0.0" width="273.5" height="22.5"/>
+                                                        <rect key="frame" x="104.5" y="0.0" width="293.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="uXL-1d-Rdx" firstAttribute="trailing" secondItem="O4b-bg-nDw" secondAttribute="centerX" multiplier="0.6" id="maH-WP-Ywq"/>
+                                                    <constraint firstItem="uXL-1d-Rdx" firstAttribute="trailing" secondItem="O4b-bg-nDw" secondAttribute="centerX" multiplier="0.5" id="maH-WP-Ywq"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" horizontalCompressionResistancePriority="770" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1s3-Ph-Y8i" userLabel="stackDate">
                                                 <rect key="frame" x="0.0" y="110" width="398" height="22.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="360" verticalHuggingPriority="251" horizontalCompressionResistancePriority="770" text="Stage" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwY-Hf-Fb2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final, 2019-07-14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eO7-RH-KKs">
-                                                        <rect key="frame" x="124.5" y="0.0" width="273.5" height="22.5"/>
+                                                        <rect key="frame" x="104.5" y="0.0" width="293.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="nwY-Hf-Fb2" firstAttribute="trailing" secondItem="1s3-Ph-Y8i" secondAttribute="centerX" multiplier="0.6" id="r7v-Wn-diM"/>
+                                                    <constraint firstItem="nwY-Hf-Fb2" firstAttribute="trailing" secondItem="1s3-Ph-Y8i" secondAttribute="centerX" multiplier="0.5" id="r7v-Wn-diM"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="x9V-eB-wC4" userLabel="stackName">
@@ -2630,47 +2630,47 @@
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                                 <color key="color" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <stackView opaque="NO" alpha="0.75" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gHF-DW-LQv">
-                                <rect key="frame" x="16" y="104" width="382" height="481.5"/>
+                            <stackView opaque="NO" alpha="0.75" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gHF-DW-LQv">
+                                <rect key="frame" x="8" y="104" width="398" height="481.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATP MIAMI 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nA3-HM-ABL" userLabel="title">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="64.5"/>
-                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WTA Prague, Czech Republic Women Singles" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nA3-HM-ABL" userLabel="title">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="58"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From 2019-06-22 to 2020-07-12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlX-mF-tb2" userLabel="dates">
-                                        <rect key="frame" x="0.0" y="69.5" width="382" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="63" width="398" height="59.5"/>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surface Clay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHX-HD-tQY" userLabel="surface">
-                                        <rect key="frame" x="0.0" y="139" width="382" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="127.5" width="398" height="60"/>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All toeme wee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VG-o9-wDp" userLabel="complex">
-                                        <rect key="frame" x="0.0" y="208.5" width="382" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="192.5" width="398" height="60"/>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Competitors: 88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUJ-md-Jqc" userLabel="totalPlayers">
-                                        <rect key="frame" x="0.0" y="278" width="382" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="257.5" width="398" height="60"/>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Ondemand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NW-cs-tpd" userLabel="status">
-                                        <rect key="frame" x="0.0" y="347.5" width="382" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="322.5" width="398" height="60"/>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner last Season:  Roger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35U-Uw-h3N" userLabel="winnerLast">
-                                        <rect key="frame" x="0.0" y="417" width="382" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="387.5" width="398" height="94"/>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2686,9 +2686,9 @@
                             <constraint firstItem="gHF-DW-LQv" firstAttribute="top" secondItem="dge-Fv-Xqa" secondAttribute="top" constant="16" id="12w-I3-flb"/>
                             <constraint firstItem="Rkc-6Q-0MG" firstAttribute="centerY" secondItem="dge-Fv-Xqa" secondAttribute="centerY" id="ESd-ED-yNj"/>
                             <constraint firstItem="gHF-DW-LQv" firstAttribute="bottom" secondItem="dge-Fv-Xqa" secondAttribute="centerY" multiplier="1.3" id="ONa-aq-ALg"/>
-                            <constraint firstItem="gHF-DW-LQv" firstAttribute="trailing" secondItem="dge-Fv-Xqa" secondAttribute="trailing" constant="-16" id="RT0-Vh-BpU"/>
+                            <constraint firstItem="gHF-DW-LQv" firstAttribute="trailing" secondItem="dge-Fv-Xqa" secondAttribute="trailing" constant="-8" id="RT0-Vh-BpU"/>
                             <constraint firstItem="Rkc-6Q-0MG" firstAttribute="centerX" secondItem="dge-Fv-Xqa" secondAttribute="centerX" id="T4I-bC-e29"/>
-                            <constraint firstItem="gHF-DW-LQv" firstAttribute="leading" secondItem="dge-Fv-Xqa" secondAttribute="leading" constant="16" id="vnO-kf-1Qf"/>
+                            <constraint firstItem="gHF-DW-LQv" firstAttribute="leading" secondItem="dge-Fv-Xqa" secondAttribute="leading" constant="8" id="vnO-kf-1Qf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dge-Fv-Xqa"/>
                     </view>
@@ -2801,7 +2801,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="z8t-VM-9GQ"/>
-        <segue reference="0va-bq-R0F"/>
+        <segue reference="dCU-ea-Naj"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CHE" width="21" height="15"/>

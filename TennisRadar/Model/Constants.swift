@@ -34,6 +34,7 @@ class Constants {
     static let serviceGames = "ServiceGames"
     static let receiverPoints = "ReceiverPoints"
     static let servicePoints = "ServicePoints"
+    static let pickedDate = "pickedDate"
     
     // dates
     static let MMMMyyyyFormat = "MMMM yyyy"

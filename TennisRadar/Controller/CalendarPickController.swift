@@ -17,12 +17,6 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     
     @IBOutlet weak var calendarView: CalendarView!
     weak var delegate : CalendarPickControllerDelegate?
-    let formatter = DateFormatter()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        formatter.timeZone = TimeZone.current
-        formatter.locale = Locale.current
-    }
     
     func endDate() -> Date {
         let today = Date()
@@ -31,8 +25,7 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     }
     
     func headerString(_ input: Date) -> String? {
-        formatter.dateFormat = Constants.MMMMyyyyFormat
-        return formatter.string(from: input)
+        return ControllerUtil.dateToString(date: input, format: Constants.MMMMyyyyFormat)
     }
     
     override func viewDidLoad() {
@@ -50,6 +43,7 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
         myStyle.firstWeekday = .sunday
         myStyle.calendar.timeZone = TimeZone.current
         myStyle.calendar.locale = Locale.current
+        myStyle.cellSelectedColor = UIColor.lightGray
 
         // set your values
         calendarView.style = myStyle
@@ -61,8 +55,14 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let today = Date()
-        self.calendarView.setDisplayDate(today, animated: false)
+        var date = Date()
+        
+        if let pickedDate = UserDefaults.standard.string(forKey: Constants.pickedDate),
+            let dateSelected = ControllerUtil.stringToDate(dateStr: pickedDate, format: Constants.yyyyMMddFormat) {
+            date = dateSelected
+        }
+        
+        self.calendarView.setDisplayDate(date, animated: false)
     }
     
     func startDate() -> Date {
@@ -77,8 +77,7 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     
     func calendar(_ calendar: CalendarView, didSelectDate date: Date, withEvents events: [CalendarEvent]) {
         if let delegate = delegate {
-            formatter.dateFormat = Constants.yyyyMMddFormat
-            delegate.handleSelection(data: formatter.string(from: date))
+            delegate.handleSelection(data: ControllerUtil.dateToString(date: date, format: Constants.yyyyMMddFormat)!)
         }
         dismiss(animated: true, completion: nil)
     }

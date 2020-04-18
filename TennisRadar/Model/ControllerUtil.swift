@@ -29,10 +29,23 @@ class ControllerUtil {
         return capWords.joined(separator: join)
     }
     
-    class func formatDateFromString(dateStr: String?, format: String = "yyyy-MMM-dd", isPosixDate: Bool = false) -> String {
+    class func stringToDate(dateStr: String, format: String = "yyyyMMdd") -> Date? {
+        let formatter = dateFormatter(dateFormat: format)
+        return formatter.date(from: dateStr)
+    }
+    
+    class func dateToString(date: Date, format: String = "yyyyMMdd") -> String? {
+        let formatter = dateFormatter(dateFormat: format)
+        return formatter.string(from: date)
+    }
+    
+    class func formatDate(dateStr: String?,
+                          formatOrigin: String = "yyyy-MMM-dd",
+                          formatTarget: String = "yyyyMMdd",
+                          isPosixDate: Bool = false) -> String {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = format
+        formatter.dateFormat = formatOrigin
         if isPosixDate {
             formatter.locale = Locale(identifier: "en_US_POSIX")
         }
@@ -42,7 +55,7 @@ class ControllerUtil {
         }
         
         if let date = formatter.date(from: str) {
-            formatter.dateFormat = Constants.yyyyMMddFormat
+            formatter.dateFormat = formatTarget
             return formatter.string(from: date)
         }
         
@@ -62,16 +75,25 @@ class ControllerUtil {
         return refreshControl
     }
     
-    class func getLabel(_ view: UIView, text: String) -> UILabel {
+    class func getLabel(_ view: UIView, text: String, fontSize: CGFloat = 20) -> UILabel {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
 
         messageLabel.text = text
         messageLabel.textColor = UIColor.black
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = UIFont(name: "Futura-CondensedMedium", size: 20)
+        messageLabel.font = UIFont(name: "Futura-CondensedMedium", size: fontSize)
         messageLabel.sizeToFit()
         
         return messageLabel
+    }
+    
+    fileprivate class func dateFormatter(dateFormat: String) -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
+        formatter.dateFormat = dateFormat
+        
+        return formatter
     }
 }
