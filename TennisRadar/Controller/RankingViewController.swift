@@ -91,4 +91,8 @@ class RankingViewController: UITableViewController {
         self.tableView.reloadData()
         self.activityIndicator.stopAnimating()
     }
+    
+    func stopAnimation() {
+        self.activityIndicator.stopAnimating()
+    }
 }

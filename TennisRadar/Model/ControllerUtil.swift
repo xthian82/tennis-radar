@@ -52,4 +52,26 @@ class ControllerUtil {
     class func presentAlert(_ controller: UIViewController, title: String, message: String) {
         controller.present(controller.getDefaultAlertUI(title: title, message: message), animated: true, completion: nil)
     }
+    
+    class func getRefreshControl(_ view: UIViewController, selector: Selector) -> UIRefreshControl {
+        let refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = UIColor.green
+        refreshControl.tintColor = UIColor.white
+        refreshControl.addTarget(view, action: selector, for: .valueChanged)
+        
+        return refreshControl
+    }
+    
+    class func getLabel(_ view: UIView, text: String) -> UILabel {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
+
+        messageLabel.text = text
+        messageLabel.textColor = UIColor.black
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont(name: "Futura-CondensedMedium", size: 20)
+        messageLabel.sizeToFit()
+        
+        return messageLabel
+    }
 }

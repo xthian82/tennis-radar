@@ -31,8 +31,9 @@ class OngoingTournamentsController: UITableViewController {
         }
         
         if segue.identifier == Constants.showTournamentInfoSegue && selectedIndex.row >= 0 {
-            let nav = segue.destination as! UINavigationController
-            let tourInfoVC = nav.topViewController as! TourInfoViewController
+            // let nav = segue.destination as! UINavigationController
+            // let tourInfoVC = nav.topViewController as! TourInfoViewController
+            let tourInfoVC = segue.destination as! TourInfoViewController
             tourInfoVC.tournamentId = tournaments?[selectedIndex.row].id
         }
     }

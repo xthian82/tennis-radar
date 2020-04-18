@@ -9,23 +9,15 @@
 import UIKit
 import Foundation
 
-
-
-// MARK: - TODOS
-/**
-  - tournament info detail view
-  - fix alerts for empty network response
-  - handle future schedule
-  - show alert of no match on empty response in match details
-  - check future date selection
- */
-
-class LiveSummaryViewController: UITableViewController, CalendarPickControllerDelegate {
+class LiveSummaryViewController: UITableViewController,
+    CalendarPickControllerDelegate {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     var tournamentResults = [String: [MatchResult]]()
     var tournamentsLoaded = [Int: String]()
     var matchesLoaded = [IndexPath: String]()
+    var selectedDate: String? = nil
+    var isFromRefresh = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +26,13 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
-    }
+        
+        refreshControl = ControllerUtil.getRefreshControl(self, selector: #selector(handleRefresh))
+   }
     
     
     override func viewWillAppear(_ animated: Bool) {
-        getResults(ofDate: "2019-07-14")
-        //getLiveSummary()*/
+        getResults(ofDate: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,7 +53,20 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     func handleSelection(data: String) {
         getResults(ofDate: data)
     }
-       
+    
+    // @IBAction func handleSwipeDown(_ sender: UISwipeGestureRecognizer) {
+    @objc func handleRefresh() {
+        if tableView.numberOfSections != 0 {
+            print("quiting refresh... no empty table")
+            return
+        }
+
+        isFromRefresh = true
+        self.tableView.backgroundView = ControllerUtil.getLabel(self.view, text: "Refreshing.")
+        getResults(ofDate: "2019-07-14")
+    }
+    
+    
     // MARK: Table Functions
     override func numberOfSections(in tableView: UITableView) -> Int {
         return tournamentResults.keys.count
@@ -87,18 +93,16 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let keyStr = tournamentsLoaded[section] else {
-            return 0
+        var size = 0
+        if let keyStr = tournamentsLoaded[section], let itemsAtKey = tournamentResults[keyStr] {
+            size = itemsAtKey.count
         }
         
-        guard let itemsAtKey = tournamentResults[keyStr] else {
-            return 0
-        }
-        if itemsAtKey.count > 0 {
+        if size > 0 {
             tableView.separatorStyle = .singleLine
         }
         
-        return itemsAtKey.count
+        return size
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -121,13 +125,20 @@ class LiveSummaryViewController: UITableViewController, CalendarPickControllerDe
     
     // MARK: - test funcs
     func getResults(ofDate: String?) {
-        activityIndicator.startAnimating()
+        print("getting results of \(ofDate ?? "live")")
+        
+        if !isFromRefresh {
+            activityIndicator.startAnimating()
+        }
         TennisApi.getResults(ofDate: ofDate) { response in
             self.clearAll()
-            self.activityIndicator.stopAnimating()
+            if !self.isFromRefresh {
+                self.activityIndicator.stopAnimating()
+            } else {
+                self.refreshControl?.endRefreshing()
+            }
             guard let tResults: TournamentResults = response else {
-                
-                ControllerUtil.presentAlert(self, title: "Info", message: "No result found for \(ofDate ?? "today")")
+                self.tableView.backgroundView = ControllerUtil.getLabel(self.view, text: "No data is currently available. Please pull down to refresh.")
                 return
             }
 

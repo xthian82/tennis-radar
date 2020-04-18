@@ -13,11 +13,13 @@ struct Info: Codable {
     let complex: String?
     let complexId: String?
     let numberOfQualifiedCompetitors: Int?
+    let tournamentStatus: String?
     
     enum CodingKeys: String, CodingKey {
         case surface
         case complex
         case complexId = "complex_id"
         case numberOfQualifiedCompetitors = "number_of_qualified_competitors"
+        case tournamentStatus = "tournament_status"
     }
 }

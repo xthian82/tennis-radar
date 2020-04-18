@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccW-wf-Fas">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -488,7 +488,7 @@
         <scene sceneID="W8H-Cw-3jD">
             <objects>
                 <viewController id="O2T-xE-xgP" customClass="MatchDetailsController" customModule="TennisRadar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Byu-zW-Dpv">
+                    <view key="view" contentMode="scaleToFill" id="Byu-zW-Dpv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -497,7 +497,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleAspectFit" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="YJI-bq-uh2" userLabel="StatScrollView">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleAspectFit" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="YJI-bq-uh2" userLabel="StatScrollView">
                                 <rect key="frame" x="8" y="96" width="398" height="379"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MEF-fF-coU" userLabel="VersusStatStack">
@@ -1005,7 +1005,7 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Bmr-IH-JV6"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Tns-me-dIX"/>
                             </scrollView>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" separatorInsetReference="fromAutomaticInsets" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="UFc-wu-VCL" userLabel="HeadToHead">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" separatorInsetReference="fromAutomaticInsets" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="UFc-wu-VCL" userLabel="HeadToHead">
                                 <rect key="frame" x="12" y="491" width="382" height="371"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2442,7 +2442,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WM2-SD-fTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="Boe-wJ-thZ">
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="Boe-wJ-thZ">
                     <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="color" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2590,9 +2590,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="ygf-7b-W10" kind="presentation" identifier="showTournamentInfo" modalPresentationStyle="fullScreen" id="EhM-ot-x8E"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2609,6 +2606,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="L1J-QW-gBK" id="ujA-aT-MRX"/>
+                        <segue destination="whe-kR-Mns" kind="show" identifier="showTournamentInfo" id="mcX-q7-4LK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1r0-8L-1BV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2624,7 +2622,7 @@
         <scene sceneID="9kE-AF-qxd">
             <objects>
                 <viewController id="whe-kR-Mns" customClass="TourInfoViewController" customModule="TennisRadar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BuT-5C-WCB">
+                    <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="BuT-5C-WCB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2632,28 +2630,83 @@
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                                 <color key="color" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <stackView opaque="NO" alpha="0.75" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gHF-DW-LQv">
+                                <rect key="frame" x="16" y="104" width="382" height="481.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATP MIAMI 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nA3-HM-ABL" userLabel="title">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="64.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From 2019-06-22 to 2020-07-12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlX-mF-tb2" userLabel="dates">
+                                        <rect key="frame" x="0.0" y="69.5" width="382" height="64.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surface Clay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHX-HD-tQY" userLabel="surface">
+                                        <rect key="frame" x="0.0" y="139" width="382" height="64.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All toeme wee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VG-o9-wDp" userLabel="complex">
+                                        <rect key="frame" x="0.0" y="208.5" width="382" height="64.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Competitors: 88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUJ-md-Jqc" userLabel="totalPlayers">
+                                        <rect key="frame" x="0.0" y="278" width="382" height="64.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Ondemand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NW-cs-tpd" userLabel="status">
+                                        <rect key="frame" x="0.0" y="347.5" width="382" height="64.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner last Season:  Roger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35U-Uw-h3N" userLabel="winnerLast">
+                                        <rect key="frame" x="0.0" y="417" width="382" height="64.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29486782830000002" green="0.56031829119999998" blue="0.39063743979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.29486782830000002" green="0.56031829119999998" blue="0.39063743979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gHF-DW-LQv" firstAttribute="top" secondItem="dge-Fv-Xqa" secondAttribute="top" constant="16" id="12w-I3-flb"/>
                             <constraint firstItem="Rkc-6Q-0MG" firstAttribute="centerY" secondItem="dge-Fv-Xqa" secondAttribute="centerY" id="ESd-ED-yNj"/>
+                            <constraint firstItem="gHF-DW-LQv" firstAttribute="bottom" secondItem="dge-Fv-Xqa" secondAttribute="centerY" multiplier="1.3" id="ONa-aq-ALg"/>
+                            <constraint firstItem="gHF-DW-LQv" firstAttribute="trailing" secondItem="dge-Fv-Xqa" secondAttribute="trailing" constant="-16" id="RT0-Vh-BpU"/>
                             <constraint firstItem="Rkc-6Q-0MG" firstAttribute="centerX" secondItem="dge-Fv-Xqa" secondAttribute="centerX" id="T4I-bC-e29"/>
+                            <constraint firstItem="gHF-DW-LQv" firstAttribute="leading" secondItem="dge-Fv-Xqa" secondAttribute="leading" constant="16" id="vnO-kf-1Qf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dge-Fv-Xqa"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tournament Info" id="0EK-PX-6NT">
-                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.left" catalog="system" id="Pie-yC-deJ">
-                            <connections>
-                                <action selector="cancelActionTapped" destination="whe-kR-Mns" id="s9x-VD-bzl"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Tournament Info" id="0EK-PX-6NT"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Rkc-6Q-0MG" id="jtr-eb-wLm"/>
+                        <outlet property="complex" destination="0VG-o9-wDp" id="Oog-ew-ETr"/>
+                        <outlet property="date" destination="dlX-mF-tb2" id="nDE-Sq-jMq"/>
+                        <outlet property="name" destination="nA3-HM-ABL" id="Szi-Oh-uKu"/>
+                        <outlet property="players" destination="QUJ-md-Jqc" id="I0Q-WF-tU6"/>
+                        <outlet property="status" destination="7NW-cs-tpd" id="MCI-Gi-4v6"/>
+                        <outlet property="surface" destination="JHX-HD-tQY" id="05H-4F-oSJ"/>
+                        <outlet property="winner" destination="35U-Uw-h3N" id="bmN-iq-Tx5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jv8-AJ-FU9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1058" y="1667"/>
+            <point key="canvasLocation" x="-2171.0144927536235" y="1666.7410714285713"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MAD-5m-GFO">
@@ -2709,27 +2762,6 @@
             <point key="canvasLocation" x="-3568" y="-553"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="gCD-3T-2SU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ygf-7b-W10" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="KfM-bf-oto">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="H2d-kF-Rw0"/>
-                    </navigationItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qn5-ON-qw8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="whe-kR-Mns" kind="relationship" relationship="rootViewController" id="cWy-xh-nC3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="egj-Zr-z5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2054" y="1667"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="Wsp-gl-UXL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GUs-XU-JVh" sceneMemberID="viewController">
@@ -2768,8 +2800,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2g8-qf-VNV"/>
-        <segue reference="dCU-ea-Naj"/>
+        <segue reference="z8t-VM-9GQ"/>
+        <segue reference="0va-bq-R0F"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CHE" width="21" height="15"/>

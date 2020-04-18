@@ -30,8 +30,8 @@ class RankingPageViewController: UIPageViewController, UIPageViewControllerDeleg
         delegate = self
         TennisApi.getPlayerRankings { response in
             guard let rankings: PlayerRankings = response else {
+                self.orderedViewControllers[0].stopAnimation()
                  ControllerUtil.presentAlert(self, title: "Error", message: "No ranking found")
-
                 return
             }
             for (index, controller) in self.orderedViewControllers.enumerated() {
