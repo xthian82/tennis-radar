@@ -236,12 +236,5 @@ import UIKit
     fileprivate func setTypeFont(isAwayHigher: Bool, away: UILabel, home: UILabel) {
         away.font = isAwayHigher ? Constants.fontBold : Constants.fontMedium
         home.font = isAwayHigher ? Constants.fontMedium : Constants.fontBold
-        /*if isAwayHigher {
-            away.font = Constants.fontBold
-            home.font = Constants.fontMedium
-        } else {
-            home.font = Constants.fontBold
-            away.font = Constants.fontMedium
-        }*/
     }
 }

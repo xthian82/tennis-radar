@@ -107,12 +107,6 @@ class TennisApi {
 
     //MARK: - Helpers
     fileprivate class func getLiveOrDate(_ ofDate: String?) -> String {
-        /*var response: String
-        if let ofDate = ofDate {
-            response = ofDate
-        } else {
-            response = "live"
-        }*/
         return ofDate ?? "live"
     }
 }

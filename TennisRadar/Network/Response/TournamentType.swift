@@ -19,15 +19,4 @@ enum TournamentType: String, CaseIterable {
     case wtaChampionships = "wta_championships"
     case atpNextGeneration = "atp_next_generation"
     case wtaEliteTrophy = "wta_elite_trophy"
-    
-    /*
-    static func findByValue(_ value: String) -> TournamentType? {
-        for tournament in TournamentType.allCases {
-            if tournament.rawValue == value {
-                return tournament
-            }
-        }
-        
-        return nil
-    }*/
 }

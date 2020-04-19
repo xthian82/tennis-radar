@@ -22,13 +22,3 @@ enum MatchStatus: String {
     case retired = "The match is incomplete as the result of one player"
     case walkover = "Walkover"
 }
-
-/*
-1st_set – First set
-2nd_set – Second set
-3rd_set – Third set
-4th_set – Fourth set
-5th_set – Fifth set*/
-
-
-
