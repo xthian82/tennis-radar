@@ -18,6 +18,7 @@ class OngoingTournamentsController: UITableViewController {
         super.viewDidLoad()
         tableView.backgroundView = activityIndicator
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Constants.fontNavBar ?? UIFont.systemFont(ofSize: 17)]
     }
        
     override func viewWillAppear(_ animated: Bool) {

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Matches-->
+        <!--Match Results-->
         <scene sceneID="aHY-li-09d">
             <objects>
                 <tableViewController id="IFa-bU-xQ3" customClass="LiveSummaryViewController" customModule="TennisRadar" customModuleProvider="target" sceneMemberID="viewController">
@@ -408,7 +408,7 @@
                             <outlet property="delegate" destination="IFa-bU-xQ3" id="kFU-0e-wX4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Matches" id="9XC-Od-cNo">
+                    <navigationItem key="navigationItem" title="Match Results" id="9XC-Od-cNo">
                         <barButtonItem key="leftBarButtonItem" image="calendar" catalog="system" id="VKm-ei-AcP">
                             <connections>
                                 <segue destination="bSe-CW-n0p" kind="presentation" identifier="showCalendar" id="DTR-mk-U4s"/>

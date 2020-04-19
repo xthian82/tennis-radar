@@ -39,6 +39,7 @@ class PlayerInfoViewController: UIViewController, UIScrollViewDelegate, UINaviga
         uiscrollView.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Constants.fontNavBar ?? UIFont.systemFont(ofSize: 17)]
     }
     
     override func viewWillAppear(_ animated: Bool) {

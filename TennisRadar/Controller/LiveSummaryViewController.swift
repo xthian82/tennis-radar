@@ -28,11 +28,16 @@ class LiveSummaryViewController: UITableViewController,
         tableView.delegate = self
         
         refreshControl = ControllerUtil.getRefreshControl(self, selector: #selector(handleRefresh))
-   }
-    
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Constants.fontNavBar ?? UIFont.systemFont(ofSize: 17)]
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         getResults(ofDate: selectedDate)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.set(nil, forKey: Constants.pickedDate)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -128,7 +133,7 @@ class LiveSummaryViewController: UITableViewController,
     
     // MARK: - test funcs
     func getResults(ofDate: String?) {
-        print("getting results of \(ofDate ?? "live")")
+        self.navigationController?.navigationBar.topItem?.title = "Match Results \(ofDate ?? "Today")"
         
         if !isFromRefresh {
             activityIndicator.startAnimating()

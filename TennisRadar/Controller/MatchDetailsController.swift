@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigationControllerDelegate {
     
@@ -86,6 +87,7 @@ class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigati
         scrollView.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Constants.fontNavBar ?? UIFont.systemFont(ofSize: 17)]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -132,6 +134,11 @@ class MatchDetailsController: UIViewController, UIScrollViewDelegate, UINavigati
         guard let homePlayerId = homePlayerId, let awayPlayerId = awayPlayerId else {
             return
         }
+        
+        // ----
+        // trial api from sport radar reject too many successive calls
+        usleep(useconds_t(1_000_000))
+        
         activityIndicator.startAnimating()
         TennisApi.getHeadToHead(homePlayerId, versus: awayPlayerId) { (response) in
             self.activityIndicator.stopAnimating()

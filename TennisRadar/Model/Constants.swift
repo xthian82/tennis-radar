@@ -13,6 +13,7 @@ class Constants {
     // fonts
     static let fontBold = UIFont(name: "Futura-Bold", size: 13.0)
     static let fontMedium = UIFont(name: "Futura-Medium", size: 13.0)
+    static let fontNavBar = UIFont(name: "Futura-CondensedMedium", size: 18.0)
     
     static let bestOfFive = "bo5"
     static let maxRankPlayers = 150
