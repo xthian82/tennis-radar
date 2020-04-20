@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class SettingsViewController: UITableViewController {
+class SettingsViewController: UITableViewController, NSFetchedResultsControllerDelegate {
  
     //MARK: - Properties
     @IBOutlet weak var wtaPremierSingles: UISwitch!
@@ -39,6 +40,7 @@ class SettingsViewController: UITableViewController {
     var atpCategoriesSingles: [String:UISwitch]!
     var atpCategoriesDoubles: [String:UISwitch]!
     var tournaments: [String:UISwitch]!
+    var fetchedTourTypesController: NSFetchedResultsController<TourType>!
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -76,11 +78,19 @@ class SettingsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        fetchedTourTypesController = super.setupFetchController(CoreDataUtil.createFetchRequest(), delegate: self)
+        
+        fetchedTourTypesController.delegate = self
         setupSwitches(wtaCategoriesSingles)
         setupSwitches(wtaCategoriesDoubles)
         setupSwitches(atpCategoriesSingles)
         setupSwitches(atpCategoriesDoubles)
         setupSwitches(tournaments)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        fetchedTourTypesController = nil
     }
     
     // MARK: - Table Header
@@ -192,7 +202,8 @@ class SettingsViewController: UITableViewController {
     // MARK: - Helpers
     private func setupSwitches(_ switches: [String : UISwitch]) {
         for (key, uiSwitch) in switches {
-            uiSwitch.isOn = UserDefaults.standard.bool(forKey: key)
+            let tourType = CoreDataUtil.filterTourTypes(fetchedTourTypesController.fetchedObjects, byName: key)?.isOn ?? false
+            uiSwitch.isOn = tourType
         }
     }
     
@@ -210,6 +221,10 @@ class SettingsViewController: UITableViewController {
     }
     
     private func saveOption(_ name: String, isOn: Bool) {
-        UserDefaults.standard.set(isOn, forKey: name)
+        if let tourType = CoreDataUtil.filterTourTypes(fetchedTourTypesController.fetchedObjects, byName: name) {
+            CoreDataUtil.updateTourType(tourType: tourType, isOn: isOn)
+        } else {
+            CoreDataUtil.addTourType(name: name, isOn: isOn)
+        }
     }
 }

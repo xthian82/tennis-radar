@@ -32,54 +32,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-    // MARK: - Core Data stack
-
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "TennisRadar")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
-
-    // MARK: - Core Data Saving support
-
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-
     private func checkIfFirstLaunch() {
-        if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
-            //print("App has launched before")
-        } else {
-            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
-            setValueForKey(true, forKeys: TournamentManager.atpCategoriesSingles)
-            setValueForKey(false, forKeys: TournamentManager.atpCategoriesDoubles)
+        if !UserDefaults.standard.bool(forKey: Constants.hasLaunchedBefore) {
+            print("App Launching for the first time, saving defaults ...")
+            UserDefaults.standard.set(true, forKey: Constants.hasLaunchedBefore)
             setValueForKey(true, forKeys: TournamentManager.wtaCategoriesSingles)
-            setValueForKey(false, forKeys: TournamentManager.wtaCategoriesDoubles)
-
+            setValueForKey(true, forKeys: TournamentManager.atpCategoriesSingles)
             setValueForKey(true, forKeys: TournamentManager.tourSingles)
             setValueForKey(false, forKeys: TournamentManager.tourDoubles)
+            setValueForKey(false, forKeys: TournamentManager.wtaCategoriesDoubles)
+            setValueForKey(false, forKeys: TournamentManager.atpCategoriesDoubles)
             
             UserDefaults.standard.synchronize()
+        } else {
+            print("Relaunching app...")
         }
     }
     
     private func setValueForKey(_ value: Bool, forKeys: [String]) {
         for key in forKeys {
-            UserDefaults.standard.set(value, forKey: key)
+            CoreDataUtil.addTourType(name: key, isOn: value)
         }
     }
 }

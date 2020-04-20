@@ -38,7 +38,6 @@ class DataController {
             guard error == nil else {
                 fatalError(error!.localizedDescription)
             }
-            //self.autoSaveViewContext()
             self.configureContexts()
             completion?()
         }
@@ -53,10 +52,5 @@ class DataController {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
-    }
-    
-    func deleObject(object: NSManagedObject) {
-        viewContext.delete(object)
-        saveContext()
     }
 }

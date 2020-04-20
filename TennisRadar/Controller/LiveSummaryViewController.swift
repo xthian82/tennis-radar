@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 class LiveSummaryViewController: UITableViewController,
     CalendarPickControllerDelegate {
@@ -18,6 +19,7 @@ class LiveSummaryViewController: UITableViewController,
     var matchesLoaded = [IndexPath: String]()
     var selectedDate: String? = nil
     var isFromRefresh = false
+    var fetchedTourTypesController: NSFetchedResultsController<TourType>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,8 @@ class LiveSummaryViewController: UITableViewController,
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getResults(ofDate: selectedDate)
+        fetchedTourTypesController = super.setupFetchController(CoreDataUtil.createFetchRequest(), delegate: self)
+        getDataResults(ofDate: selectedDate) { _ in }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,7 +63,7 @@ class LiveSummaryViewController: UITableViewController,
         UserDefaults.standard.set(data, forKey: Constants.pickedDate)
         self.clearAll()
         self.tableView.backgroundView = activityIndicator
-        getResults(ofDate: selectedDate)
+        getDataResults(ofDate: selectedDate) { _ in }
     }
     
     @objc func handleRefresh() {
@@ -71,7 +74,7 @@ class LiveSummaryViewController: UITableViewController,
 
         isFromRefresh = true
         self.tableView.backgroundView = ControllerUtil.getLabel(self.view, text: "Refreshing.")
-        getResults(ofDate: selectedDate)
+        getDataResults(ofDate: selectedDate) { _ in }
     }
     
     
@@ -132,7 +135,7 @@ class LiveSummaryViewController: UITableViewController,
     }
     
     // MARK: - test funcs
-    func getResults(ofDate: String?) {
+    func getDataResults(ofDate: String?, completion: @escaping(Bool) -> Void) {
         self.navigationController?.navigationBar.topItem?.title = "Match Results \(ofDate ?? "Today")"
         
         if !isFromRefresh {
@@ -147,6 +150,7 @@ class LiveSummaryViewController: UITableViewController,
             }
             guard let tResults: TournamentResults = response else {
                 self.tableView.backgroundView = ControllerUtil.getLabel(self.view, text: "No data is currently available. Please pull down to refresh.")
+                completion(false)
                 return
             }
 
@@ -156,7 +160,9 @@ class LiveSummaryViewController: UITableViewController,
                     continue
                 }
 
-                if !UserDefaults.standard.bool(forKey: tournament.filter()) {
+                let tourTypeSelected = CoreDataUtil.filterTourTypes(self.fetchedTourTypesController.fetchedObjects, byName: tournament.filter())?.isOn ?? false
+                
+                if !tourTypeSelected {
                     continue
                 }
                 
@@ -172,6 +178,7 @@ class LiveSummaryViewController: UITableViewController,
             if self.tournamentResults.count == 0 {
                 self.tableView.backgroundView = ControllerUtil.getLabel(self.view, text: "No data found, you can pick a date in calendar")
             }
+            completion(true)
         }
     }
     
@@ -179,6 +186,56 @@ class LiveSummaryViewController: UITableViewController,
         tournamentResults.removeAll()
         tournamentsLoaded.removeAll()
         matchesLoaded.removeAll()
+        self.tableView.backgroundView = nil
     }
 }
 
+extension LiveSummaryViewController: NSFetchedResultsControllerDelegate {
+    
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if self.tableView.numberOfSections < newIndexPath!.section {
+                tableView.insertRows(at: [newIndexPath!], with: .fade)
+            }
+        case .delete:
+            if self.tableView.numberOfSections < indexPath!.section {
+                tableView.deleteRows(at: [indexPath!], with: .fade)
+            }
+        case .update:
+            if self.tableView.numberOfSections < indexPath!.section {
+                tableView.reloadRows(at: [indexPath!], with: .fade)
+            }
+        case .move:
+            if self.tableView.numberOfSections < newIndexPath!.section &&
+            self.tableView.numberOfSections < indexPath!.section {
+                tableView.moveRow(at: indexPath!, to: newIndexPath!)
+            }
+        default:
+            print("unkonwn!")
+        }
+    }
+    
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        let indexSet = IndexSet(integer: sectionIndex)
+        
+        switch type {
+        case .insert:
+            tableView.insertSections(indexSet, with: .fade)
+        case .delete:
+            tableView.deleteSections(indexSet, with: .fade)
+        default:
+            print("unkonwn!")
+        }
+    }
+    
+    public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        getDataResults(ofDate: selectedDate) { _ in
+            self.tableView.beginUpdates()
+        }
+    }
+    
+    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+}

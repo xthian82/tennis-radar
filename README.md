@@ -28,7 +28,9 @@ List of current ongoing tournaments. Click on any row to see details about the t
 Use the settings icon to pick which tournament to follow.
 
 ## Calendar
-Pick a date to see match results from the selected date.
+Pick a date to see match results from the selected date. (Up to 24 monts in the past)
+
+If you switch on other View, picked date will be discarded.
 
 Samples (Jul, 14 2019, Sep 8, 2019)
 

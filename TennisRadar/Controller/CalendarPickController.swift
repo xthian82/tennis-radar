@@ -56,7 +56,7 @@ class CalendarPickController: UIViewController, CalendarViewDataSource, Calendar
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         var date = Date()
-        
+
         if let pickedDate = UserDefaults.standard.string(forKey: Constants.pickedDate),
             let dateSelected = ControllerUtil.stringToDate(dateStr: pickedDate, format: Constants.yyyyMMddFormat) {
             date = dateSelected

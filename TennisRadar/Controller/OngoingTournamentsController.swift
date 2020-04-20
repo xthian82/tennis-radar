@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class OngoingTournamentsController: UITableViewController {
 
     var tournaments: [Tournament]? = nil
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    var fetchedTourTypesController: NSFetchedResultsController<TourType>!
     
     // MARK: - Window functions
     override func viewDidLoad() {
@@ -23,7 +25,13 @@ class OngoingTournamentsController: UITableViewController {
        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getOngoingTournaments()
+        fetchedTourTypesController = super.setupFetchController(CoreDataUtil.createFetchRequest(), delegate: self)
+        getOngoingTournaments { _ in }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        fetchedTourTypesController = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,19 +72,49 @@ class OngoingTournamentsController: UITableViewController {
     }
     
     // MARK: - Service
-    func getOngoingTournaments() {
+    func getOngoingTournaments(completion: @escaping (_ didFinish: Bool) -> Void) {
         activityIndicator.startAnimating()
         TennisApi.getOngoingTournaments { response in
             self.activityIndicator.stopAnimating()
             guard let tournaments: Tournaments = response else {
                  ControllerUtil.presentAlert(self, title: "Error", message: "No tournaments found")
-
+                completion(false)
                 return
             }
             self.tournaments = tournaments.tournaments.filter({ (tseason) -> Bool in
-                return UserDefaults.standard.bool(forKey: tseason.filter())
+                return CoreDataUtil.filterTourTypes(self.fetchedTourTypesController.fetchedObjects, byName: tseason.filter())?.isOn ?? false
             })
             self.tableView.reloadData()
+            completion(true)
         }
     }
 }
+
+extension OngoingTournamentsController: NSFetchedResultsControllerDelegate {
+    
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            tableView.insertRows(at: [newIndexPath!], with: .fade)
+        case .delete:
+            tableView.deleteRows(at: [indexPath!], with: .fade)
+        case .update:
+            tableView.reloadRows(at: [indexPath!], with: .fade)
+        case .move:
+            tableView.moveRow(at: indexPath!, to: newIndexPath!)
+        default:
+            print("unkonwn!")
+        }
+    }
+    
+    public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        getOngoingTournaments { response in
+            self.tableView.beginUpdates()
+        }
+    }
+    
+    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+}
+
