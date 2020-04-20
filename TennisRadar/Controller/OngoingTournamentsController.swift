@@ -95,13 +95,22 @@ extension OngoingTournamentsController: NSFetchedResultsControllerDelegate {
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-            tableView.insertRows(at: [newIndexPath!], with: .fade)
+            if self.tableView.numberOfSections < newIndexPath!.section {
+                tableView.insertRows(at: [newIndexPath!], with: .fade)
+            }
         case .delete:
-            tableView.deleteRows(at: [indexPath!], with: .fade)
+            if self.tableView.numberOfSections < indexPath!.section {
+                tableView.deleteRows(at: [indexPath!], with: .fade)
+            }
         case .update:
-            tableView.reloadRows(at: [indexPath!], with: .fade)
+            if self.tableView.numberOfSections < indexPath!.section {
+                tableView.reloadRows(at: [indexPath!], with: .fade)
+            }
         case .move:
-            tableView.moveRow(at: indexPath!, to: newIndexPath!)
+            if self.tableView.numberOfSections < newIndexPath!.section &&
+            self.tableView.numberOfSections < indexPath!.section {
+                tableView.moveRow(at: indexPath!, to: newIndexPath!)
+            }
         default:
             print("unkonwn!")
         }
